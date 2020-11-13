@@ -1,0 +1,10 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="onClickPrevious()">Lùi</a></li>
+      <li class="page-item" *ngFor="let index of itemsLength" [class.active]="index === currentPage"
+          (click)="onClickPage(index)">
+          <a class="page-link">{{index}}</a>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="onClickNext()">Tiếp</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,92 @@
+<div class="title">THÊM ĐẠI LÝ</div>
+<div class="container">
+  <form [formGroup]="agencyFormGroup">
+    <div class="row">
+      <div class="col-15">
+        <h6>Mã hồ sơ :</h6>
+      </div>
+       <div class="col-35">
+        <input type="text" id="AgencyCode" placeholder="Mã 5 ký tự A-XXXX.." class="field-input form-control"
+        formControlName="code"
+        [class.is-invalid]="agencyFormGroup.get('code').invalid && agencyFormGroup.get('code').touched"
+        [(ngModel)]="inputObject.mahoso" name="code" ngModel>
+      </div>
+      <div class="col-15">
+        <h6>Tên đại lý:</h6>
+      </div>
+      <div class="col-35">
+        <input type="text" placeholder="Tên đăng ký.." class="field-input form-control"
+        formControlName="agencyName"
+        [class.is-invalid]="agencyFormGroup.get('agencyName').invalid && agencyFormGroup.get('agencyName').touched"
+         [(ngModel)]="inputObject.tendaily" name="agencyName" ngModel>
+      </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-15">
+          <h6>Mã loại :</h6>
+        </div>
+         <div class="col-35">
+          <input type="text" placeholder="Mã loại đại lý.." class="field-input form-control"
+          formControlName="agencyType"
+          [class.is-invalid]="agencyFormGroup.get('agencyType').invalid && agencyFormGroup.get('agencyType').touched"
+          [(ngModel)]="inputObject.maloaidaily" name="agencyType" ngModel>
+        </div>
+        <div class="col-15">
+          <h6>Số điện thoại:</h6>
+        </div>
+        <div class="col-35">
+          <input type="text" placeholder="Số điện thoại đại lý.." class="field-input form-control"
+          formControlName="phone"
+          [class.is-invalid]="agencyFormGroup.get('phone').invalid && agencyFormGroup.get('phone').touched"
+           [(ngModel)]="inputObject.dienthoai" name="phone" ngModel>
+        </div>
+      </div> 
+      <br> 
+      <div class="row">
+        <div class="col-15">
+          <h6>Địa chỉ :</h6>
+        </div>
+         <div class="col-35">
+          <input type="text" placeholder="Địa chỉ đăng ký.." class="field-input form-control"
+          formControlName="address"
+          [class.is-invalid]="agencyFormGroup.get('address').invalid && agencyFormGroup.get('address').touched"
+          [(ngModel)]="inputObject.diachi" name="address" ngModel>
+        </div>
+        <div class="col-15">
+          <h6>Mã quận:</h6>
+        </div>
+        <div class="col-35">
+          <input type="text" placeholder="Mã quận đăng ký.." class="field-input form-control"
+          formControlName="districtCode"
+          [class.is-invalid]="agencyFormGroup.get('districtCode').invalid && agencyFormGroup.get('districtCode').touched"
+           [(ngModel)]="inputObject.maquan" name="districtCode" ngModel>
+        </div>
+      </div>  
+      <br>
+      <div class="row">
+        <div class="col-15">
+          <h6>Email :</h6>
+        </div>
+         <div class="col-35">
+          <input type="text" placeholder="Email liên hệ.." class="field-input form-control"
+          formControlName="email"
+          [class.is-invalid]="agencyFormGroup.get('email').invalid && agencyFormGroup.get('email').touched"
+          [(ngModel)]="inputObject.email" name="email" ngModel>
+        </div>
+        <div class="col-15">
+          <h6>tiền nợ :</h6>
+        </div>
+        <div class="col-35">
+          <input type="text" placeholder="Tiền nợ.." class="field-input form-control"
+          formControlName="debt"
+          [class.is-invalid]="agencyFormGroup.get('debt').invalid && agencyFormGroup.get('debt').touched"
+           [(ngModel)]="inputObject.tienno" name="debt" ngModel>
+        </div>
+      </div>  
+  </form>
+  <div class="container-btn">
+      <button type="submit" class="btn button-log-in" (click)="onClickSave()">{{infoMessage}}</button>
+      <button class="btn btn-danger button-cancel" (click)="onClickCloseButton()">Thoát</button>
+    </div>
+</div>
