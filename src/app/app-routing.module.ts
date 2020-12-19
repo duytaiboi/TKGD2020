@@ -1,19 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-const appRoutes: Routes = [
+const routes: Routes = [
+  { path: "", pathMatch: "full", redirectTo: "/welcome" },
   {
-      path: 'home',
-      loadChildren: './QlDaily/main.module#MainModule'
+    path: "welcome",
+    loadChildren: () =>
+      import("./pages/welcome/welcome.module").then((m) => m.WelcomeModule),
+  },
+  {
+    path: "about",
+    loadChildren: () =>
+      import("./pages/about/about.module").then((m) => m.AboutModule),
   },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(appRoutes, { useHash: true })
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
