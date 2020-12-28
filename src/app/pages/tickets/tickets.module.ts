@@ -10,6 +10,7 @@ import { NgZorroAntdModule } from "ng-zorro-antd";
 import { CommonModule } from "@angular/common";
 import { PaymentComponent } from "./payment/payment.component";
 import { BrowserModule } from "@angular/platform-browser";
+import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
 @NgModule({
   imports: [
     TicketsRoutingModule,
@@ -19,7 +20,17 @@ import { BrowserModule } from "@angular/platform-browser";
     NgZorroAntdModule,
     CommonModule,
   ],
-  declarations: [TicketsComponent, ChooseCoachComponent, PaymentComponent],
-  exports: [TicketsComponent, ChooseCoachComponent, PaymentComponent],
+  declarations: [
+    TicketsComponent,
+    ChooseCoachComponent,
+    PaymentComponent,
+    VeDaDatComponent,
+  ],
+  // exports: [
+  //   TicketsComponent,
+  //   ChooseCoachComponent,
+  //   PaymentComponent,
+  //   VeDaDatComponent,
+  // ],
 })
 export class TicketsModule {}

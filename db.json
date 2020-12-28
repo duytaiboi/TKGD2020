@@ -1,0 +1,64 @@
+{
+    "xe": [
+        {
+            "id": 1,
+            "ten": "Phương Trang",
+            "gia_ve": 150000,
+            "diem_di": "Quảng Ninh",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "01:00",
+                    "dia_diem": "Bến xe Móng Cái"
+                },
+                {
+                    "gio": "01:30",
+                    "dia_diem": "Khu vực Móng Cái"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "06:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "06:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ]
+        }
+    ],
+    "trang_thai_xe": [
+        {
+            "id": 1,
+            "xe_id": 1,
+            "vi_tri_trong": [
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "ve_da_dat": [
+        {
+            "id": 1,
+            "ma_ve": "123123",
+            "ten_kh": "Nguyễn Bảo Sỷ Anh",
+            "sdt_kh": "0976764564",
+            "ten_xe": "Phương Trang",
+            "std_xe": "0934534544",
+            "diem_di": "Quảng Ninh",
+            "diem_den": "Hà Nội",
+            "diem_don": {
+                "gio": "01:00",
+                "dia_diem": "Bến xe Móng Cái"
+            },
+            "diem_tra": {
+                "gio": "06:30",
+                "dia_diem": "Nội thành Hà Nội"
+            },
+            "vi_tri": 1,
+            "pt_thanh_toan": "Thanh toán tại quầy"
+        }
+    ]
+}
