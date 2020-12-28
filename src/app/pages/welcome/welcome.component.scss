@@ -1,0 +1,52 @@
+[nz-form] {
+}
+
+nz-date-picker ::ng-deep .ant-calendar-picker {
+  width: 100%;
+}
+
+nz-range-picker {
+  margin: 0 8px 12px 0;
+}
+
+.content-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 0px 5px 5px #999999;
+  line-height: 4;
+}
+
+.form-title {
+  font-size: 15px;
+  font-weight: 500;
+  text-shadow: 0px 5px 5px #999999;
+  color: #ffffff !important;
+}
+
+.icon-transfer {
+  font-size: 40px;
+  padding: 20px 20px;
+  color: #6d8abe;
+  cursor: pointer;
+}
+
+.btn-search {
+  border-radius: 50%;
+  margin-left: 50px;
+  margin-top: -20px;
+  width: 170px;
+  height: 170px;
+  border: 3px solid #30ADD4;
+}
+
+.btn-search-title {
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.search-icon {
+  font-size: 40px;
+  color: #30ADD4;
+}

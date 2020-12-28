@@ -9,26 +9,27 @@
 }
 
 .logo {
-  width: 120px;
   height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 24px 16px 0;
   float: left;
 }
 
 nz-header {
   position: fixed;
+  z-index: 1000;
   width: 100%;
-  background: #fff;
+  background-image: linear-gradient(to top, #64cff0, #ffffff);
 }
 
 [nz-menu] {
-  line-height: 64px;
+  line-height: 63px;
+  background-image: linear-gradient(to top, #64cff0, #ffffff);
 }
 
 nz-content {
   padding: 0 50px;
   margin-top: 64px;
+  background: rgb(231, 231, 231);
+  min-height: 853px;
 }
 
 nz-breadcrumb {
@@ -36,11 +37,38 @@ nz-breadcrumb {
 }
 
 .inner-content {
-  background: #fff;
+  background-image: url("src/assets/img/main-background.jpg");
   padding: 24px;
-  min-height: 380px;
+  height: auto;
+  min-height: 800px;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
 }
 
 nz-footer {
   text-align: center;
+}
+
+.custom-icon {
+  font-size: 20px;
+}
+
+.btn-title {
+  margin-left: -2px;
+}
+
+.btn-header {
+  border-radius: 24px;
+  margin-left: 10px;
+}
+
+.icon-main {
+  font-size: 30px;
+}
+
+.btn-phone-tilte {
+  color: rgb(45, 167, 45);
+  font-weight: 500;
+  margin-left: -2px;
 }

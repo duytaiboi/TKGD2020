@@ -1,1 +1,80 @@
-Welcome pages
+<div class="content-title">Đến bất cứ đâu bạn muốn !</div>
+
+<form nz-form>
+  <nz-form-item nzJustify="center">
+    <div nz-col [nzSpan]="3" nzOffset="4">
+      <nz-form-label [nzSpan]="24"
+        ><span class="form-title">Ngày đi</span></nz-form-label
+      >
+      <nz-form-control [nzSpan]="22" nzHasFeedback>
+        <nz-date-picker
+          [nzSize]="large"
+          [(ngModel)]="date"
+          (ngModelChange)="onDateChange($event)"
+          [ngModelOptions]="{ standalone: true }"
+        ></nz-date-picker>
+      </nz-form-control>
+    </div>
+    <div nz-col [nzSpan]="3">
+      <div>
+        <nz-form-label [nzSpan]="24"
+          ><span class="form-title">{{
+            isChanged ? "Nơi đến" : "Nơi đi"
+          }}</span></nz-form-label
+        >
+        <nz-form-control [nzSpan]="22" nzValidateStatus="success" nzHasFeedback>
+          <nz-select
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Sài Gòn"
+            [(ngModel)]="selectedValue"
+            [ngModelOptions]="{ standalone: true }"
+            [nzSize]="large"
+          >
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="2">
+      <i
+        nz-icon
+        nzType="swap"
+        class="icon-transfer"
+        nzTheme="outline"
+        (click)="transfer()"
+      ></i>
+    </div>
+    <div nz-col [nzSpan]="3">
+      <div>
+        <nz-form-label [nzSpan]="24"
+          ><span class="form-title">{{
+            isChanged ? "Nơi đi" : "Nơi đến"
+          }}</span></nz-form-label
+        >
+        <nz-form-control [nzSpan]="22" nzValidateStatus="success" nzHasFeedback>
+          <nz-select
+            [nzSize]="large"
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Hà Nội"
+            [(ngModel)]="selectedValue2"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            <nz-option nzLabel="Jack" nzValue="jack2"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy2"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom2"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="3">
+      <button nz-button class="btn-search">
+        <i nz-icon nzType="search" class="search-icon" nzTheme="outline"></i
+        ><span class="btn-search-title">Tìm vé</span>
+      </button>
+    </div>
+  </nz-form-item>
+</form>

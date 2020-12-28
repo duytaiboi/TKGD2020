@@ -27,7 +27,10 @@ import { CreateInvoiceModalComponent } from "./QlDaily/hoadon/create-invoice-mod
 import { MainModule } from "./QlDaily/main.module";
 import { IconsProviderModule } from "./icons-provider.module";
 import { NgZorroAntdModule, NZ_I18N, en_US } from "ng-zorro-antd";
-
+import { NzFormModule } from "ng-zorro-antd/form";
+import { NzIconModule } from "ng-zorro-antd/icon";
+import { IconDefinition } from "@ant-design/icons-angular";
+import { NzTimePickerModule } from "ng-zorro-antd/time-picker";
 export const environment = {
   production: false,
   appName: "nmcnpm",
@@ -38,19 +41,17 @@ export const environment = {
   imports: [
     ModalsModule,
     HttpClientModule,
-
+    NgZorroAntdModule,
     ServiceModule,
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     MainModule,
-
+    NzFormModule,
     AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,
     AlertModule.forRoot({ maxMessages: 5, timeout: 5000, position: "right" }),
-    IconsProviderModule,
-    NgZorroAntdModule,
   ],
   entryComponents: [
     AppComponent,

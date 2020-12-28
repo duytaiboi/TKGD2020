@@ -1,13 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
-import { WelcomeRoutingModule } from './welcome-routing.module';
+import { WelcomeRoutingModule } from "./welcome-routing.module";
 
-import { WelcomeComponent } from './welcome.component';
-
-
+import { WelcomeComponent } from "./welcome.component";
+import { NzFormModule } from "ng-zorro-antd/form";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgZorroAntdModule } from "ng-zorro-antd";
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
-  imports: [WelcomeRoutingModule],
+  imports: [
+    WelcomeRoutingModule,
+    NzFormModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgZorroAntdModule,
+    CommonModule,
+  ],
   declarations: [WelcomeComponent],
-  exports: [WelcomeComponent]
+  exports: [WelcomeComponent],
 })
-export class WelcomeModule { }
+export class WelcomeModule {}

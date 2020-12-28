@@ -1,12 +1,71 @@
 <nz-layout class="layout">
   <nz-header>
-    <div class="logo"></div>
     <ul nz-menu nzMode="horizontal">
       <li nz-menu-item>
-        <a routerLink=""> Trang chủ</a>
+        <div class="logo">
+          <i nz-icon nzType="car" class="icon-main" nzTheme="outline"></i>
+        </div>
+        <a routerLink="welcome"> DatVeNhanh.com</a>
       </li>
-      <li nz-menu-item>
-        <a routerLink="about"> About</a>
+      <li class="float-right">
+        <button
+          nz-button
+          nz-dropdown
+          [nzDropdownMenu]="contactUs"
+          class="btn-header"
+        >
+          <i
+            nz-icon
+            nzType="question-circle"
+            class="custom-icon"
+            nzTheme="outline"
+          ></i
+          ><span class="btn-title">Trợ giúp</span>
+        </button>
+        <button
+          nz-button
+          nz-dropdown
+          [nzDropdownMenu]="ticket"
+          class="btn-header"
+        >
+          <i
+            nz-icon
+            nzType="reconciliation"
+            class="custom-icon"
+            nzTheme="outline"
+          ></i>
+          <span class="btn-title">Vé đã đặt</span>
+        </button>
+        <button nz-button class="btn-header">
+          <i nz-icon nzType="phone" class="custom-icon" nzTheme="outline"></i
+          ><span class="btn-phone-tilte">1900-1010</span>
+        </button>
+        <nz-dropdown-menu #contactUs="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a routerLink="about">Về chúng tôi</a>
+            </li>
+            <li nz-menu-item>
+              <a routerLink="about">Hướng dẫn thanh toán</a>
+            </li>
+            <li nz-menu-item>
+              <a routerLink="about">Chính sách bảo mật</a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+        <nz-dropdown-menu #ticket="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item>
+              <a routerLink="about">Về chúng tôi</a>
+            </li>
+            <li nz-menu-item>
+              <a routerLink="about">Hướng dẫn thanh toán</a>
+            </li>
+            <li nz-menu-item>
+              <a routerLink="about">Chính sách bảo mật</a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
       </li>
     </ul>
   </nz-header>
@@ -20,5 +79,5 @@
       <router-outlet></router-outlet>
     </div>
   </nz-content>
-  <nz-footer>Ant Design ©2019 Implement By Angular</nz-footer>
+  <!-- <nz-footer>Ant Design ©2019 Implement By Angular</nz-footer> -->
 </nz-layout>
