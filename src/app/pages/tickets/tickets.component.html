@@ -9,7 +9,6 @@
         >
         <nz-form-control [nzSpan]="22" nzHasFeedback>
           <nz-date-picker
-            [nzSize]="large"
             [(ngModel)]="date"
             (ngModelChange)="onDateChange($event)"
             [ngModelOptions]="{ standalone: true }"
@@ -34,7 +33,6 @@
               nzPlaceHolder="Sài Gòn"
               [(ngModel)]="selectedValue"
               [ngModelOptions]="{ standalone: true }"
-              [nzSize]="large"
             >
               <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
               <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
@@ -65,7 +63,6 @@
             nzHasFeedback
           >
             <nz-select
-              [nzSize]="large"
               nzShowSearch
               nzAllowClear
               nzPlaceHolder="Hà Nội"
@@ -80,7 +77,7 @@
         </div>
       </div>
       <div nz-col [nzSpan]="3">
-        <button nz-button class="btn-search" routerLink="/tickets/choose-coach">
+        <button nz-button class="btn-search" routerLink="/tickets/payment">
           <i nz-icon nzType="search" class="search-icon" nzTheme="outline"></i
           ><span class="btn-search-title">Tìm vé</span>
         </button>

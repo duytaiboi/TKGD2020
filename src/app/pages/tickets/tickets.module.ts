@@ -7,8 +7,9 @@ import { ChooseCoachComponent } from "./choose-coach/choose-coach.component";
 import { NzFormModule } from "ng-zorro-antd/form";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgZorroAntdModule } from "ng-zorro-antd";
-import { CommonModule } from '@angular/common';  
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from "@angular/common";
+import { PaymentComponent } from "./payment/payment.component";
+import { BrowserModule } from "@angular/platform-browser";
 @NgModule({
   imports: [
     TicketsRoutingModule,
@@ -18,7 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
     NgZorroAntdModule,
     CommonModule,
   ],
-  declarations: [TicketsComponent,ChooseCoachComponent],
-  exports: [TicketsComponent,ChooseCoachComponent],
+  declarations: [TicketsComponent, ChooseCoachComponent, PaymentComponent],
+  exports: [TicketsComponent, ChooseCoachComponent, PaymentComponent],
 })
 export class TicketsModule {}
