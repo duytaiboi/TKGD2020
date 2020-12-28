@@ -36,15 +36,6 @@ nz-breadcrumb {
   margin: 16px 0;
 }
 
-.inner-content {
-  background-image: url("src/assets/img/main-background.jpg");
-  padding: 24px;
-  height: auto;
-  min-height: 800px;
-  width: auto;
-  background-repeat: no-repeat;
-  background-position: 0% 50%;
-}
 
 nz-footer {
   text-align: center;
@@ -71,4 +62,12 @@ nz-footer {
   color: rgb(45, 167, 45);
   font-weight: 500;
   margin-left: -2px;
+}
+
+.ant-menu-horizontal {
+  line-height: 64px;
+  white-space: nowrap;
+  border: 0;
+  border-bottom: none;
+  box-shadow: none
 }
