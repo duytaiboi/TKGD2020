@@ -13,13 +13,14 @@ export class XeService extends ApiService {
 
   private readonly url: string = "/xe";
 
-  search() {
+  search(): any {
     return this.httpGet(this.url);
   }
 
   get(id: string) {
     return this.get(this.url + `/${id}`);
   }
+
   add(body: any) {
     return this.httpPost(this.url, body);
   }

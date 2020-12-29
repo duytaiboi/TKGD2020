@@ -1,5 +1,4 @@
-[nz-form] {
-}
+[nz-form] {}
 
 nz-date-picker ::ng-deep .ant-calendar-picker {
   width: 100%;
@@ -9,54 +8,45 @@ nz-range-picker {
   margin: 0 8px 12px 0;
 }
 
-.content-title {
-  text-align: center;
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: 500;
-  text-shadow: 0px 5px 5px #999999;
-  line-height: 4;
-}
-
 .form-title {
-  font-size: 15px;
+  font-size  : 15px;
   font-weight: 500;
   text-shadow: 0px 5px 5px #999999;
-  color: #ffffff !important;
+  color      : #ffffff !important;
 }
 
 .icon-transfer {
   font-size: 40px;
-  padding: 20px 20px;
-  color: #6d8abe;
-  cursor: pointer;
+  padding  : 20px 20px;
+  color    : #6d8abe;
+  cursor   : pointer;
 }
 
 .btn-search {
   border-radius: 50%;
-  margin-left: 50px;
-  margin-top: -20px;
-  width: 170px;
-  height: 170px;
-  border: 3px solid #30add4;
+  margin-left  : 50px;
+  margin-top   : -20px;
+  width        : 170px;
+  height       : 170px;
+  border       : 3px solid #30add4;
 }
 
 .btn-search-title {
-  font-size: 25px;
+  font-size  : 25px;
   margin-left: 5px;
 }
 
 .search-icon {
   font-size: 40px;
-  color: #30add4;
+  color    : #30add4;
 }
 
 .inner-content {
-  background-image: url("src/assets/img/main-background.jpg");
-  padding: 24px;
-  height: auto;
-  min-height: 800px;
-  width: auto;
-  background-repeat: no-repeat;
+  background-image   : url("src/assets/img/main-background.jpg");
+  padding            : 24px;
+  height             : auto;
+  min-height         : 800px;
+  width              : auto;
+  background-repeat  : no-repeat;
   background-position: 0% 50%;
 }

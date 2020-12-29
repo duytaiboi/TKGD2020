@@ -42,9 +42,9 @@
     "ve_da_dat": [
         {
             "id": 1,
-            "ma_ve": "123123",
+            "ma_ve": "2",
             "ten_kh": "Nguyễn Bảo Sỷ Anh",
-            "sdt_kh": "0976764564",
+            "sdt_kh": "1",
             "ten_xe": "Phương Trang",
             "std_xe": "0934534544",
             "diem_di": "Quảng Ninh",
@@ -58,7 +58,8 @@
                 "dia_diem": "Nội thành Hà Nội"
             },
             "vi_tri": 1,
-            "pt_thanh_toan": "Thanh toán tại quầy"
+            "pt_thanh_toan": "Thanh toán tại quầy",
+            "tong_tien": 150000
         }
     ]
 }
