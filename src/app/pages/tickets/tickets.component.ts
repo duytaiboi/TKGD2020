@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-tickets",
@@ -10,11 +11,37 @@ export class TicketsComponent implements OnInit {
   selectedValue2 = null;
   isChanged = false;
   date = null;
+  // Display
+  chon_xe = false;
 
-  constructor() {}
+  index = 0;
+  disable = false;
+  timXeForm: FormGroup;
 
-  ngOnInit() {}
+  constructor(private fb: FormBuilder) {}
 
+  ngOnInit() {
+    this.timXeForm = this.fb.group({
+      name: ["", Validators.required],
+      code: ["", Validators.required],
+    });
+  }
+  onIndexChange(index: number): void {
+    this.index = index;
+    console.log(this.index);
+  }
+
+  goBack() {
+    this.index = 2;
+  }
+
+  timXe() {
+    console.log("ádas");
+    this.chon_xe = true;
+  }
+  backToSearch() {
+    this.chon_xe = false;
+  }
   ngOnChanges() {
     console.log(this.selectedValue);
   }

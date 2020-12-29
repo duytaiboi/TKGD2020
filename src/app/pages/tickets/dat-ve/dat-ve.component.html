@@ -1,94 +1,5 @@
 <div class="inner-content">
-  <div [hidden]="chon_xe">
-    <div class="content-title">Đến bất cứ đâu bạn muốn !</div>
-
-    <form nz-form [formGroup]="timXeForm" (ngSubmit)="timXe()">
-      <nz-form-item nzJustify="center">
-        <div nz-col [nzSpan]="3" nzOffset="4">
-          <nz-form-label [nzSpan]="24"
-            ><span class="form-title">Ngày đi</span></nz-form-label
-          >
-          <nz-form-control [nzSpan]="22" nzHasFeedback>
-            <nz-date-picker
-              [(ngModel)]="date"
-              (ngModelChange)="onDateChange($event)"
-              [ngModelOptions]="{ standalone: true }"
-            ></nz-date-picker>
-          </nz-form-control>
-        </div>
-        <div nz-col [nzSpan]="3">
-          <div>
-            <nz-form-label [nzSpan]="24"
-              ><span class="form-title">{{
-                isChanged ? "Nơi đến" : "Nơi đi"
-              }}</span></nz-form-label
-            >
-            <nz-form-control
-              [nzSpan]="22"
-              nzValidateStatus="success"
-              nzHasFeedback
-            >
-              <nz-select
-                nzShowSearch
-                nzAllowClear
-                nzPlaceHolder="Sài Gòn"
-                [(ngModel)]="selectedValue"
-                [ngModelOptions]="{ standalone: true }"
-              >
-                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </div>
-        </div>
-        <div nz-col [nzSpan]="2">
-          <i
-            nz-icon
-            nzType="swap"
-            class="icon-transfer"
-            nzTheme="outline"
-            (click)="transfer()"
-          ></i>
-        </div>
-        <div nz-col [nzSpan]="3">
-          <div>
-            <nz-form-label [nzSpan]="24"
-              ><span class="form-title">{{
-                isChanged ? "Nơi đi" : "Nơi đến"
-              }}</span></nz-form-label
-            >
-            <nz-form-control
-              [nzSpan]="22"
-              nzValidateStatus="success"
-              nzHasFeedback
-            >
-              <nz-select
-                nzShowSearch
-                nzAllowClear
-                nzPlaceHolder="Hà Nội"
-                [(ngModel)]="selectedValue2"
-                [ngModelOptions]="{ standalone: true }"
-              >
-                <nz-option nzLabel="Jack" nzValue="jack2"></nz-option>
-                <nz-option nzLabel="Lucy" nzValue="lucy2"></nz-option>
-                <nz-option nzLabel="Tom" nzValue="tom2"></nz-option>
-              </nz-select>
-            </nz-form-control>
-          </div>
-        </div>
-        <div nz-col [nzSpan]="3">
-          <button nz-button class="btn-search">
-            <i nz-icon nzType="search" class="search-icon" nzTheme="outline"></i
-            ><span class="btn-search-title">Tìm vé</span>
-          </button>
-        </div>
-      </nz-form-item>
-    </form>
-  </div>
-
-  <!-- Chọn xe -->
-  <div [hidden]="!chon_xe">
+  <div>
     <div class="steps">
       <nz-steps [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
         <nz-step nzTitle="Chọn xe"></nz-step>
@@ -113,7 +24,7 @@
         </div>
         <div class="row pageContent pb-2">
           <div class="col-md-10 d-flex">
-            <button class="btn button-back" (click)="backToSearch()">
+            <button class="btn button-back">
               <span
                 ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
               ></span>

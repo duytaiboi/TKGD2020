@@ -11,6 +11,7 @@ import { CommonModule } from "@angular/common";
 import { PaymentComponent } from "./payment/payment.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
+import { DatVeComponent } from './dat-ve/dat-ve.component';
 @NgModule({
   imports: [
     TicketsRoutingModule,
@@ -25,6 +26,7 @@ import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
     ChooseCoachComponent,
     PaymentComponent,
     VeDaDatComponent,
+    DatVeComponent,
   ],
   // exports: [
   //   TicketsComponent,
