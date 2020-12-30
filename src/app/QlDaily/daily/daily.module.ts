@@ -21,7 +21,7 @@ import { DailyDatashowingComponent } from './daily-datashowing/daily-datashowing
     ReactiveFormsModule,
     ModalModule.forRoot(),
     FormsModule,
-    AlertModule.forRoot({ maxMessages: 5, timeout: 2000, position: 'right' }),
+    AlertModule.forRoot({ maxMessages: 5, timeout: 2000, positionX: 'right' }),
     DailyBillRoutingModule,
   ],
   exports: [
