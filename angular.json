@@ -145,5 +145,8 @@
       }
     }
   },
-  "defaultProject": "WebApp"
+  "defaultProject": "WebApp",
+  "cli": {
+    "analytics": false
+  }
 }
