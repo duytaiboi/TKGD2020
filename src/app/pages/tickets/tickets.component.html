@@ -1,4 +1,4 @@
-<div class="inner-content" [hidden]="screen_chon_xe">
+<div [hidden]="screen_chon_xe" class="inner-content">
   <div>
     <div class="content-title">Đến bất cứ đâu bạn muốn !</div>
 
@@ -62,8 +62,11 @@
     </form>
   </div>
 </div>
-<div style="background-color: #ffffff; padding: 20px" [hidden]="!screen_chon_xe">
-  <!-- Chọn xe -->
+
+<div
+  [hidden]="!screen_chon_xe"
+  style="background-color: #ffffff; padding: 20px; min-height: 100vh"
+>
   <div>
     <div class="steps">
       <nz-steps [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
@@ -73,328 +76,381 @@
         <nz-step nzTitle="Đặt vé và thanh toán"></nz-step>
       </nz-steps>
     </div>
-
-    <div class="step-1" *ngIf="index == 0">
-      <div class="">
-        <div class="row pageContent py-1">
-          <div class="col-md-10 d-flex align-items-center">
-            <h5 class="totalBus">Hiện có 145 xe</h5>
-          </div>
-          <div
-            class="col-md-2 d-flex justify-content-between align-items-center"
-          >
-            <h5>Bộ lọc</h5>
-            <button class="btn btn-outline-warning">Xóa lọc</button>
-          </div>
-        </div>
-        <div class="row pageContent pb-2">
-          <div class="col-md-10 d-flex">
-            <button class="btn button-back" (click)="backToSearch()">
-              <span
-                ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
-              ></span>
-            </button>
-            <div class="row px-5">
-              <!-- view block 2 -->
-              <!-- <div class="viewColumn"> -->
-              <!-- bus 1 -->
-              <div class="bus col-md-6" *ngFor="let item of xe">
-                <!-- content of bus -->
-                <div class="busContent box1 p-3 mype-4">
-                  <!-- row 1 of bus -->
-                  <div class="row">
-                    <div class="col-md-8">
-                      <p class="busName">{{ item.ten }}</p>
-                    </div>
-                    <div class="text-right col-md-4">
-                      <p class="busRating">
-                        <span
-                          ><i class="fa fa-star" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star-o" aria-hidden="true"></i
-                        ></span>
-                      </p>
-                    </div>
-                  </div>
-                  <!-- row 2 of bus -->
-                  <div
-                    class="d-flex justify-content-between align-items-center px-4"
-                  >
-                    <div>
-                      <p class="m-0">
-                        <span class="location-icon"
-                          ><i
-                            class="fa fa-map-marker fa-2x"
-                            aria-hidden="true"
-                          ></i
-                        ></span>
-                        <span
-                          >{{ item.diem_don[0].gio }} |
-                          {{ item.diem_don[0].dia_diem }}</span
-                        >
-                      </p>
-                      <p class="m-0">
-                        <span class="location-icon myps-1"
-                          ><i
-                            class="fa fa-long-arrow-down"
-                            aria-hidden="true"
-                          ></i
-                        ></span>
-                        <span></span>
-                      </p>
-                      <p>
-                        <span class="location-icon"
-                          ><i
-                            class="fa fa-map-marker fa-2x"
-                            aria-hidden="true"
-                          ></i
-                        ></span>
-                        <span
-                          >{{ item.diem_tra[item.diem_tra.length - 1].gio }} |
-                          {{
-                            item.diem_tra[item.diem_tra.length - 1].dia_diem
-                          }}</span
-                        >
-                      </p>
-                    </div>
-                    <p class="busTimeStart">{{ item.diem_don[0].gio }}</p>
-                  </div>
-                  <!-- row 3 of bus -->
-                  <div class="d-flex justify-content-between">
-                    <p class="busSeatEmpty">
-                      {{ item.vi_tri_trong.length }} chỗ trống
-                    </p>
-                    <p class="busPrice">{{ item.gia_ve }} vnd</p>
-                  </div>
-                  <!-- button of bus -->
-                  <button class="btn busButton" (click)="chonXe(item)">
-                    <span
-                      ><i
-                        class="fa fa-arrow-circle-right fa-2x"
-                        aria-hidden="true"
-                      ></i
-                    ></span>
-                  </button>
-                </div>
-                <!-- /busContent -->
-              </div>
-              <!-- /bus 1 -->
-              <!-- </div>    -->
-              <!-- view block 2 -->
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="filter">
-              <form>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label" for="nhaxe">Nhà xe</label>
-                  <select class="form-select" id="nhaxe">
-                    <option selected>Phương Trang</option>
-                  </select>
-                </div>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label" for="diemdi">Điểm đi</label>
-                  <select class="form-select" id="diemdi">
-                    <option selected>Sài Gòn</option>
-                  </select>
-                </div>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label" for="diemden">Điểm đến</label>
-                  <select class="form-select" id="diemden">
-                    <option selected>Hà Tiên</option>
-                  </select>
-                </div>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label" for="sapxepgiave"
-                    >Sắp xếp giá vé</label
-                  >
-                  <select class="form-select" id="sapxepgiave">
-                    <option selected>Thấp đến cao</option>
-                  </select>
-                </div>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label" for="sapxepdanhgia"
-                    >Sắp xếp đánh giá</label
-                  >
-                  <select class="form-select" id="sapxepdanhgia">
-                    <option selected>4 sao</option>
-                  </select>
-                </div>
-                <!-- control -->
-                <div class="my-form-control">
-                  <label class="form-label">Thời gian khởi hành</label>
-                  <div class="d-flex justify-content-center">
-                    <div class="me-2">
-                      <label for="hour">Giờ</label>
-                      <select class="form-select" id="hour">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option selected>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                        <option>18</option>
-                        <option>19</option>
-                        <option>20</option>
-                        <option>21</option>
-                        <option>22</option>
-                        <option>23</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label for="hour">Phút</label>
-                      <select class="form-select" id="hour">
-                        <option>00</option>
-                        <option selected>30</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-1">
+        <button class="btn button-back" style="max-height: 100vh" (click)="previousStep()">
+          <span
+            ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
+          ></span>
+        </button>
       </div>
-    </div>
-    <div class="step-2" *ngIf="index == 1">page2</div>
-    <div class="step-3" *ngIf="index == 2">page3</div>
-    <div class="step-4" *ngIf="index == 3">
-      <label nz-radio-button class="back-btn" (click)="goBack()" nzValue="large"
-        ><i class="back-icon" nz-icon nzType="caret-left" nzTheme="outline"></i
-      ></label>
-      <span class="ticket-infos">
-        <div class="ticket-infos__title">Thông tin vé</div>
-        <div class="ticket-infos__wrapper1">
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Nơi đi</div>
+      <div class="col-10">
+        <!-- Chọn xe -->
+        <div class="step-1" *ngIf="index == 0">
+          <div class="">
+            <div class="row pageContent py-1">
+              <div class="col-md-10 d-flex align-items-center">
+                <h5 class="totalBus">Hiện có {{ xe.length }} xe</h5>
+              </div>
+              <div
+                class="col-md-2 d-flex justify-content-between align-items-center"
+              >
+                <h5>Bộ lọc</h5>
+                <button class="btn btn-outline-warning">Xóa lọc</button>
+              </div>
             </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Sài Gòn</div>
-            </div>
-          </div>
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Nơi đến</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Hà Tiên</div>
-            </div>
-          </div>
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Ngày khởi hành</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">29 - 12- 2020</div>
-            </div>
-          </div>
-
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Thời gian khởi hành</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">8:30</div>
-            </div>
-          </div>
-
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Điểm đón</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">227 Nguyễn Văn Cừ</div>
-            </div>
-          </div>
-
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Điểm trả</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
-            </div>
-          </div>
-
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Vị trí ghế</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <span class="ticket-infos__content">B01</span>
-              <span class="ticket-infos__content">A01</span>
-              <span class="ticket-infos__content">B01</span>
-              <span class="ticket-infos__content">B06</span>
-            </div>
-          </div>
-
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Tổng tiền</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">660.000 vnd</div>
+            <div class="row pageContent pb-2">
+              <div class="col-md-10 d-flex">
+                <div class="row px-5">
+                  <!-- view block 2 -->
+                  <!-- <div class="viewColumn"> -->
+                  <!-- bus 1 -->
+                  <div class="bus col-md-6" *ngFor="let item of xe">
+                    <!-- content of bus -->
+                    <div class="busContent box1 p-3 mype-4">
+                      <!-- row 1 of bus -->
+                      <div class="row">
+                        <div class="col-md-8">
+                          <p class="busName">{{ item.ten }}</p>
+                        </div>
+                        <div class="text-right col-md-4">
+                          <p class="busRating">
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star-o" aria-hidden="true"></i
+                            ></span>
+                          </p>
+                        </div>
+                      </div>
+                      <!-- row 2 of bus -->
+                      <div class="">
+                        <div>
+                          <p class="m-0">
+                            <span class="location-icon"
+                              ><i
+                                class="fa fa-map-marker fa-2x"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                            <span
+                              >{{ item.diem_don[0].gio }} |
+                              {{ item.diem_don[0].dia_diem }}</span
+                            >
+                          </p>
+                          <p class="m-0">
+                            <span class="location-icon myps-1"
+                              ><i
+                                class="fa fa-long-arrow-down"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                            <span></span>
+                          </p>
+                          <p>
+                            <span class="location-icon"
+                              ><i
+                                class="fa fa-map-marker fa-2x"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                            <span
+                              >{{ item.diem_tra[item.diem_tra.length - 1].gio }}
+                              |
+                              {{
+                                item.diem_tra[item.diem_tra.length - 1].dia_diem
+                              }}</span
+                            >
+                          </p>
+                        </div>
+                      </div>
+                      <!-- row 3 of bus -->
+                      <div class="d-flex justify-content-between">
+                        <p class="busSeatEmpty">
+                          {{ item.vi_tri_trong.length }} chỗ trống
+                        </p>
+                        <p class="busPrice">{{ item.gia_ve }} vnd</p>
+                      </div>
+                      <!-- button of bus -->
+                      <button class="btn busButton" (click)="chonXe(item)">
+                        <span
+                          ><i
+                            class="fa fa-arrow-circle-right fa-2x"
+                            aria-hidden="true"
+                          ></i
+                        ></span>
+                      </button>
+                    </div>
+                    <!-- /busContent -->
+                  </div>
+                  <!-- /bus 1 -->
+                  <!-- </div>    -->
+                  <!-- view block 2 -->
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="filter">
+                  <form>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label" for="nhaxe">Nhà xe</label>
+                      <select class="form-select" id="nhaxe">
+                        <option selected>Phương Trang</option>
+                      </select>
+                    </div>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label" for="diemdi">Điểm đi</label>
+                      <select class="form-select" id="diemdi">
+                        <option selected>Sài Gòn</option>
+                      </select>
+                    </div>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label" for="diemden">Điểm đến</label>
+                      <select class="form-select" id="diemden">
+                        <option selected>Hà Tiên</option>
+                      </select>
+                    </div>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label" for="sapxepgiave"
+                        >Sắp xếp giá vé</label
+                      >
+                      <select class="form-select" id="sapxepgiave">
+                        <option selected>Thấp đến cao</option>
+                      </select>
+                    </div>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label" for="sapxepdanhgia"
+                        >Sắp xếp đánh giá</label
+                      >
+                      <select class="form-select" id="sapxepdanhgia">
+                        <option selected>4 sao</option>
+                      </select>
+                    </div>
+                    <!-- control -->
+                    <div class="my-form-control">
+                      <label class="form-label">Thời gian khởi hành</label>
+                      <div class="d-flex justify-content-center">
+                        <div class="me-2">
+                          <label for="hour">Giờ</label>
+                          <select class="form-select" id="hour">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option selected>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="hour">Phút</label>
+                          <select class="form-select" id="hour">
+                            <option>00</option>
+                            <option selected>30</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </span>
-
-      <span class="ticket-infos">
-        <div class="ticket-infos__title">Thông tin hành khách</div>
-        <div class="ticket-infos__wrapper2">
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Điểm trả</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
-            </div>
-          </div>
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Điểm trả</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
-            </div>
-          </div>
-          <div nz-row class="ticket-infos__row">
-            <div nz-col nzSpan="6">
-              <div class="ticket-infos__label">Điểm trả</div>
-            </div>
-            <div nz-col nzSpan="18">
-              <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+        <!-- End Chọn xe -->
+        <!-- Chọn ghế -->
+        <div class="step-2" *ngIf="index == 1">page2</div>
+        <!-- End chọn ghế -->
+        <!-- Chọn điểm đón/trả -->
+        <div class="step-3" *ngIf="index == 2">
+          <div *ngIf="xe_da_chon">
+            <h3>{{ xe_da_chon.ten }}</h3>
+            <div class="row">
+              <div class="col-sm-6">
+                <h5>Điểm đón</h5>
+                <div>
+                  <nz-radio-group [(ngModel)]="diem_don">
+                    <label
+                      *ngFor="let item of xe_da_chon.diem_don; index as i"
+                      nz-radio
+                      [nzValue]="item"
+                    >
+                      {{ item.gio }} | {{ item.dia_diem }}
+                    </label>
+                  </nz-radio-group>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <h5>Điểm trả</h5>
+                <div>
+                  <nz-radio-group [(ngModel)]="diem_tra">
+                    <label
+                      *ngFor="let item of xe_da_chon.diem_tra; index as i"
+                      nz-radio
+                      [nzValue]="item"
+                    >
+                      {{ item.gio }} | {{ item.dia_diem }}
+                    </label>
+                  </nz-radio-group>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </span>
+        <!-- End Chọn điểm đón/trả -->
+        <!-- Thanh toán -->
+        <div class="step-4" *ngIf="index == 3">
+          <span class="ticket-infos">
+            <div class="ticket-infos__title">Thông tin vé</div>
+            <div class="ticket-infos__wrapper1">
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Nơi đi</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Sài Gòn</div>
+                </div>
+              </div>
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Nơi đến</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Hà Tiên</div>
+                </div>
+              </div>
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Ngày khởi hành</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">29 - 12- 2020</div>
+                </div>
+              </div>
+
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Thời gian khởi hành</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">8:30</div>
+                </div>
+              </div>
+
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Điểm đón</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">227 Nguyễn Văn Cừ</div>
+                </div>
+              </div>
+
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Điểm trả</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+                </div>
+              </div>
+
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Vị trí ghế</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <span class="ticket-infos__content">B01</span>
+                  <span class="ticket-infos__content">A01</span>
+                  <span class="ticket-infos__content">B01</span>
+                  <span class="ticket-infos__content">B06</span>
+                </div>
+              </div>
+
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Tổng tiền</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">660.000 vnd</div>
+                </div>
+              </div>
+            </div>
+          </span>
+
+          <span class="ticket-infos">
+            <div class="ticket-infos__title">Thông tin hành khách</div>
+            <div class="ticket-infos__wrapper2">
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Điểm trả</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+                </div>
+              </div>
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Điểm trả</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+                </div>
+              </div>
+              <div nz-row class="ticket-infos__row">
+                <div nz-col nzSpan="6">
+                  <div class="ticket-infos__label">Điểm trả</div>
+                </div>
+                <div nz-col nzSpan="18">
+                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+        <!-- End Thanh toán -->
+      </div>
+      <div class="col-1">
+        <button
+          *ngIf="index != 0 && index != 3"
+          class="btn button-back"
+          (click)="nextStep()"
+        >
+          <span
+            ><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i
+          ></span>
+        </button>
+      </div>
     </div>
   </div>
 </div>

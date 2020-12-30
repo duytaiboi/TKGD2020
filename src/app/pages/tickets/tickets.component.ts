@@ -20,6 +20,9 @@ export class TicketsComponent implements OnInit {
   disable = false;
   timXeForm: FormGroup;
   xe = [];
+  xe_da_chon = null;
+  diem_don = null;
+  diem_tra = null;
 
   constructor(
     private fb: FormBuilder,
@@ -36,7 +39,9 @@ export class TicketsComponent implements OnInit {
   }
 
   onIndexChange(index: number): void {
+    // if (index < this.index) {
     this.index = index;
+    // }
   }
 
   goBack() {
@@ -62,16 +67,20 @@ export class TicketsComponent implements OnInit {
       }
     });
   }
-  
+
   chonXe(item) {
     console.log(item);
-    this.toChonViTri();
+    // this.toChonViTri();
+    this.xe_da_chon = item;
+    this.diem_don = this.xe_da_chon.diem_don[0];
+    this.diem_tra = this.xe_da_chon.diem_tra[this.xe_da_chon.diem_tra.length - 1];
+    this.toDiemDonTra();
   }
 
   toChonViTri() {
     this.index = 1;
   }
-  
+
   toDiemDonTra() {
     this.index = 2;
   }
@@ -79,7 +88,7 @@ export class TicketsComponent implements OnInit {
   toThanhToan() {
     this.index = 3;
   }
-  
+
   backToSearch() {
     this.screen_chon_xe = false;
     window.scrollTo(0, 0);
@@ -89,13 +98,24 @@ export class TicketsComponent implements OnInit {
   }
 
   transfer() {
-    const current_diem_di=this.timXeForm.value.diem_di;
-    const current_diem_den=this.timXeForm.value.diem_den;
+    const current_diem_di = this.timXeForm.value.diem_di;
+    const current_diem_den = this.timXeForm.value.diem_den;
     this.timXeForm.controls.diem_di.setValue(current_diem_den);
     this.timXeForm.controls.diem_den.setValue(current_diem_di);
   }
 
   onDateChange(result: Date[]): void {
     console.log("onChange: ", result);
+  }
+
+  nextStep() {
+    this.index++;
+  }
+  previousStep() {
+    if (this.index > 0) {
+      this.index--;
+    } else {
+      this.backToSearch();
+    }
   }
 }
