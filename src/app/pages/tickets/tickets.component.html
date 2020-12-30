@@ -68,6 +68,7 @@
   style="background-color: #ffffff; padding: 20px; min-height: 100vh"
 >
   <div>
+    <!-- Step bar -->
     <div class="steps">
       <nz-steps [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
         <nz-step nzTitle="Chọn xe"></nz-step>
@@ -330,7 +331,7 @@
         <!-- End Chọn điểm đón/trả -->
         <!-- Thanh toán -->
         <div class="step-4" *ngIf="index == 3">
-          <span class="ticket-infos">
+          <span class="ticket-infos col-md-8">
             <div class="ticket-infos__title">Thông tin vé</div>
             <div class="ticket-infos__wrapper1">
               <div nz-row class="ticket-infos__row">
@@ -408,7 +409,7 @@
             </div>
           </span>
 
-          <span class="ticket-infos">
+          <span class="ticket-infos col-md-4">
             <div class="ticket-infos__title">Thông tin hành khách</div>
             <div class="ticket-infos__wrapper2">
               <div nz-row class="ticket-infos__row">
