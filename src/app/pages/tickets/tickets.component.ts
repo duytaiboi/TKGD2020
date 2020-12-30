@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NzMessageService } from "ng-zorro-antd";
 import { XeService } from "src/app/services/xe.service";
+import { SeatMap } from "src/core/model/seat-map.model";
+import { SeatModel } from "src/core/model/seat.model";
 
 @Component({
   selector: "app-tickets",
@@ -9,10 +11,6 @@ import { XeService } from "src/app/services/xe.service";
   styleUrls: ["./tickets.component.scss"],
 })
 export class TicketsComponent implements OnInit {
-  selectedValue = null;
-  selectedValue2 = null;
-  isChanged = false;
-  date = null;
   // Display
   screen_chon_xe = false;
 
@@ -20,9 +18,164 @@ export class TicketsComponent implements OnInit {
   disable = false;
   timXeForm: FormGroup;
   xe = [];
+  // Xe đã chọn
   xe_da_chon = null;
-  diem_don = null;
-  diem_tra = null;
+  diem_don = null; // điểm đón đã chọn
+  diem_tra = null; // điểm trả đã chọn
+  
+  // Chọn ghế
+  listSeatsA: SeatModel[] = [
+    {
+      digit: "A",
+      index: 0,
+      status: false,
+      reserved: true,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 1,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 2,
+      status: false,
+      reserved: true,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 3,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 4,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 5,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 6,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 7,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 8,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "A",
+      index: 9,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+  ];
+  listSeatsB: SeatModel[] = [
+    {
+      digit: "B",
+      index: 0,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 1,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 2,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 3,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 4,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 5,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 6,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 7,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 8,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+    {
+      digit: "B",
+      index: 9,
+      status: false,
+      reserved: false,
+      price: 20.0,
+    },
+  ];
+
+  seatsMapA: SeatMap = new SeatMap(this.listSeatsA);
+  seatsMapB: SeatMap = new SeatMap(this.listSeatsB);
+
+  listSeats: SeatModel[];
+  clickedSeats: SeatModel[] = [];
+
+  totalPrice: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -36,16 +189,13 @@ export class TicketsComponent implements OnInit {
       diem_den: ["Hà Nội", Validators.required],
       diem_di: ["Sài Gòn", Validators.required],
     });
+    this.prepareSeatsMap();
   }
 
   onIndexChange(index: number): void {
-    // if (index < this.index) {
-    this.index = index;
-    // }
-  }
-
-  goBack() {
-    this.index = 2;
+    if (index < this.index) {
+      this.index = index;
+    }
   }
 
   timXe() {
@@ -70,11 +220,12 @@ export class TicketsComponent implements OnInit {
 
   chonXe(item) {
     console.log(item);
-    // this.toChonViTri();
     this.xe_da_chon = item;
     this.diem_don = this.xe_da_chon.diem_don[0];
-    this.diem_tra = this.xe_da_chon.diem_tra[this.xe_da_chon.diem_tra.length - 1];
-    this.toDiemDonTra();
+    this.diem_tra = this.xe_da_chon.diem_tra[
+      this.xe_da_chon.diem_tra.length - 1
+    ];
+    this.toChonViTri();
   }
 
   toChonViTri() {
@@ -92,9 +243,6 @@ export class TicketsComponent implements OnInit {
   backToSearch() {
     this.screen_chon_xe = false;
     window.scrollTo(0, 0);
-  }
-  ngOnChanges() {
-    console.log(this.selectedValue);
   }
 
   transfer() {
@@ -117,5 +265,49 @@ export class TicketsComponent implements OnInit {
     } else {
       this.backToSearch();
     }
+  }
+
+  // Chọn ghế
+
+  onSeatClick(seat: SeatModel) {
+    console.log(seat);
+    if (seat.digit === "A") {
+      var selectedSeat = <HTMLElement>(
+        document.getElementsByClassName("A")[seat.index]
+      );
+    } else {
+      var selectedSeat = <HTMLElement>(
+        document.getElementsByClassName("B")[seat.index]
+      );
+    }
+
+    if (!seat.status) {
+      selectedSeat.style.backgroundColor =
+        "rgba(61.00000016391277, 213.00000250339508, 224.000001847744, 1)";
+      seat.status = !seat.status;
+      this.clickedSeats.push(seat);
+    } else {
+      selectedSeat.style.backgroundColor = "white";
+      selectedSeat.style.color = "black";
+      seat.status = !seat.status;
+      this.clickedSeats = [
+        ...this.clickedSeats.filter((x) => x.index !== seat.index),
+      ];
+    }
+    var seatModel = new SeatModel();
+    seatModel.digit = selectedSeat.innerHTML;
+    this.calculatePrice();
+  }
+
+  private calculatePrice() {
+    this.clickedSeats.forEach((seat) => {
+      this.totalPrice = this.totalPrice + seat.price;
+    });
+  }
+
+  private prepareSeatsMap() {
+    this.listSeats = [];
+    this.listSeats = this.listSeats.concat(this.listSeatsA);
+    this.listSeats = this.listSeats.concat(this.listSeatsB);
   }
 }

@@ -79,7 +79,11 @@
     </div>
     <div class="row">
       <div class="col-1">
-        <button class="btn button-back" style="max-height: 100vh" (click)="previousStep()">
+        <button
+          class="btn button-back"
+          style="max-height: 100vh"
+          (click)="previousStep()"
+        >
           <span
             ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
           ></span>
@@ -290,7 +294,93 @@
         </div>
         <!-- End Chọn xe -->
         <!-- Chọn ghế -->
-        <div class="step-2" *ngIf="index == 1">page2</div>
+        <div class="step-2" *ngIf="index == 1">
+          <div *ngIf="listSeats" id="e49_3">
+            <div id="seat-container">
+              <div class="ground-seats">
+                <div
+                  class="seats-row"
+                  *ngFor="let item of [].constructor(seatsMapA.Row); index as i"
+                >
+                  <div
+                    (click)="onSeatClick(seatsMapA.listSeat[j + 2 * i])"
+                    class="seats A"
+                    [class.seat-reserved]="
+                      seatsMapA.listSeat[j + 2 * i].reserved
+                    "
+                    *ngFor="
+                      let item of [].constructor(seatsMapA.Column);
+                      index as j
+                    "
+                  >
+                    <span id="seats" class="seat"
+                      >{{ seatsMapA.listSeat[0].digit }}{{ j + 2 * i }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="seat-container-ground">
+              <div class="ground-seats">
+                <div
+                  class="seats-row"
+                  *ngFor="let item of [].constructor(seatsMapB.Row); index as i"
+                >
+                  <div
+                    (click)="onSeatClick(seatsMapB.listSeat[j + 2 * i])"
+                    class="seats B"
+                    *ngFor="
+                      let item of [].constructor(seatsMapB.Column);
+                      index as j
+                    "
+                  >
+                    <span id="seats" class="seat"
+                      >{{ seatsMapB.listSeat[0].digit }}{{ j + 2 * i }}</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="selected-seats-container">
+              <div *ngIf="clickedSeats" class="clicked-seats-section">
+                <div
+                  class="clicked-seats"
+                  *ngFor="let item of clickedSeats; index as i"
+                >
+                  <span id="seats" class="seat"
+                    >{{ item.digit }}{{ item.index }}</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div id="e49_175">
+              <div id="e49_176"></div>
+              <span *ngIf="totalPrice" id="e49_177"
+                >{{ totalPrice * 1000 }} VNĐ</span
+              >
+            </div>
+            <span id="e49_182">Tầng trên</span
+            ><span id="e49_183">Tầng dưới</span>
+            <div id="e49_184">
+              <span id="e49_185">Trạng thái:</span
+              ><span id="e49_186">Còn trống</span
+              ><span id="e49_187">Đã đặt</span
+              ><span id="e49_188">Đang chọn</span>
+              <div id="e49_189">
+                <div id="e49_190"></div>
+              </div>
+              <div id="e49_191">
+                <div id="e49_192"></div>
+              </div>
+              <div id="e49_193">
+                <div id="e49_194"></div>
+              </div>
+            </div>
+            <span id="e49_195">Danh sách ghế</span
+            ><span id="e49_196">Tổng tiền</span
+            ><span id="e49_197">Phương Trang</span>
+          </div>
+        </div>
         <!-- End chọn ghế -->
         <!-- Chọn điểm đón/trả -->
         <div class="step-3" *ngIf="index == 2">
