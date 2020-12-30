@@ -13,8 +13,13 @@ export class XeService extends ApiService {
 
   private readonly url: string = "/xe";
 
-  search(): any {
-    return this.httpGet(this.url);
+  timXe(input: any): any {
+    const ngay_di = input.ngay_di.toLocaleDateString();
+    const diem_di = input.diem_di;
+    const diem_den = input.diem_den;
+    return this.httpGet(
+      this.url + `?ngay_di=${ngay_di}&diem_di=${diem_di}&diem_den=${diem_den}`
+    );
   }
 
   get(id: string) {

@@ -1,5 +1,5 @@
-<div class="inner-content">
-  <div [hidden]="chon_xe">
+<div class="inner-content" [hidden]="screen_chon_xe">
+  <div>
     <div class="content-title">Đến bất cứ đâu bạn muốn !</div>
 
     <form nz-form [formGroup]="timXeForm" (ngSubmit)="timXe()">
@@ -8,36 +8,23 @@
           <nz-form-label [nzSpan]="24"
             ><span class="form-title">Ngày đi</span></nz-form-label
           >
-          <nz-form-control [nzSpan]="22" nzHasFeedback>
+          <nz-form-control [nzSpan]="22">
             <nz-date-picker
-              [(ngModel)]="date"
-              (ngModelChange)="onDateChange($event)"
-              [ngModelOptions]="{ standalone: true }"
+              formControlName="ngay_di"
+              nzFormat="dd/MM/yyyy"
             ></nz-date-picker>
           </nz-form-control>
         </div>
         <div nz-col [nzSpan]="3">
           <div>
-            <nz-form-label [nzSpan]="24"
-              ><span class="form-title">{{
-                isChanged ? "Nơi đến" : "Nơi đi"
-              }}</span></nz-form-label
-            >
-            <nz-form-control
-              [nzSpan]="22"
-              nzValidateStatus="success"
-              nzHasFeedback
-            >
-              <nz-select
-                nzShowSearch
-                nzAllowClear
-                nzPlaceHolder="Sài Gòn"
-                [(ngModel)]="selectedValue"
-                [ngModelOptions]="{ standalone: true }"
-              >
-                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
-                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
-                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            <nz-form-label [nzSpan]="24">
+              <span class="form-title">Nơi đi</span>
+            </nz-form-label>
+            <nz-form-control [nzSpan]="22">
+              <nz-select nzShowSearch formControlName="diem_di">
+                <nz-option nzLabel="Hà Nội" nzValue="Hà Nội"></nz-option>
+                <nz-option nzLabel="Đà Nẵng" nzValue="Đà Nẵng"></nz-option>
+                <nz-option nzLabel="Sài Gòn" nzValue="Sài Gòn"></nz-option>
               </nz-select>
             </nz-form-control>
           </div>
@@ -53,26 +40,14 @@
         </div>
         <div nz-col [nzSpan]="3">
           <div>
-            <nz-form-label [nzSpan]="24"
-              ><span class="form-title">{{
-                isChanged ? "Nơi đi" : "Nơi đến"
-              }}</span></nz-form-label
-            >
-            <nz-form-control
-              [nzSpan]="22"
-              nzValidateStatus="success"
-              nzHasFeedback
-            >
-              <nz-select
-                nzShowSearch
-                nzAllowClear
-                nzPlaceHolder="Hà Nội"
-                [(ngModel)]="selectedValue2"
-                [ngModelOptions]="{ standalone: true }"
-              >
-                <nz-option nzLabel="Jack" nzValue="jack2"></nz-option>
-                <nz-option nzLabel="Lucy" nzValue="lucy2"></nz-option>
-                <nz-option nzLabel="Tom" nzValue="tom2"></nz-option>
+            <nz-form-label [nzSpan]="24">
+              <span class="form-title">Nơi đến</span>
+            </nz-form-label>
+            <nz-form-control [nzSpan]="22">
+              <nz-select nzShowSearch formControlName="diem_den">
+                <nz-option nzLabel="Hà Nội" nzValue="Hà Nội"></nz-option>
+                <nz-option nzLabel="Đà Nẵng" nzValue="Đà Nẵng"></nz-option>
+                <nz-option nzLabel="Sài Gòn" nzValue="Sài Gòn"></nz-option>
               </nz-select>
             </nz-form-control>
           </div>
@@ -86,9 +61,10 @@
       </nz-form-item>
     </form>
   </div>
-
+</div>
+<div style="background-color: #ffffff; padding: 20px" [hidden]="!screen_chon_xe">
   <!-- Chọn xe -->
-  <div [hidden]="!chon_xe">
+  <div>
     <div class="steps">
       <nz-steps [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
         <nz-step nzTitle="Chọn xe"></nz-step>
@@ -118,166 +94,103 @@
                 ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
               ></span>
             </button>
-            <div class="viewListBus">
+            <div class="row px-5">
               <!-- view block 2 -->
-              <div class="viewColumn">
-                <!-- bus 1 -->
-                <div class="bus">
-                  <!-- content of bus -->
-                  <div class="busContent box1 p-3 mype-4">
-                    <!-- row 1 of bus -->
-                    <div class="d-flex justify-content-between">
-                      <p class="busName">Phương Trang</p>
+              <!-- <div class="viewColumn"> -->
+              <!-- bus 1 -->
+              <div class="bus col-md-6" *ngFor="let item of xe">
+                <!-- content of bus -->
+                <div class="busContent box1 p-3 mype-4">
+                  <!-- row 1 of bus -->
+                  <div class="row">
+                    <div class="col-md-8">
+                      <p class="busName">{{ item.ten }}</p>
+                    </div>
+                    <div class="text-right col-md-4">
                       <p class="busRating">
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                          ><i class="fa fa-star" aria-hidden="true"></i
                         ></span>
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                          ><i class="fa fa-star" aria-hidden="true"></i
                         ></span>
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                          ><i class="fa fa-star" aria-hidden="true"></i
                         ></span>
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                          ><i class="fa fa-star" aria-hidden="true"></i
                         ></span>
                         <span
-                          ><i class="fa fa-star-o fa-2x" aria-hidden="true"></i
+                          ><i class="fa fa-star-o" aria-hidden="true"></i
                         ></span>
                       </p>
                     </div>
-                    <!-- row 2 of bus -->
-                    <div
-                      class="d-flex justify-content-between align-items-center px-4"
-                    >
-                      <div>
-                        <p class="m-0">
-                          <span class="location-icon"
-                            ><i
-                              class="fa fa-map-marker fa-2x"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span>Sài Gòn</span>
-                        </p>
-                        <p class="m-0">
-                          <span class="location-icon myps-1"
-                            ><i
-                              class="fa fa-long-arrow-down"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span></span>
-                        </p>
-                        <p>
-                          <span class="location-icon"
-                            ><i
-                              class="fa fa-map-marker fa-2x"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span>Hà Tiên</span>
-                        </p>
-                      </div>
-                      <p class="busTimeStart">6:30</p>
-                    </div>
-                    <!-- row 3 of bus -->
-                    <div class="d-flex justify-content-between">
-                      <p class="busSeatEmpty">10 chỗ trống</p>
-                      <p class="busPrice">165.000 vnd</p>
-                    </div>
-                    <!-- button of bus -->
-                    <button class="btn busButton">
-                      <span
-                        ><i
-                          class="fa fa-arrow-circle-right fa-2x"
-                          aria-hidden="true"
-                        ></i
-                      ></span>
-                    </button>
                   </div>
-                  <!-- /busContent -->
-                </div>
-                <!-- /bus 1 -->
-                <!-- bus 1 -->
-                <div class="bus">
-                  <!-- content of bus -->
-                  <div class="busContent box1 p-3 mype-4">
-                    <!-- row 1 of bus -->
-                    <div class="d-flex justify-content-between">
-                      <p class="busName">Phương Trang</p>
-                      <p class="busRating">
-                        <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                  <!-- row 2 of bus -->
+                  <div
+                    class="d-flex justify-content-between align-items-center px-4"
+                  >
+                    <div>
+                      <p class="m-0">
+                        <span class="location-icon"
+                          ><i
+                            class="fa fa-map-marker fa-2x"
+                            aria-hidden="true"
+                          ></i
                         ></span>
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
+                          >{{ item.diem_don[0].gio }} |
+                          {{ item.diem_don[0].dia_diem }}</span
+                        >
+                      </p>
+                      <p class="m-0">
+                        <span class="location-icon myps-1"
+                          ><i
+                            class="fa fa-long-arrow-down"
+                            aria-hidden="true"
+                          ></i
+                        ></span>
+                        <span></span>
+                      </p>
+                      <p>
+                        <span class="location-icon"
+                          ><i
+                            class="fa fa-map-marker fa-2x"
+                            aria-hidden="true"
+                          ></i
                         ></span>
                         <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star fa-2x" aria-hidden="true"></i
-                        ></span>
-                        <span
-                          ><i class="fa fa-star-o fa-2x" aria-hidden="true"></i
-                        ></span>
+                          >{{ item.diem_tra[item.diem_tra.length - 1].gio }} |
+                          {{
+                            item.diem_tra[item.diem_tra.length - 1].dia_diem
+                          }}</span
+                        >
                       </p>
                     </div>
-                    <!-- row 2 of bus -->
-                    <div
-                      class="d-flex justify-content-between align-items-center px-4"
-                    >
-                      <div>
-                        <p class="m-0">
-                          <span class="location-icon"
-                            ><i
-                              class="fa fa-map-marker fa-2x"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span>Sài Gòn</span>
-                        </p>
-                        <p class="m-0">
-                          <span class="location-icon myps-1"
-                            ><i
-                              class="fa fa-long-arrow-down"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span></span>
-                        </p>
-                        <p>
-                          <span class="location-icon"
-                            ><i
-                              class="fa fa-map-marker fa-2x"
-                              aria-hidden="true"
-                            ></i
-                          ></span>
-                          <span>Hà Tiên</span>
-                        </p>
-                      </div>
-                      <p class="busTimeStart">6:30</p>
-                    </div>
-                    <!-- row 3 of bus -->
-                    <div class="d-flex justify-content-between">
-                      <p class="busSeatEmpty">10 chỗ trống</p>
-                      <p class="busPrice">165.000 vnd</p>
-                    </div>
-                    <!-- button of bus -->
-                    <button class="btn busButton">
-                      <span
-                        ><i
-                          class="fa fa-arrow-circle-right fa-2x"
-                          aria-hidden="true"
-                        ></i
-                      ></span>
-                    </button>
+                    <p class="busTimeStart">{{ item.diem_don[0].gio }}</p>
                   </div>
-                  <!-- /busContent -->
+                  <!-- row 3 of bus -->
+                  <div class="d-flex justify-content-between">
+                    <p class="busSeatEmpty">
+                      {{ item.vi_tri_trong.length }} chỗ trống
+                    </p>
+                    <p class="busPrice">{{ item.gia_ve }} vnd</p>
+                  </div>
+                  <!-- button of bus -->
+                  <button class="btn busButton" (click)="chonXe(item)">
+                    <span
+                      ><i
+                        class="fa fa-arrow-circle-right fa-2x"
+                        aria-hidden="true"
+                      ></i
+                    ></span>
+                  </button>
                 </div>
-                <!-- /bus 1 -->
+                <!-- /busContent -->
               </div>
+              <!-- /bus 1 -->
+              <!-- </div>    -->
+              <!-- view block 2 -->
             </div>
           </div>
           <div class="col-md-2">

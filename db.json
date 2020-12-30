@@ -4,16 +4,17 @@
             "id": 1,
             "ten": "Phương Trang",
             "gia_ve": 150000,
-            "diem_di": "Quảng Ninh",
+            "ngay_di": "30/12/2020",
+            "diem_di": "Đà Nẵng",
             "diem_den": "Hà Nội",
             "diem_don": [
                 {
                     "gio": "01:00",
-                    "dia_diem": "Bến xe Móng Cái"
+                    "dia_diem": "Bến xe Đà Nẵng"
                 },
                 {
                     "gio": "01:30",
-                    "dia_diem": "Khu vực Móng Cái"
+                    "dia_diem": "Khu vực Đà Nẵng"
                 }
             ],
             "diem_tra": [
@@ -25,17 +26,214 @@
                     "gio": "06:30",
                     "dia_diem": "Nội thành Hà Nội"
                 }
-            ]
-        }
-    ],
-    "trang_thai_xe": [
-        {
-            "id": 1,
-            "xe_id": 1,
+            ],
             "vi_tri_trong": [
                 1,
                 2,
                 3
+            ]
+        },
+        {
+            "id": 2,
+            "ten": "Thạnh Bưởi",
+            "gia_ve": 200000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Đà Nẵng",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "15:00",
+                    "dia_diem": "Bến xe Đà Nẵng"
+                },
+                {
+                    "gio": "15:30",
+                    "dia_diem": "Khu vực Đà Nẵng"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "22:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "22:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                1,
+                5,
+                8
+            ]
+        },
+        {
+            "id": 3,
+            "ten": "Thạnh Bưởi",
+            "gia_ve": 250000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Sài Gòn",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "15:00",
+                    "dia_diem": "Bến xe Miền Đông"
+                },
+                {
+                    "gio": "15:30",
+                    "dia_diem": "Khu vực Sài Gòn"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "22:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "22:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                4,
+                6,
+                9
+            ]
+        },
+        {
+            "id": 4,
+            "ten": "Thạnh Bưởi",
+            "gia_ve": 160000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Sài Gòn",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "13:00",
+                    "dia_diem": "Bến xe Miền Đông"
+                },
+                {
+                    "gio": "13:30",
+                    "dia_diem": "Khu vực Sài Gòn"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "18:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "18:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                1,
+                5,
+                6,
+                9
+            ]
+        },
+        {
+            "id": 5,
+            "ten": "Phương Trang",
+            "gia_ve": 200000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Sài Gòn",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "13:00",
+                    "dia_diem": "Bến xe Miền Đông"
+                },
+                {
+                    "gio": "13:30",
+                    "dia_diem": "Khu vực Sài Gòn"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "18:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "18:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                4,
+                6,
+                7
+            ]
+        },
+        {
+            "id": 6,
+            "ten": "Phương Trang",
+            "gia_ve": 200000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Sài Gòn",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "14:00",
+                    "dia_diem": "Bến xe Miền Đông"
+                },
+                {
+                    "gio": "14:30",
+                    "dia_diem": "Khu vực Sài Gòn"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "19:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "19:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                7,
+                8,
+                9,
+                10,
+                11
+            ]
+        },
+        {
+            "id": 7,
+            "ten": "Thạnh Bưởi",
+            "gia_ve": 200000,
+            "ngay_di": "30/12/2020",
+            "diem_di": "Đà Nẵng",
+            "diem_den": "Hà Nội",
+            "diem_don": [
+                {
+                    "gio": "16:00",
+                    "dia_diem": "Bến xe Đà Nẵng"
+                },
+                {
+                    "gio": "16:30",
+                    "dia_diem": "Khu vực Đà Nẵng"
+                }
+            ],
+            "diem_tra": [
+                {
+                    "gio": "23:00",
+                    "dia_diem": "Văn phòng Hà Nội"
+                },
+                {
+                    "gio": "23:30",
+                    "dia_diem": "Nội thành Hà Nội"
+                }
+            ],
+            "vi_tri_trong": [
+                1,
+                5,
+                8,
+                9,
+                10
             ]
         }
     ],
@@ -58,6 +256,7 @@
                 "dia_diem": "Nội thành Hà Nội"
             },
             "vi_tri": 1,
+            "ngay_di": "30/12/2020",
             "pt_thanh_toan": "Thanh toán tại quầy",
             "tong_tien": 150000
         }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { NzMessageService } from "ng-zorro-antd";
+import { XeService } from "src/app/services/xe.service";
 
 @Component({
   selector: "app-tickets",
@@ -12,23 +14,29 @@ export class TicketsComponent implements OnInit {
   isChanged = false;
   date = null;
   // Display
-  chon_xe = false;
+  screen_chon_xe = false;
 
   index = 0;
   disable = false;
   timXeForm: FormGroup;
+  xe = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private xeSV: XeService,
+    private message: NzMessageService
+  ) {}
 
   ngOnInit() {
     this.timXeForm = this.fb.group({
-      name: ["", Validators.required],
-      code: ["", Validators.required],
+      ngay_di: [new Date(), Validators.required],
+      diem_den: ["Hà Nội", Validators.required],
+      diem_di: ["Sài Gòn", Validators.required],
     });
   }
+
   onIndexChange(index: number): void {
     this.index = index;
-    console.log(this.index);
   }
 
   goBack() {
@@ -36,11 +44,45 @@ export class TicketsComponent implements OnInit {
   }
 
   timXe() {
-    console.log("ádas");
-    this.chon_xe = true;
+    console.log(this.timXeForm.value.ngay_di.toLocaleDateString());
+    for (const i in this.timXeForm.controls) {
+      this.timXeForm.controls[i].markAsDirty();
+      this.timXeForm.controls[i].updateValueAndValidity();
+    }
+    if (this.timXeForm.invalid) {
+      return;
+    }
+
+    this.xeSV.timXe(this.timXeForm.value).subscribe((res) => {
+      if (res && res.length) {
+        this.screen_chon_xe = true;
+        this.xe = res;
+      } else {
+        this.message.error("Không tìm thấy xe");
+      }
+    });
   }
+  
+  chonXe(item) {
+    console.log(item);
+    this.toChonViTri();
+  }
+
+  toChonViTri() {
+    this.index = 1;
+  }
+  
+  toDiemDonTra() {
+    this.index = 2;
+  }
+
+  toThanhToan() {
+    this.index = 3;
+  }
+  
   backToSearch() {
-    this.chon_xe = false;
+    this.screen_chon_xe = false;
+    window.scrollTo(0, 0);
   }
   ngOnChanges() {
     console.log(this.selectedValue);

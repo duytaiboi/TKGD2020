@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { NzMessageService } from "ng-zorro-antd";
 import { VeService } from "src/app/services/ve.service";
 
 @Component({
@@ -10,8 +11,11 @@ import { VeService } from "src/app/services/ve.service";
 export class VeDaDatComponent implements OnInit {
   ve: any = null;
   validateForm!: FormGroup;
-  error = null;
-  constructor(private veSV: VeService, private fb: FormBuilder) {}
+  constructor(
+    private veSV: VeService,
+    private fb: FormBuilder,
+    private message: NzMessageService
+  ) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -21,7 +25,6 @@ export class VeDaDatComponent implements OnInit {
   }
 
   submitForm(): void {
-    this.error = null;
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
@@ -39,7 +42,7 @@ export class VeDaDatComponent implements OnInit {
         this.ve = res[0];
         console.log(this.ve);
       } else {
-        this.error = "Không tìm thấy vé";
+        this.message.error("Không tìm thấy vé hợp lệ");
       }
     });
   }
