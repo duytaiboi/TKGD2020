@@ -89,8 +89,10 @@ export class TicketsComponent implements OnInit {
   }
 
   transfer() {
-    this.isChanged = !this.isChanged;
-    console.log(this.selectedValue2);
+    const current_diem_di=this.timXeForm.value.diem_di;
+    const current_diem_den=this.timXeForm.value.diem_den;
+    this.timXeForm.controls.diem_di.setValue(current_diem_den);
+    this.timXeForm.controls.diem_den.setValue(current_diem_di);
   }
 
   onDateChange(result: Date[]): void {
