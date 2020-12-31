@@ -185,9 +185,9 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit() {
     this.timXeForm = this.fb.group({
-      ngay_di: [new Date(), Validators.required],
+      ngay_di: [new Date(2020, 11, 30), Validators.required],
       diem_den: ["Hà Nội", Validators.required],
-      diem_di: ["Sài Gòn", Validators.required],
+      diem_di: ["Đà Nẵng", Validators.required],
     });
     this.prepareSeatsMap();
   }
@@ -199,7 +199,7 @@ export class TicketsComponent implements OnInit {
   }
 
   timXe() {
-    console.log(this.timXeForm.value.ngay_di.toLocaleDateString());
+    console.log(this.timXeForm.value.ngay_di);
     for (const i in this.timXeForm.controls) {
       this.timXeForm.controls[i].markAsDirty();
       this.timXeForm.controls[i].updateValueAndValidity();

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/tickets" },
   {
-    path: "welcome",
+    path: "users",
     loadChildren: () =>
       import("./pages/welcome/welcome.module").then((m) => m.WelcomeModule),
   },

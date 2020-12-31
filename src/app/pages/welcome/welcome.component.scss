@@ -1,13 +1,85 @@
 [nz-form] {
 }
 
-nz-date-picker ::ng-deep .ant-calendar-picker {
+// Css DN
+
+html,
+body {
+  height: 100%;
+}
+.container-fluid {
+  background-image: linear-gradient(#134758, #8ccbde);
   width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nz-range-picker {
-  margin: 0 8px 12px 0;
+.loginModal {
+  width: 70%;
+  height: 65%;
+  background-image   : url("src/assets/img/main-background.jpg");
+  background-repeat  : no-repeat;
+  background-position: 44% 64%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -2px 2px 2px 1px #134758;
+  border-radius: 8px;
 }
+img {
+  max-width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.extraBackground {
+  width: 930px;
+  height: 1592px;
+  transform: rotate(49deg);
+  background-color: green;
+  position: absolute;
+  top: -126px;
+  left: -534px;
+
+  background-image: linear-gradient(#fafeff, #56ccf2);
+  /*display: fixed;*/
+}
+
+.loginContent {
+  position: absolute;
+  top: 120px;
+  left: 180px;
+}
+
+.loginContent h3 {
+  margin-bottom: 2.5rem;
+}
+
+.loginContent form div {
+  margin-bottom: 0.75rem;
+}
+
+.loginContent form input {
+  box-shadow: -1px 1px 1px #134758;
+}
+.loginContent form button {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  box-shadow: -1px 1px 1px #134758;
+}
+
+.loginContent form p {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+//================
 
 .content-title {
   text-align: center;

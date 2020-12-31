@@ -23,14 +23,40 @@
           ><span class="btn-title">Trợ giúp</span>
         </button>
 
-        <button routerLink="/tickets/ve-da-dat" nz-button class="btn-header">
-          Vé đã đặt
+        <button
+          nz-button
+          nz-dropdown
+          [nzDropdownMenu]="loggedInDdl"
+          class="btn-header"
+        >
+          <i
+            nz-icon
+            nzType="question-circle"
+            class="custom-icon"
+            nzTheme="outline"
+          ></i
+          ><span class="btn-title">{{ loggedIn ? "Tân Cao" : "Guest" }}</span>
         </button>
-        
+
         <button nz-button class="btn-header">
           <i nz-icon nzType="phone" class="custom-icon" nzTheme="outline"></i
           ><span class="btn-phone-tilte">1900-1010</span>
         </button>
+        <nz-dropdown-menu #loggedInDdl="nzDropdownMenu">
+          <ul nz-menu *ngIf="loggedIn">
+            <li nz-menu-item>
+              <a routerLink="/tickets/ve-da-dat">Kiểm tra vé của tôi</a>
+            </li>
+            <li nz-menu-item>
+              <a (click)="logout()">Đăng xuất</a>
+            </li>
+          </ul>
+          <ul nz-menu *ngIf="!loggedIn">
+            <li nz-menu-item>
+              <a routerLink="/users">Đăng nhập</a>
+            </li>
+          </ul>
+        </nz-dropdown-menu>
         <nz-dropdown-menu #contactUs="nzDropdownMenu">
           <ul nz-menu>
             <li nz-menu-item>
