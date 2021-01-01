@@ -1,33 +1,34 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NzMessageService } from "ng-zorro-antd";
 import { UserService } from "src/app/services/user.service";
 
 @Component({
-  selector: "app-welcome",
-  templateUrl: "./welcome.component.html",
-  styleUrls: ["./welcome.component.scss"],
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"],
 })
-export class WelcomeComponent implements OnInit {
+export class SignupComponent implements OnInit {
   form: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private message: NzMessageService,
-    private router: Router
+    private router: Router,
+    private message: NzMessageService
   ) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      username: ["0933615558", Validators.required],
-      pw: ["tan123", Validators.required],
+      fullname: ["", Validators.required],
+      email: ["", Validators.required],
+      numbers: ["", Validators.required],
+      pw: ["", Validators.required],
     });
   }
 
-  signin() {
+  signupWithForm() {
     console.log(this.form);
 
     for (const i in this.form.controls) {
@@ -40,14 +41,9 @@ export class WelcomeComponent implements OnInit {
       return;
     }
 
-    this.userService.login(this.form.value).subscribe((res) => {
-      console.log(res);
-      if (res && res.length) {
-        this.message.success("Đăng nhập thành công");
-        this.router.navigate(["/tickets"]);
-      } else {
-        this.message.error("Vui lòng kiểm tra lại tài khoản/mật khẩu");
-      }
+    this.userService.add(this.form.value).subscribe((res) => {
+      this.message.success("Đăng ký thành công");
+      this.router.navigate(["/tickets"]);
     });
   }
 }

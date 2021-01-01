@@ -1,0 +1,50 @@
+<body>
+  <div class="container-fluid">
+    <div class="loginModal">
+      <div class="extraBackground"></div>
+      <div class="loginContent">
+        <h3>Đăng ký</h3>
+        <form [formGroup]="form" (ngSubmit)="signupWithForm()">
+          <div>
+            <label>Họ và tên</label>
+            <input
+              formControlName="fullname"
+              class="form-control"
+              autocomplete="off"
+              type="text"
+            />
+          </div>
+          <div>
+            <label>Email</label>
+            <input
+              formControlName="email"
+              autocomplete="off"
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div>
+            <label>Số điện thoại</label>
+            <input
+              formControlName="numbers"
+              autocomplete="off"
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div>
+            <label>Mật khẩu</label>
+            <input
+              formControlName="pw"
+              autocomplete="new-password"
+              class="form-control"
+              type="password"
+            />
+          </div>
+          <button class="btn btn-primary" type="submit">Đăng ký</button>
+          <p routerLink="/users">Đăng nhập</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

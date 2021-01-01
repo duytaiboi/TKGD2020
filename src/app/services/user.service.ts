@@ -14,18 +14,18 @@ export class UserService extends ApiService {
   private readonly url: string = "/users";
 
   login(input: any): any {
-    const sdt = input.sdt.toLocaleDateString();
-    const matKhau = input.matKhau;
-    return this.httpGet(
-      this.url + `?sdt=${sdt}&matKhau=${matKhau}`
-    );
+    const reqUrl = input.username.includes("@")
+      ? `?email=${input.username}&pw=${input.pw}`
+      : `?numbers=${input.username}&pw=${input.pw}`;
+    return this.httpGet(this.url + reqUrl);
   }
 
   get(id: string) {
-    return this.get(this.url + `/${id}`);
+    return this.httpGet(this.url + `/${id}`);
   }
 
   add(body: any) {
+    body.tickets = [];
     return this.httpPost(this.url, body);
   }
 

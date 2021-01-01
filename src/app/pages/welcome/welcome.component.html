@@ -1,21 +1,30 @@
 <body>
   <div class="container-fluid">
     <div class="loginModal">
-      <img src="./dangnhap-background.jpg" alt="" />
       <div class="extraBackground"></div>
       <div class="loginContent">
         <h3>Đăng nhập</h3>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="signin()">
           <div>
             <label for="sdtoremail">Số điện thoại/Email</label>
-            <input class="form-control" type="text" id="sdtoremail" />
+            <input
+              formControlName="username"
+              class="form-control"
+              type="text"
+              id="sdtoremail"
+            />
           </div>
           <div>
             <label for="sdtoremail">Mật khẩu</label>
-            <input class="form-control" type="text" id="sdtoremail" />
+            <input
+              formControlName="pw"
+              class="form-control"
+              type="text"
+              id="sdtoremail"
+            />
           </div>
-          <button class="btn btn-primary">Đăng nhập</button>
-          <p>Đăng ký</p>
+          <button class="btn btn-primary" type="submit">Đăng nhập</button>
+          <p routerLink="/users/signup">Đăng ký</p>
           <p>Quên mật khẩu</p>
         </form>
       </div>
