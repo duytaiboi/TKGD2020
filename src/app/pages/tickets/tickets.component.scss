@@ -221,7 +221,6 @@ h5 {
 }
 
 .busContent {
-  max-height      : 212px;
   border          : 1px solid #3DD5E0;
   box-shadow      : -3px 3px 3px 0 #828282;
   background-color: #ffffff;
@@ -262,7 +261,9 @@ h5 {
 .button-back span {
   color: #3DD5E0;
 }
-
+custom-back-col {
+  margin-left: -20px;
+}
 .mype-4 {
   padding-right: 3.5rem !important;
 }
@@ -286,7 +287,7 @@ h5 {
 }
 
 .busName {
-  font-size    : 25px;
+  font-size    : 20px;
   font-weight  : bold;
   color        : #3DD5E0;
   margin-bottom: 0.45rem;
