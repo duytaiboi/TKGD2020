@@ -269,8 +269,8 @@ export class TicketsComponent implements OnInit {
     this.diem_tra = this.xe_da_chon.diem_tra[
       this.xe_da_chon.diem_tra.length - 1
     ];
-    this.toDiemDonTra();
-    // this.toChonViTri();
+    // this.toDiemDonTra();
+    this.toChonViTri();
   }
 
   toChonViTri() {
