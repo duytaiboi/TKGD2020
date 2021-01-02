@@ -23,6 +23,7 @@ export class TicketsComponent implements OnInit {
   xe = [];
   // Xe đã chọn
   xe_da_chon = null;
+  ghe_da_chon: SeatModel[] = [];
   diem_don = null; // điểm đón đã chọn
   diem_tra = null; // điểm trả đã chọn
 
@@ -39,7 +40,7 @@ export class TicketsComponent implements OnInit {
       digit: "A",
       index: 1,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
@@ -53,49 +54,49 @@ export class TicketsComponent implements OnInit {
       digit: "A",
       index: 3,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 4,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 5,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 6,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 7,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 8,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "A",
       index: 9,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
   ];
@@ -104,70 +105,70 @@ export class TicketsComponent implements OnInit {
       digit: "B",
       index: 0,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 1,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 2,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 3,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 4,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 5,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 6,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 7,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 8,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
     {
       digit: "B",
       index: 9,
       status: false,
-      reserved: false,
+      reserved: true,
       price: 20.0,
     },
   ];
@@ -186,7 +187,7 @@ export class TicketsComponent implements OnInit {
     private message: NzMessageService,
     private veSV: VeService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.timXeForm = this.fb.group({
@@ -200,7 +201,6 @@ export class TicketsComponent implements OnInit {
       pt_thanh_toan: [this.pt_thanh_toans[0], [Validators.required]],
       email_kh: null,
     });
-    this.prepareSeatsMap();
   }
 
   // đặt vé
@@ -214,7 +214,7 @@ export class TicketsComponent implements OnInit {
     }
     //this.get();
     const customerInfo = this.customerInfoForm.value;
-    
+
     const model = {
       ma_ve: Date.now().toString(36),
       ten_kh: customerInfo.ten_kh,
@@ -232,11 +232,11 @@ export class TicketsComponent implements OnInit {
       tong_tien: this.totalPrice,
     };
     this.veSV.dat_ve(model).subscribe((res) => {
-      if(res && res.id){
+      if (res && res.id) {
         this.message.success("Đặt vé thành công");
         this.router.navigate(['tickets/ve-da-dat']);
       }
-      else{
+      else {
         this.message.error("Đặt vé thất bại");
       }
     });
@@ -275,6 +275,7 @@ export class TicketsComponent implements OnInit {
 
   toChonViTri() {
     this.index = 1;
+    this.prepareSeatsMap();
   }
 
   toDiemDonTra() {
@@ -328,12 +329,16 @@ export class TicketsComponent implements OnInit {
         "rgba(61.00000016391277, 213.00000250339508, 224.000001847744, 1)";
       seat.status = !seat.status;
       this.clickedSeats.push(seat);
+      this.ghe_da_chon.push(seat);
     } else {
       selectedSeat.style.backgroundColor = "white";
       selectedSeat.style.color = "black";
       seat.status = !seat.status;
       this.clickedSeats = [
         ...this.clickedSeats.filter((x) => x.index !== seat.index),
+      ];
+      this.ghe_da_chon = [
+        ...this.ghe_da_chon.filter((x) => x.index !== seat.index),
       ];
     }
     var seatModel = new SeatModel();
@@ -351,5 +356,25 @@ export class TicketsComponent implements OnInit {
     this.listSeats = [];
     this.listSeats = this.listSeats.concat(this.listSeatsA);
     this.listSeats = this.listSeats.concat(this.listSeatsB);
+    for (var i = 0; i < this.listSeatsA.length; i++) {
+      for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
+        console.log(this.listSeatsA[i].digit);
+        console.log(this.xe_da_chon.vi_tri_trong[j].digit);
+        console.log(this.listSeatsA[i].index);
+        console.log(this.xe_da_chon.vi_tri_trong[j].index);
+        if (this.listSeatsA[i].digit===this.xe_da_chon.vi_tri_trong[j].digit && this.listSeatsA[i].index===Number(this.xe_da_chon.vi_tri_trong[j].index))
+        {
+          this.listSeatsA[i].reserved=false;
+        }
+      }
+    }
+    for (var i = 0; i < this.listSeatsB.length; i++) {
+      for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
+        if (this.listSeatsB[i].digit===this.xe_da_chon.vi_tri_trong[j].digit && this.listSeatsB[i].index===Number(this.xe_da_chon.vi_tri_trong[j].index))
+        {
+          this.listSeatsB[i].reserved=false;
+        }
+      }
+    }
   }
 }

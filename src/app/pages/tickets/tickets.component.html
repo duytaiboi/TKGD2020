@@ -328,6 +328,9 @@
                 >
                   <div
                     (click)="onSeatClick(seatsMapB.listSeat[j + 2 * i])"
+                    [class.seat-reserved]="
+                      seatsMapB.listSeat[j + 2 * i].reserved
+                    "
                     class="seats B"
                     *ngFor="
                       let item of [].constructor(seatsMapB.Column);
@@ -499,10 +502,7 @@
                   <div class="ticket-infos__label">Vị trí ghế</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <span class="ticket-infos__content">B01</span>
-                  <span class="ticket-infos__content">A01</span>
-                  <span class="ticket-infos__content">B01</span>
-                  <span class="ticket-infos__content">B06</span>
+                  <span *ngFor="let seat of ghe_da_chon" class="ticket-infos__content">{{seat.digit}}{{seat.index}}</span>                 
                 </div>
               </div>
 

@@ -28,9 +28,22 @@
         }
       ],
       "vi_tri_trong": [
-        1,
-        2,
-        3
+        {
+          "digit":"A",
+          "index":"1"
+        },
+        {
+          "digit":"B",
+          "index":"5"
+        },
+        {
+          "digit":"B",
+          "index":"2"
+        },
+        {
+          "digit":"B",
+          "index":"9"
+        }
       ]
     },
     {
@@ -61,9 +74,18 @@
         }
       ],
       "vi_tri_trong": [
-        1,
-        5,
-        8
+        {
+          "digit":"A",
+          "index":"3"
+        },
+        {
+          "digit":"B",
+          "index":"6"
+        },
+        {
+          "digit":"B",
+          "index":"7"
+        }
       ]
     },
     {
@@ -94,9 +116,18 @@
         }
       ],
       "vi_tri_trong": [
-        4,
-        6,
-        9
+        {
+          "digit":"A",
+          "index":"2"
+        },
+        {
+          "digit":"B",
+          "index":"2"
+        },
+        {
+          "digit":"B",
+          "index":"3"
+        }
       ]
     },
     {
@@ -127,10 +158,22 @@
         }
       ],
       "vi_tri_trong": [
-        1,
-        5,
-        6,
-        9
+        {
+          "digit":"B",
+          "index":"1"
+        },
+        {
+          "digit":"B",
+          "index":"5"
+        },
+        {
+          "digit":"A",
+          "index":"2"
+        },
+        {
+          "digit":"B",
+          "index":"7"
+        }
       ]
     },
     {
@@ -161,9 +204,18 @@
         }
       ],
       "vi_tri_trong": [
-        4,
-        6,
-        7
+        {
+          "digit":"B",
+          "index":"1"
+        },
+        {
+          "digit":"B",
+          "index":"5"
+        },
+        {
+          "digit":"A",
+          "index":"2"
+        }
       ]
     },
     {
@@ -194,11 +246,26 @@
         }
       ],
       "vi_tri_trong": [
-        7,
-        8,
-        9,
-        10,
-        11
+        {
+          "digit":"A",
+          "index":"1"
+        },
+        {
+          "digit":"A",
+          "index":"5"
+        },
+        {
+          "digit":"A",
+          "index":"2"
+        },
+        {
+          "digit":"B",
+          "index":"5"
+        },
+        {
+          "digit":"B",
+          "index":"4"
+        }
       ]
     },
     {
@@ -229,11 +296,14 @@
         }
       ],
       "vi_tri_trong": [
-        1,
-        5,
-        8,
-        9,
-        10
+        {
+          "digit":"B",
+          "index":"5"
+        },
+        {
+          "digit":"A",
+          "index":"2"
+        }
       ]
     }
   ],

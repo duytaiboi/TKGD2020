@@ -39,7 +39,7 @@ export const environment = {
     AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,
-    AlertModule.forRoot({ maxMessages: 5, timeout: 5000, position: "right" }),
+    AlertModule.forRoot({ maxMessages: 5, timeout: 5000, positionX: "right" }),
   ],
   entryComponents: [
     AppComponent,
