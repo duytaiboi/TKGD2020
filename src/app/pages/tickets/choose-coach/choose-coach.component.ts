@@ -10,7 +10,6 @@ export class ChooseCoachComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('a');
   }
 
 }

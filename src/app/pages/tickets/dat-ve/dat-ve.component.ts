@@ -20,7 +20,6 @@ export class DatVeComponent implements OnInit {
   }
   onIndexChange(index: number): void {
     this.index = index;
-    console.log(this.index);
   }
 
   goBack() {

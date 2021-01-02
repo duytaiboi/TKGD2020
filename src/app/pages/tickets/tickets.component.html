@@ -1,6 +1,6 @@
 <div [hidden]="screen_chon_xe" class="inner-content">
   <div>
-    <div class="content-title">Đến bất cứ đâu bạn muốn !</div>
+    <div class="content-title mb-5">Đến bất cứ đâu bạn muốn !</div>
 
     <form nz-form [formGroup]="timXeForm" (ngSubmit)="timXe()">
       <nz-form-item nzJustify="center">
@@ -70,7 +70,7 @@
   <div>
     <!-- Step bar -->
     <div class="steps">
-      <nz-steps [nzCurrent]="index" (nzIndexChange)="onIndexChange($event)">
+      <nz-steps [nzCurrent]="index">
         <nz-step nzTitle="Chọn xe"></nz-step>
         <nz-step nzTitle="Chọn ghế"></nz-step>
         <nz-step nzTitle="Chọn điểm đón trả"></nz-step>
@@ -81,7 +81,7 @@
       <div class="col-1">
         <button
           class="btn button-back"
-          style="max-height: 100vh"
+          style="height: 75vh"
           (click)="previousStep()"
         >
           <span
@@ -388,31 +388,35 @@
             <h3>{{ xe_da_chon.ten }}</h3>
             <div class="row">
               <div class="col-sm-6">
-                <h5>Điểm đón</h5>
-                <div>
-                  <nz-radio-group [(ngModel)]="diem_don">
-                    <label
-                      *ngFor="let item of xe_da_chon.diem_don; index as i"
-                      nz-radio
-                      [nzValue]="item"
-                    >
-                      {{ item.gio }} | {{ item.dia_diem }}
-                    </label>
-                  </nz-radio-group>
+                <div class="p-2 border rounded shadow-sm">
+                  <h5>Điểm đón</h5>
+                  <div>
+                    <nz-radio-group [(ngModel)]="diem_don">
+                      <label
+                        *ngFor="let item of xe_da_chon.diem_don; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
+                        {{ item.gio }} | {{ item.dia_diem }}
+                      </label>
+                    </nz-radio-group>
+                  </div>
                 </div>
               </div>
               <div class="col-sm-6">
-                <h5>Điểm trả</h5>
-                <div>
-                  <nz-radio-group [(ngModel)]="diem_tra">
-                    <label
-                      *ngFor="let item of xe_da_chon.diem_tra; index as i"
-                      nz-radio
-                      [nzValue]="item"
-                    >
-                      {{ item.gio }} | {{ item.dia_diem }}
-                    </label>
-                  </nz-radio-group>
+                <div class="p-2 border rounded shadow-sm">
+                  <h5>Điểm trả</h5>
+                  <div>
+                    <nz-radio-group [(ngModel)]="diem_tra">
+                      <label
+                        *ngFor="let item of xe_da_chon.diem_tra; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
+                        {{ item.gio }} | {{ item.dia_diem }}
+                      </label>
+                    </nz-radio-group>
+                  </div>
                 </div>
               </div>
             </div>
@@ -429,7 +433,9 @@
                   <div class="ticket-infos__label">Nơi đi</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Sài Gòn</div>
+                  <div class="ticket-infos__content">
+                    {{ xe_da_chon.diem_di }}
+                  </div>
                 </div>
               </div>
               <div nz-row class="ticket-infos__row">
@@ -437,7 +443,9 @@
                   <div class="ticket-infos__label">Nơi đến</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Hà Tiên</div>
+                  <div class="ticket-infos__content">
+                    {{ xe_da_chon.diem_den }}
+                  </div>
                 </div>
               </div>
               <div nz-row class="ticket-infos__row">
@@ -445,7 +453,9 @@
                   <div class="ticket-infos__label">Ngày khởi hành</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">29 - 12- 2020</div>
+                  <div class="ticket-infos__content">
+                    {{ xe_da_chon.ngay_di }}
+                  </div>
                 </div>
               </div>
 
@@ -454,7 +464,9 @@
                   <div class="ticket-infos__label">Thời gian khởi hành</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">8:30</div>
+                  <div class="ticket-infos__content">
+                    {{ diem_don.gio }}
+                  </div>
                 </div>
               </div>
 
@@ -463,7 +475,10 @@
                   <div class="ticket-infos__label">Điểm đón</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">227 Nguyễn Văn Cừ</div>
+                  <div class="ticket-infos__content">
+                    {{ diem_don.gio }} |
+                    {{ diem_don.dia_diem }}
+                  </div>
                 </div>
               </div>
 
@@ -472,7 +487,10 @@
                   <div class="ticket-infos__label">Điểm trả</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+                  <div class="ticket-infos__content">
+                    {{ diem_tra.gio }} |
+                    {{ diem_tra.dia_diem }}
+                  </div>
                 </div>
               </div>
 
@@ -493,48 +511,109 @@
                   <div class="ticket-infos__label">Tổng tiền</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">660.000 vnd</div>
+                  <div class="ticket-infos__content">{{totalPrice}}</div>
                 </div>
               </div>
             </div>
           </span>
+          <div class="col-md-4">
+            <form
+              nz-form
+              [formGroup]="customerInfoForm"
+              (ngSubmit)="datVe()"
+            >
+              <span class="ticket-infos">
+                <div class="ticket-infos__title">Thông tin hành khách</div>
+                <div class="ticket-infos__wrapper2" style="margin-bottom: 10px !important;">
+                  <nz-form-item style="margin-bottom: 10px">
+                    <label
+                      for="ten_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Tên hành khách</label
+                    >
+                    <nz-form-control
+                      class="col-12"
+                      nzErrorTip="Vui lòng không để trống trường này!"
+                    >
+                      <input
+                        id="ten_kh"
+                        type="text"
+                        nz-input
+                        formControlName="ten_kh"
+                      />
+                    </nz-form-control>
+                  </nz-form-item>
 
-          <span class="ticket-infos col-md-4">
-            <div class="ticket-infos__title">Thông tin hành khách</div>
-            <div class="ticket-infos__wrapper2">
-              <div nz-row class="ticket-infos__row">
-                <div nz-col nzSpan="6">
-                  <div class="ticket-infos__label">Điểm trả</div>
+                  <nz-form-item style="margin-bottom: 10px">
+                    <label
+                      for="sdt_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Số điện thoại</label
+                    >
+                    <nz-form-control
+                      class="col-12"
+                      nzErrorTip="Vui lòng không để trống trường này!"
+                    >
+                      <input
+                        id="sdt_kh"
+                        type="text"
+                        nz-input
+                        formControlName="sdt_kh"
+                      />
+                    </nz-form-control>
+                  </nz-form-item>
+
+                  <nz-form-item style="margin-bottom: 10px">
+                    <label
+                      for="email_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Email</label
+                    >
+                    <nz-form-control class="col-12">
+                      <input
+                        id="email_kh"
+                        type="text"
+                        nz-input
+                        formControlName="email_kh"
+                      />
+                    </nz-form-control>
+                  </nz-form-item>
                 </div>
-                <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
+              </span>
+              <span class="ticket-infos">
+                <div class="ticket-infos__title">Phương thức thanh toán</div>
+                <div class="ticket-infos__wrapper2" style="margin-bottom: 10px !important;">
+                  <div class="col-12">
+                    <nz-radio-group formControlName="pt_thanh_toan">
+                      <label
+                        *ngFor="let item of pt_thanh_toans; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
+                        {{ item }}
+                      </label>
+                    </nz-radio-group>
+                  </div>
                 </div>
-              </div>
-              <div nz-row class="ticket-infos__row">
-                <div nz-col nzSpan="6">
-                  <div class="ticket-infos__label">Điểm trả</div>
-                </div>
-                <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
-                </div>
-              </div>
-              <div nz-row class="ticket-infos__row">
-                <div nz-col nzSpan="6">
-                  <div class="ticket-infos__label">Điểm trả</div>
-                </div>
-                <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">Cầu Rạch Giá 2</div>
-                </div>
-              </div>
-            </div>
-          </span>
+              </span>
+              <nz-form-item>
+                <nz-form-control class="col-12">
+                  <button nz-button nzType="primary" style="width: 100%; border-radius: 50vw;">Thanh toán</button>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </div>
         </div>
         <!-- End Thanh toán -->
       </div>
       <div class="col-1">
         <button
           *ngIf="index != 0 && index != 3"
-          class="btn button-back"
+          class="btn button-back float-right"
+          style="height: 75vh"
           (click)="nextStep()"
         >
           <span

@@ -129,7 +129,6 @@ export class DatVeXeComponent implements OnInit {
   }
 
   onSeatClick(seat: SeatModel) {
-    console.log(seat);
     if (seat.digit === "A") {
       var selectedSeat = (<HTMLElement>document.getElementsByClassName("A")[seat.index]);
     }

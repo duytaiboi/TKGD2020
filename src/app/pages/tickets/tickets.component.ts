@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { NzMessageService } from "ng-zorro-antd";
+import { VeService } from "src/app/services/ve.service";
 import { XeService } from "src/app/services/xe.service";
 import { SeatMap } from "src/core/model/seat-map.model";
 import { SeatModel } from "src/core/model/seat.model";
@@ -17,12 +19,13 @@ export class TicketsComponent implements OnInit {
   index = 0;
   disable = false;
   timXeForm: FormGroup;
+  customerInfoForm: FormGroup;
   xe = [];
   // Xe đã chọn
   xe_da_chon = null;
   diem_don = null; // điểm đón đã chọn
   diem_tra = null; // điểm trả đã chọn
-  
+
   // Chọn ghế
   listSeatsA: SeatModel[] = [
     {
@@ -176,11 +179,13 @@ export class TicketsComponent implements OnInit {
   clickedSeats: SeatModel[] = [];
 
   totalPrice: number = 0;
-
+  pt_thanh_toans = ["Thẻ Visa", "Thẻ ATM", "Momo", "Tiền mặt"];
   constructor(
     private fb: FormBuilder,
     private xeSV: XeService,
-    private message: NzMessageService
+    private message: NzMessageService,
+    private veSV: VeService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -189,17 +194,56 @@ export class TicketsComponent implements OnInit {
       diem_den: ["Hà Nội", Validators.required],
       diem_di: ["Đà Nẵng", Validators.required],
     });
+    this.customerInfoForm = this.fb.group({
+      ten_kh: [null, [Validators.required]],
+      sdt_kh: [null, [Validators.required]],
+      pt_thanh_toan: [this.pt_thanh_toans[0], [Validators.required]],
+      email_kh: null,
+    });
     this.prepareSeatsMap();
   }
 
-  onIndexChange(index: number): void {
-    if (index < this.index) {
-      this.index = index;
+  // đặt vé
+  datVe() {
+    for (const i in this.customerInfoForm.controls) {
+      this.customerInfoForm.controls[i].markAsDirty();
+      this.customerInfoForm.controls[i].updateValueAndValidity();
     }
+    if (this.customerInfoForm.invalid) {
+      return;
+    }
+    //this.get();
+    const customerInfo = this.customerInfoForm.value;
+    
+    const model = {
+      ma_ve: Date.now().toString(36),
+      ten_kh: customerInfo.ten_kh,
+      sdt_kh: customerInfo.sdt_kh,
+      email_kh: customerInfo.email_kh,
+      ten_xe: this.xe_da_chon.ten_xe,
+      sdt_xe: this.xe_da_chon.sdt_xe,
+      diem_di: this.xe_da_chon.diem_di,
+      diem_den: this.xe_da_chon.diem_den,
+      diem_don: this.diem_don,
+      diem_tra: this.diem_tra,
+      vi_tri: ["A01", "B02"],
+      ngay_di: this.xe_da_chon.ngay_di,
+      pt_thanh_toan: customerInfo.pt_thanh_toan,
+      tong_tien: this.totalPrice,
+    };
+    this.veSV.dat_ve(model).subscribe((res) => {
+      if(res && res.id){
+        this.message.success("Đặt vé thành công");
+        this.router.navigate(['tickets/ve-da-dat']);
+      }
+      else{
+        this.message.error("Đặt vé thất bại");
+      }
+    });
   }
 
+  // Tìm xe
   timXe() {
-    console.log(this.timXeForm.value.ngay_di);
     for (const i in this.timXeForm.controls) {
       this.timXeForm.controls[i].markAsDirty();
       this.timXeForm.controls[i].updateValueAndValidity();
@@ -218,14 +262,15 @@ export class TicketsComponent implements OnInit {
     });
   }
 
+  // chọn xe
   chonXe(item) {
-    console.log(item);
     this.xe_da_chon = item;
     this.diem_don = this.xe_da_chon.diem_don[0];
     this.diem_tra = this.xe_da_chon.diem_tra[
       this.xe_da_chon.diem_tra.length - 1
     ];
-    this.toChonViTri();
+    this.toDiemDonTra();
+    // this.toChonViTri();
   }
 
   toChonViTri() {
@@ -253,7 +298,6 @@ export class TicketsComponent implements OnInit {
   }
 
   onDateChange(result: Date[]): void {
-    console.log("onChange: ", result);
   }
 
   nextStep() {
@@ -268,9 +312,7 @@ export class TicketsComponent implements OnInit {
   }
 
   // Chọn ghế
-
   onSeatClick(seat: SeatModel) {
-    console.log(seat);
     if (seat.digit === "A") {
       var selectedSeat = <HTMLElement>(
         document.getElementsByClassName("A")[seat.index]

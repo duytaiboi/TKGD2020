@@ -24,7 +24,6 @@ export class PaymentComponent implements OnInit {
   }
   onIndexChange(index: number): void {
     this.index = index;
-    console.log(this.index);
   }
 
   goBack() {

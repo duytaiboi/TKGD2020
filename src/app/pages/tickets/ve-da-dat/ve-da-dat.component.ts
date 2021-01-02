@@ -40,7 +40,6 @@ export class VeDaDatComponent implements OnInit {
     this.veSV.tim_ve(model.ma_ve, model.sdt_kh).subscribe((res) => {
       if (res && res.length) {
         this.ve = res[0];
-        console.log(this.ve);
       } else {
         this.message.error("Không tìm thấy vé hợp lệ");
       }

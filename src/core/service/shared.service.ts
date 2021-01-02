@@ -12,13 +12,10 @@ export class SharedService {
     numberOfAgencyType: number;
 
     getRegulation() {
-        console.log(this.regulation);
         return this.regulation;
     }
     setRegulation(value: any) {
-        console.log(value);
         this.regulation = {...value};
-        console.log(this.regulation);
     }
     getlistAgency() {
         return this.listAgency;

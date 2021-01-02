@@ -243,8 +243,9 @@
       "ma_ve": "2",
       "ten_kh": "Nguyễn Bảo Sỷ Anh",
       "sdt_kh": "1",
+      "email_kh": "a@gmail.com",
       "ten_xe": "Phương Trang",
-      "std_xe": "0934534544",
+      "sdt_xe": "0934534544",
       "diem_di": "Quảng Ninh",
       "diem_den": "Hà Nội",
       "diem_don": {
@@ -256,12 +257,228 @@
         "dia_diem": "Nội thành Hà Nội"
       },
       "vi_tri": [
-        1,
-        2
+        "A02",
+        "B01"
       ],
       "ngay_di": "30/12/2020",
-      "pt_thanh_toan": "Thanh toán tại quầy",
+      "pt_thanh_toan": "Tiền mặt",
       "tong_tien": 150000
+    },
+    {
+      "ma_ve": "function now() { [native code] }",
+      "ten_kh": "sya nh",
+      "sdt_kh": "1231231232",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A1",
+        "B2"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 2
+    },
+    {
+      "ma_ve": "function now() { [native code] }",
+      "ten_kh": "sya nh",
+      "sdt_kh": "1231231232",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A1",
+        "B2"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 3
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 21:47:45 GMT+0700 (GMT+07:00)",
+      "ten_kh": "sya nh 1",
+      "sdt_kh": "1231231232",
+      "email_kh": "anh.nguyen7@vietunion.com.vn",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 4
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 21:49:24 GMT+0700 (GMT+07:00)",
+      "ten_kh": "sya nh 2",
+      "sdt_kh": "1231231232",
+      "email_kh": "asdasd@gmail.com",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "15:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "22:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 5
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 21:53:25 GMT+0700 (GMT+07:00)",
+      "ten_kh": "asasdasd",
+      "sdt_kh": "13123232323",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 6
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 21:53:59 GMT+0700 (GMT+07:00)",
+      "ten_kh": "sya nh 1",
+      "sdt_kh": "12312312312",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 7
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 21:55:10 GMT+0700 (GMT+07:00)",
+      "ten_kh": "asdasdaw",
+      "sdt_kh": "21312312322",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ ATM",
+      "tong_tien": 0,
+      "id": 8
+    },
+    {
+      "ma_ve": "Sat Jan 02 2021 22:00:09 GMT+0700 (GMT+07:00)",
+      "ten_kh": "awdawd",
+      "sdt_kh": "awdawdawd",
+      "email_kh": null,
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "15:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "22:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 0,
+      "id": 9
+    },
+    {
+      "ma_ve": "kjfu7gd6",
+      "ten_kh": "asdd",
+      "sdt_kh": "12312312312",
+      "email_kh": "asdasd@gmail.com",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 0,
+      "id": 10
     }
   ],
   "users": [

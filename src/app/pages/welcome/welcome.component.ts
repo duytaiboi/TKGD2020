@@ -28,7 +28,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   signin() {
-    console.log(this.form);
 
     for (const i in this.form.controls) {
       this.form.controls[i].markAsDirty();
@@ -41,7 +40,6 @@ export class WelcomeComponent implements OnInit {
     }
 
     this.userService.login(this.form.value).subscribe((res) => {
-      console.log(res);
       if (res && res.length) {
         this.message.success("Đăng nhập thành công");
         this.router.navigate(["/tickets"]);
