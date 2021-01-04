@@ -1,4 +1,5 @@
-[nz-form] {}
+[nz-form] {
+}
 
 nz-date-picker ::ng-deep .ant-calendar-picker {
   width: 100%;
@@ -9,45 +10,45 @@ nz-range-picker {
 }
 
 .form-title {
-  font-size  : 15px;
+  font-size: 15px;
   font-weight: 500;
   text-shadow: 0px 5px 5px #999999;
-  color      : #ffffff !important;
+  color: #ffffff !important;
 }
 
 .icon-transfer {
   font-size: 40px;
-  padding  : 20px 20px;
-  color    : #6d8abe;
-  cursor   : pointer;
+  padding: 20px 20px;
+  color: #6d8abe;
+  cursor: pointer;
 }
 
 .btn-search {
   border-radius: 50%;
-  margin-left  : 50px;
-  margin-top   : -20px;
-  width        : 170px;
-  height       : 170px;
-  border       : 3px solid #30add4;
+  margin-left: 50px;
+  margin-top: -20px;
+  width: 170px;
+  height: 170px;
+  border: 3px solid #30add4;
 }
 
 .btn-search-title {
-  font-size  : 25px;
+  font-size: 25px;
   margin-left: 5px;
 }
 
 .search-icon {
   font-size: 40px;
-  color    : #30add4;
+  color: #30add4;
 }
 
 .inner-content {
-  background-image   : url("src/assets/img/main-background.jpg");
-  padding            : 24px;
-  height             : 100vh;
+  background-image: url("src/assets/img/main-background.jpg");
+  padding: 24px;
+  height: 100vh;
   // min-height         : 800px;
-  width              : auto;
-  background-repeat  : no-repeat;
+  width: auto;
+  background-repeat: no-repeat;
   background-position: 0% 50%;
 }
 
@@ -66,48 +67,48 @@ nz-range-picker {
 }
 
 .back-btn {
-  width        : 42px;
-  height       : 600px;
-  font-size    : 60px;
-  padding      : 285px 0px;
+  width: 42px;
+  height: 600px;
+  font-size: 60px;
+  padding: 285px 0px;
   border-radius: 40px !important;
-  border       : 1px solid #3dd5e0;
+  border: 1px solid #3dd5e0;
 }
 
 .back-icon {
   margin-left: -10px;
-  color      : #3dd5e0;
+  color: #3dd5e0;
 }
 
 .step-4 {
   display: flex;
-  color  : black;
+  color: black;
 
   .ticket-infos {
-    font-size  : 16px;
+    font-size: 16px;
 
     .ticket-infos__title {
       font-weight: 500;
-      font-size  : 20px;
+      font-size: 20px;
     }
 
     .ticket-infos__wrapper1 {
-      padding         : 20px 0px;
-      border          : 3px solid #dee2e2;
-      border-radius   : 12px;
+      padding: 20px 0px;
+      border: 3px solid #dee2e2;
+      border-radius: 12px;
       background-color: #ffffff;
     }
 
     .ticket-infos__wrapper2 {
-      padding      : 20px 0px;
-      border       : 3px solid #dee2e2;
+      padding: 20px 0px;
+      border: 3px solid #dee2e2;
       border-radius: 12px;
       background-color: #ffffff;
     }
 
     .ticket-infos__label {
       padding: 5px 0px;
-      float  : right;
+      float: right;
     }
 
     .ticket-infos__row {
@@ -115,15 +116,14 @@ nz-range-picker {
     }
 
     .ticket-infos__content {
-      margin-left  : 10px;
-      padding      : 5px 15px;
-      border       : 1px solid #cccccc;
-      font-weight  : 600;
+      margin-left: 10px;
+      padding: 5px 15px;
+      border: 1px solid #cccccc;
+      font-weight: 600;
       border-radius: 5px;
-      width        : max-content;
+      width: max-content;
     }
   }
-
 }
 
 // chon xe
@@ -133,17 +133,17 @@ html {
 }
 
 .appBar {
-  height          : 150px;
-  background-color: #3DD5E0;
+  height: 150px;
+  background-color: #3dd5e0;
 }
 
 .container-fluid {
-  height    : 100%;
+  height: 100%;
   /*position: relative;*/
 }
 
 .pageContent {
-  width       : 100%;
+  width: 100%;
   /*height    : 73%;*/
   /*max-height: 580px;*/
   /*position  : absolute;*/
@@ -156,55 +156,62 @@ h5 {
 }
 
 .totalBus {
-  margin-left  : 4.2rem;
+  margin-left: 4.2rem;
   margin-bottom: 0;
 }
 
 .btn-outline-warning {
   border-radius: 19px;
-  color        : #FFC107;
+  color: #ffc107;
 }
 
 .btn-outline-warning:hover {
   color: #fff;
 }
 
-.pageContent>.col-md-10 {
+.right-seats-section {
+  margin-top: 2%;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContent > .col-md-10 {
   /*max-width: 1080px;*/
 }
 
 .box1 {
   // width     : 520px;
   box-sizing: border-box;
-  position  : relative;
+  position: relative;
 }
 
 .button-back {
-  width           : 42px;
-  height          : calc(100%);
-  box-sizing      : border-box;
-  top             : -12px;
-  right           : -5px;
-  border          : 1px solid #3DD5E0;
-  border-radius   : 21px;
+  width: 42px;
+  height: calc(100%);
+  box-sizing: border-box;
+  top: -12px;
+  right: -5px;
+  border: 1px solid #3dd5e0;
+  border-radius: 21px;
   background-color: #fff;
-  box-shadow      : -3px 3px 3px 0 #828282;
+  box-shadow: -3px 3px 3px 0 #828282;
 
-  display        : flex;
-  align-items    : center;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .viewListBus {
   /*display: inline;*/
-  max-height    : 540px;
+  max-height: 540px;
   /*max-width   : 1136px;*/
-  display       : flex;
+  display: flex;
   flex-direction: row;
-  overflow-x    : auto;
-  padding       : 1.5rem;
-  padding-left  : 0;
-  margin-left   : 1.5rem;
+  overflow-x: auto;
+  padding: 1.5rem;
+  padding-left: 0;
+  margin-left: 1.5rem;
 }
 
 .viewColumn {
@@ -221,33 +228,33 @@ h5 {
 }
 
 .busContent {
-  border          : 1px solid #3DD5E0;
-  box-shadow      : -3px 3px 3px 0 #828282;
+  border: 1px solid #3dd5e0;
+  box-shadow: -3px 3px 3px 0 #828282;
   background-color: #ffffff;
   margin: 10px;
 }
 
 .busButton {
-  width           : 42px;
-  height          : calc(100% + 24px);
-  box-sizing      : border-box;
-  position        : absolute;
-  top             : -12px;
-  right           : -5px;
-  border          : 1px solid #3DD5E0;
-  border-radius   : 21px;
+  width: 42px;
+  height: calc(100% + 24px);
+  box-sizing: border-box;
+  position: absolute;
+  top: -12px;
+  right: -5px;
+  border: 1px solid #3dd5e0;
+  border-radius: 21px;
   background-color: #fff;
-  box-shadow      : 0 3px 3px 0 #828282;
+  box-shadow: 0 3px 3px 0 #828282;
 
-  display        : flex;
-  align-items    : center;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .busButton:hover,
 .button-back:hover {
-  background-color: #3DD5E0;
-  border-color    : #3DD5E0;
+  background-color: #3dd5e0;
+  border-color: #3dd5e0;
 }
 
 .busButton:hover span,
@@ -259,7 +266,7 @@ h5 {
 
 .busButton span,
 .button-back span {
-  color: #3DD5E0;
+  color: #3dd5e0;
 }
 custom-back-col {
   margin-left: -20px;
@@ -273,70 +280,69 @@ custom-back-col {
 }
 
 .location-icon {
-  color: #3DD5E0;
+  color: #3dd5e0;
 }
 
-.location-icon>i {
+.location-icon > i {
   padding-right: 0.35rem !important;
 }
 
 .busTimeStart {
-  align-self : center;
+  align-self: center;
   font-weight: bold;
-  font-size  : 22px;
+  font-size: 22px;
 }
 
 .busName {
-  font-size    : 20px;
-  font-weight  : bold;
-  color        : #3DD5E0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3dd5e0;
   margin-bottom: 0.45rem;
 }
 
 .busSeatEmpty {
-  align-self   : end;
-  font-style   : italic;
-  font-size    : 18px;
-  margin-left  : 1.5rem;
+  align-self: end;
+  font-style: italic;
+  font-size: 18px;
+  margin-left: 1.5rem;
   margin-bottom: 0;
-  margin-top   : 10px;
-  color        : #F2994A;
+  margin-top: 10px;
+  color: #f2994a;
 }
 
 .busPrice {
-  font-size    : 26px;
-  font-weight  : bold;
-  color        : #EB5757;
+  font-size: 26px;
+  font-weight: bold;
+  color: #eb5757;
   margin-bottom: 0;
 }
 
 .busRating {
-  padding-top  : 5px;
+  padding-top: 5px;
   margin-bottom: 0;
 }
 
-.busRating>span {
-  color: #FFF500;
+.busRating > span {
+  color: #fff500;
 }
 
 .filter {
-  width        : 100%;
-  height       : 100%;
-  border       : 1px solid #3DD5E0;
-  box-sizing   : border-box;
-  box-shadow   : inset -2px -2px 2px 0 #828282, inset 2px 2px 2px 0 #828282;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #3dd5e0;
+  box-sizing: border-box;
+  box-shadow: inset -2px -2px 2px 0 #828282, inset 2px 2px 2px 0 #828282;
   border-radius: 8px;
-  padding      : .75rem;
+  padding: 0.75rem;
 }
 
 .my-form-control {
-  padding: .25rem 0;
+  padding: 0.25rem 0;
 }
 
 .my-form-control select {
   box-shadow: -1px 1px 1px 0 #828282;
 }
-
 
 [nz-radio] {
   display: block;
@@ -344,10 +350,9 @@ custom-back-col {
   line-height: 32px;
 }
 
-
 // Chọn ghế
 .seats-row {
-  margin-left: 30px;
+  margin-left: 0px;
   margin-top: 30px;
   display: flex;
   flex-direction: row;
@@ -376,8 +381,7 @@ custom-back-col {
   transition: 0.2s;
 }
 
-.clicked-seats
-{
+.clicked-seats {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   background-color: white;
   opacity: 1;
@@ -402,9 +406,9 @@ custom-back-col {
   cursor: pointer;
 }
 
-.seat-reserved{
+.seat-reserved {
   background-color: gray;
-  cursor:none;
+  cursor: none;
   pointer-events: none;
 }
 
@@ -418,26 +422,31 @@ custom-back-col {
   overflow: hidden;
   opacity: 1;
   width: 100%;
-  margin-left: 120px;
-  height: 589px;
-  position: absolute;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: row;
+  height: 80%;
 }
 #seat-container {
   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
   opacity: 1;
-  width: 382px;
+  width: 100%;
   height: 462px;
-  position: absolute;
-  left: 72px;
-  top: 127px;
 }
+
+.seats-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
 .ground-seats {
   background-color: rgba(255, 255, 255, 1);
   opacity: 1;
   border: 1px solid #64cff0;
-  width: 382px;
+  width: 100%;
   height: 462px;
-  position: absolute;
   left: 0px;
   top: 0px;
   border-top-left-radius: 8px;
@@ -896,6 +905,16 @@ custom-back-col {
   position: absolute;
   left: 161px;
   top: 241px;
+}
+
+.seats-component-container {
+  display: flex;
+  flex-direction: column;
+}
+.notations {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
 }
 #e49_43 {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -2292,7 +2311,6 @@ custom-back-col {
   top: 0px;
 }
 #e49_157 {
-  
   opacity: 1;
   width: 42px;
   height: 462px;
@@ -2347,9 +2365,8 @@ custom-back-col {
   width: 570px;
   height: 270px;
   background-color: white;
-  position: absolute;
   left: 896px;
-  border:1px solid #64cff0;
+  border: 1px solid #64cff0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -2522,7 +2539,6 @@ custom-back-col {
   opacity: 1;
   width: 570px;
   height: 150px;
-  position: absolute;
   left: 896px;
   top: 439px;
 }
@@ -2532,7 +2548,6 @@ custom-back-col {
   border: 1px solid #64cff0;
   width: 570px;
   height: 150px;
-  position: absolute;
   left: 0px;
   top: 0px;
   border-radius: 8px;
@@ -2542,7 +2557,6 @@ custom-back-col {
   opacity: 1;
   width: 100%;
   height: 36px;
-  position: absolute;
   left: 51px;
   top: 26px;
   font-family: Rounded Mplus 1c;
@@ -2612,9 +2626,6 @@ custom-back-col {
   opacity: 1;
   width: 109px;
   height: 33px;
-  position: absolute;
-  left: 345px;
-  top: 92px;
   font-family: Rounded Mplus 1c;
   text-align: right;
   font-size: 22px;
@@ -2626,9 +2637,6 @@ custom-back-col {
   opacity: 1;
   width: 114px;
   height: 33px;
-  position: absolute;
-  left: 752px;
-  top: 92px;
   font-family: Rounded Mplus 1c;
   text-align: right;
   font-size: 22px;
@@ -2639,7 +2647,6 @@ custom-back-col {
   opacity: 1;
   width: 712px;
   height: 36px;
-  position: absolute;
   left: 754px;
   top: 19px;
 }
@@ -2648,7 +2655,7 @@ custom-back-col {
   opacity: 1;
   width: 127px;
   height: 33px;
-  position: absolute;
+  margin-left: 10%;
   left: 0px;
   top: 0px;
   font-family: Rounded Mplus 1c;
@@ -2660,9 +2667,9 @@ custom-back-col {
 #e49_186 {
   color: rgba(0, 0, 0, 1);
   opacity: 1;
+  margin-left: 2%;
   width: 102px;
   height: 33px;
-  position: absolute;
   left: 214px;
   top: 1px;
   font-family: Rounded Mplus 1c;
@@ -2676,7 +2683,7 @@ custom-back-col {
   opacity: 1;
   width: 71px;
   height: 33px;
-  position: absolute;
+  margin-left: 2%;
   left: 427px;
   top: 1px;
   font-family: Rounded Mplus 1c;
@@ -2690,7 +2697,7 @@ custom-back-col {
   opacity: 1;
   width: 107px;
   height: 33px;
-  position: absolute;
+  margin-left: 2%;
   left: 605px;
   top: 1px;
   font-family: Rounded Mplus 1c;
@@ -2701,9 +2708,9 @@ custom-back-col {
 }
 #e49_189 {
   opacity: 1;
+  margin-left: 1%;
   width: 60px;
   height: 35px;
-  position: absolute;
   left: 145px;
   top: 0px;
 }
@@ -2714,7 +2721,6 @@ custom-back-col {
   border: 1px solid white;
   width: 60px;
   height: 35px;
-  position: absolute;
   left: 0px;
   top: 0px;
   border-top-left-radius: 4px;
@@ -2726,7 +2732,7 @@ custom-back-col {
   opacity: 1;
   width: 60px;
   height: 35px;
-  position: absolute;
+  margin-left: 1%;
   left: 535px;
   top: 0px;
 }
@@ -2737,7 +2743,6 @@ custom-back-col {
   border: 1px solid rgba(255, 255, 255, 1);
   width: 60px;
   height: 35px;
-  position: absolute;
   left: 0px;
   top: 0px;
   border-top-left-radius: 4px;
@@ -2749,7 +2754,7 @@ custom-back-col {
   opacity: 1;
   width: 60px;
   height: 35px;
-  position: absolute;
+  margin-left: 1%;
   left: 358px;
   top: 1px;
 }
@@ -2760,7 +2765,6 @@ custom-back-col {
   border: 1px solid rgba(224.000001847744, 224.000001847744, 224.000001847744, 1);
   width: 60px;
   height: 35px;
-  position: absolute;
   left: 0px;
   top: 0px;
   border-top-left-radius: 4px;
@@ -2773,7 +2777,6 @@ custom-back-col {
   opacity: 1;
   width: 157px;
   height: 33px;
-  position: absolute;
   left: 896px;
   top: 94px;
   font-family: Rounded Mplus 1c;
@@ -2787,7 +2790,6 @@ custom-back-col {
   opacity: 1;
   width: 106px;
   height: 33px;
-  position: absolute;
   left: 896px;
   top: 406px;
   font-family: Rounded Mplus 1c;
@@ -2797,11 +2799,11 @@ custom-back-col {
   line-height: undefined;
 }
 #e49_197 {
+  width: 20%;
   color: rgba(0, 0, 0, 1);
   opacity: 1;
   width: 352px;
   height: 71px;
-  position: absolute;
   left: 72px;
   top: 0px;
   font-family: Rounded Mplus 1c;
