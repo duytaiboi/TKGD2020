@@ -1,3 +1,5 @@
+import { BehaviorSubject, Observable } from "rxjs";
+import { UserService } from "src/app/services/user.service";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -13,10 +15,14 @@ import { SeatModel } from "src/core/model/seat.model";
   styleUrls: ["./tickets.component.scss"],
 })
 export class TicketsComponent implements OnInit {
+  // User
+  loggedIn = new Observable<boolean>();
+  user: any;
+
   // Display
   screen_chon_xe = false;
-
-  index = 0;
+  indexVal = 0;
+  index = new BehaviorSubject(0);
   disable = false;
   timXeForm: FormGroup;
   customerInfoForm: FormGroup;
@@ -186,8 +192,11 @@ export class TicketsComponent implements OnInit {
     private xeSV: XeService,
     private message: NzMessageService,
     private veSV: VeService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private userService: UserService
+  ) {
+    this.user = userService.getUserStorage();
+  }
 
   ngOnInit() {
     this.timXeForm = this.fb.group({
@@ -201,6 +210,45 @@ export class TicketsComponent implements OnInit {
       pt_thanh_toan: [this.pt_thanh_toans[0], [Validators.required]],
       email_kh: null,
     });
+    this.userService.isLoggedIn().subscribe((res) => {
+      this.user = this.userService.getUserStorage();
+      if (res) {
+        this.customerInfoForm.patchValue({
+          ten_kh: this.user.fullname,
+          sdt_kh: this.user.numbers,
+          email_kh: this.user.email,
+        });
+      } else {
+        this.customerInfoForm.patchValue({
+          ten_kh: null,
+          sdt_kh: null,
+          email_kh: null,
+        });
+      }
+    });
+    this.index.subscribe((res) => {
+      console.log(res);
+      if (res === 3) {
+        this.getUserInfos();
+      }
+    });
+  }
+
+  getUserInfos() {
+    this.user = this.userService.getUserStorage();
+    if (this.user) {
+      this.customerInfoForm.patchValue({
+        ten_kh: this.user.fullname,
+        sdt_kh: this.user.numbers,
+        email_kh: this.user.email,
+      });
+    } else {
+      this.customerInfoForm.patchValue({
+        ten_kh: null,
+        sdt_kh: null,
+        email_kh: null,
+      });
+    }
   }
 
   // đặt vé
@@ -234,9 +282,8 @@ export class TicketsComponent implements OnInit {
     this.veSV.dat_ve(model).subscribe((res) => {
       if (res && res.id) {
         this.message.success("Đặt vé thành công");
-        this.router.navigate(['tickets/ve-da-dat']);
-      }
-      else {
+        this.router.navigate(["tickets/ve-da-dat"]);
+      } else {
         this.message.error("Đặt vé thất bại");
       }
     });
@@ -272,18 +319,20 @@ export class TicketsComponent implements OnInit {
     // this.toDiemDonTra();
     this.toChonViTri();
   }
-
   toChonViTri() {
-    this.index = 1;
+    this.indexVal = 1;
+    this.index.next(1);
     this.prepareSeatsMap();
   }
 
   toDiemDonTra() {
-    this.index = 2;
+    this.indexVal = 2;
+    this.index.next(2);
   }
 
   toThanhToan() {
-    this.index = 3;
+    this.indexVal = 3;
+    this.index.next(3);
   }
 
   backToSearch() {
@@ -298,15 +347,16 @@ export class TicketsComponent implements OnInit {
     this.timXeForm.controls.diem_den.setValue(current_diem_di);
   }
 
-  onDateChange(result: Date[]): void {
-  }
+  onDateChange(result: Date[]): void {}
 
   nextStep() {
-    this.index++;
+    this.indexVal++;
+    this.index.next(this.indexVal);
   }
   previousStep() {
-    if (this.index > 0) {
-      this.index--;
+    if (this.indexVal > 0) {
+      this.indexVal--;
+      this.index.next(this.indexVal);
     } else {
       this.backToSearch();
     }
@@ -358,21 +408,27 @@ export class TicketsComponent implements OnInit {
     this.listSeats = this.listSeats.concat(this.listSeatsB);
     for (var i = 0; i < this.listSeatsA.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
-        console.log(this.listSeatsA[i].digit);
-        console.log(this.xe_da_chon.vi_tri_trong[j].digit);
-        console.log(this.listSeatsA[i].index);
-        console.log(this.xe_da_chon.vi_tri_trong[j].index);
-        if (this.listSeatsA[i].digit===this.xe_da_chon.vi_tri_trong[j].digit && this.listSeatsA[i].index===Number(this.xe_da_chon.vi_tri_trong[j].index))
-        {
-          this.listSeatsA[i].reserved=false;
+        // console.log(this.listSeatsA[i].digit);
+        // console.log(this.xe_da_chon.vi_tri_trong[j].digit);
+        // console.log(this.listSeatsA[i].index);
+        // console.log(this.xe_da_chon.vi_tri_trong[j].index);
+        if (
+          this.listSeatsA[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.listSeatsA[i].index ===
+            Number(this.xe_da_chon.vi_tri_trong[j].index)
+        ) {
+          this.listSeatsA[i].reserved = false;
         }
       }
     }
     for (var i = 0; i < this.listSeatsB.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
-        if (this.listSeatsB[i].digit===this.xe_da_chon.vi_tri_trong[j].digit && this.listSeatsB[i].index===Number(this.xe_da_chon.vi_tri_trong[j].index))
-        {
-          this.listSeatsB[i].reserved=false;
+        if (
+          this.listSeatsB[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.listSeatsB[i].index ===
+            Number(this.xe_da_chon.vi_tri_trong[j].index)
+        ) {
+          this.listSeatsB[i].reserved = false;
         }
       }
     }

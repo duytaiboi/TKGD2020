@@ -35,7 +35,7 @@
             class="custom-icon"
             nzTheme="outline"
           ></i
-          ><span class="btn-title">{{ loggedIn ? "Tân Cao" : "Guest" }}</span>
+          ><span class="btn-title">{{ user ? user.fullname : "Guest" }}</span>
         </button>
 
         <button nz-button class="btn-header">
@@ -43,7 +43,7 @@
           ><span class="btn-phone-tilte">1900-1010</span>
         </button>
         <nz-dropdown-menu #loggedInDdl="nzDropdownMenu">
-          <ul nz-menu *ngIf="loggedIn">
+          <ul nz-menu *ngIf="user">
             <li nz-menu-item>
               <a routerLink="/tickets/ve-da-dat">Kiểm tra vé của tôi</a>
             </li>
@@ -51,7 +51,7 @@
               <a (click)="logout()">Đăng xuất</a>
             </li>
           </ul>
-          <ul nz-menu *ngIf="!loggedIn">
+          <ul nz-menu *ngIf="!user">
             <li nz-menu-item>
               <a routerLink="/users">Đăng nhập</a>
             </li>

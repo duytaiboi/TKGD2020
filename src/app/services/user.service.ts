@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { ApiService } from "./api.service";
 
 @Injectable({
@@ -9,6 +9,22 @@ import { ApiService } from "./api.service";
 export class UserService extends ApiService {
   constructor(http: HttpClient) {
     super(http);
+  }
+  private logger = new Subject<boolean>();
+
+  setUserStorage(infos: any) {
+    localStorage.setItem("user", JSON.stringify(infos));
+    console.log(infos);
+    this.logger.next(true);
+  }
+
+  getUserStorage() {
+    let user = localStorage.getItem("user");
+    return JSON.parse(user);
+  }
+  logOut() {
+    localStorage.removeItem("user");
+    this.logger.next(false);
   }
 
   private readonly url: string = "/users";
@@ -22,6 +38,10 @@ export class UserService extends ApiService {
 
   get(id: string) {
     return this.httpGet(this.url + `/${id}`);
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.logger.asObservable();
   }
 
   add(body: any) {

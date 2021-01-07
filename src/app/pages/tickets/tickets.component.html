@@ -56,7 +56,7 @@
   <div>
     <!-- Step bar -->
     <div class="steps">
-      <nz-steps [nzCurrent]="index">
+      <nz-steps [nzCurrent]="indexVal">
         <nz-step nzTitle="Chọn xe"></nz-step>
         <nz-step nzTitle="Chọn ghế"></nz-step>
         <nz-step nzTitle="Chọn điểm đón trả"></nz-step>
@@ -71,7 +71,7 @@
       </div>
       <div class="col-10">
         <!-- Chọn xe -->
-        <div class="step-1" *ngIf="index == 0">
+        <div class="step-1" *ngIf="indexVal == 0">
           <div class="">
             <div class="row pageContent py-1">
               <div class="col-md-10 d-flex align-items-center">
@@ -88,7 +88,7 @@
                   <!-- view block 2 -->
                   <!-- <div class="viewColumn"> -->
                   <!-- bus 1 -->
-                  <div class="bus col-md-12" *ngFor="let item of xe">
+                  <div class="bus col-md-4" *ngFor="let item of xe">
                     <!-- content of bus -->
                     <div class="busContent box1 p-3 mype-4">
                       <!-- row 1 of bus -->
@@ -236,7 +236,7 @@
         </div>
         <!-- End Chọn xe -->
         <!-- Chọn ghế -->
-        <div class="step-2" *ngIf="index == 1">
+        <div class="step-2" *ngIf="indexVal == 1">
           <div class="seats-component-container">
             <div class="notations">
               <span id="e49_197">Phương
@@ -311,7 +311,7 @@
         </div>
         <!-- End chọn ghế -->
         <!-- Chọn điểm đón/trả -->
-        <div class="step-3" *ngIf="index == 2">
+        <div class="step-3" *ngIf="indexVal == 2">
           <div *ngIf="xe_da_chon">
             <h3>{{ xe_da_chon.ten }}</h3>
             <div class="row">
@@ -344,7 +344,7 @@
         </div>
         <!-- End Chọn điểm đón/trả -->
         <!-- Thanh toán -->
-        <div class="step-4" *ngIf="index == 3">
+        <div class="step-4" *ngIf="indexVal == 3">
           <span class="ticket-infos col-md-8">
             <div class="ticket-infos__title">Thông tin vé</div>
             <div class="ticket-infos__wrapper1">
@@ -484,7 +484,7 @@
         <!-- End Thanh toán -->
       </div>
       <div class="col-1">
-        <button *ngIf="index != 0 && index != 3" class="btn button-back float-right" style="height: 75vh"
+        <button *ngIf="indexVal != 0 && indexVal != 3" class="btn button-back float-right" style="height: 75vh"
           (click)="nextStep()">
           <span><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></span>
         </button>

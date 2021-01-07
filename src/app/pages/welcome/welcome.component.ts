@@ -41,6 +41,7 @@ export class WelcomeComponent implements OnInit {
 
     this.userService.login(this.form.value).subscribe((res) => {
       if (res && res.length) {
+        this.userService.setUserStorage(res[0]);
         this.message.success("Đăng nhập thành công");
         this.router.navigate(["/tickets"]);
       } else {
