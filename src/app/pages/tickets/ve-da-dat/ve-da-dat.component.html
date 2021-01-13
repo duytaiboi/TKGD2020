@@ -1,5 +1,5 @@
 <div class="inner-content">
-  <div class="row">
+  <div class="row" *ngIf="user == null">
     <div class="col-sm-6">
       <div class="content-title">Kiểm tra vé</div>
       <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
@@ -82,5 +82,44 @@
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="user">
+    <table class="table table-bordered bg-white">
+      <thead>
+        <tr>
+          <th>Mã vé</th>
+          <th>Tên khách hàng</th>
+          <th>SĐT khách hàng</th>
+          <th>Email khách hàng</th>
+          <th>Xe</th>
+          <th>Ngày đi</th>
+          <th>PTTT</th>
+          <th>Tổng tiền</th>
+          <th>Lộ trình</th>
+          <th>Điểm đón</th>
+          <th>Điểm trả</th>
+          <th>Vị trí</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of ves">
+          <td>{{item.ma_ve}}</td>
+          <td>{{item.ten_kh}}</td>
+          <td>{{item.sdt_kh}}</td>
+          <td>{{item.email_kh}}</td>
+          <td>{{item.ten_xe}} - {{item.sdt_xe}}</td>
+          <td>{{item.ngay_di}}</td>
+          <td>{{item.pt_thanh_toan}}</td>
+          <td>{{item.tong_tien}}</td>
+          <td>{{item.diem_di}} - {{item.diem_den}}</td>
+          <td>{{item.diem_don.gio}}-{{item.diem_don.dia_diem}}</td>
+          <td>{{item.diem_tra.gio}}-{{item.diem_tra.dia_diem}}</td>
+          <td>{{item.vi_tri}}</td>
+        </tr>
+        <tr *ngIf="ves.length == 0">
+          <td colspan="10">Danh sách trống</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -23,12 +23,7 @@ export class VeService extends ApiService {
     return this.httpPost(this.url_ve_da_dat, body);
   }
 
-  get(id: string) {
-    return this.get(this.url + `/${id}`);
-  }
- 
-
-  edit(e: any) {
-    return this.httpPut(this.url, e);
+  ds_ve(email_kh: string) {
+    return this.httpGet(this.url_ve_da_dat + `?email_kh=${email_kh}`);
   }
 }
