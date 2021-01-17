@@ -239,8 +239,8 @@
         <div class="step-2" *ngIf="indexVal == 1">
           <div class="seats-component-container">
             <div class="notations">
-              <span id="e49_197">Phương
-                Trang</span>
+              <span id="e49_197">{{xe_da_chon.ten}}
+                </span>
               <span id="e49_185">Trạng thái:</span>
               <span id="e49_186">Còn trống</span>
               <div id="e49_189">
@@ -262,14 +262,14 @@
               <span id="e49_182">Tầng trên</span>
               <div id="seat-container">
                 <div class="ground-seats">
-                  <div class="seats-row" *ngFor="let item of [].constructor(seatsMapA.Row); index as i">
-                    <div (click)="onSeatClick(seatsMapA.listSeat[j + 2 * i])" class="seats A" [class.seat-reserved]="
-                          seatsMapA.listSeat[j + 2 * i].reserved
+                  <div class="seats-row" *ngFor="let item of [].constructor(clonedMapA.Row); index as i">
+                    <div (click)="onSeatClick(clonedMapA.listSeat[j + 2 * i])" class="seats A" [class.seat-reserved]="
+                    clonedMapA.listSeat[j + 2 * i].reserved
                         " *ngFor="
-                          let item of [].constructor(seatsMapA.Column);
+                          let item of [].constructor(clonedMapA.Column);
                           index as j
                         ">
-                      <span id="seats" class="seat">{{ seatsMapA.listSeat[0].digit }}{{ j + 2 * i }}</span>
+                      <span id="seats" class="seat">{{ clonedMapA.listSeat[0].digit }}{{ j + 2 * i }}</span>
                     </div>
                   </div>
                 </div>
@@ -279,14 +279,14 @@
               <span id="e49_183">Tầng dưới</span>
               <div id="seat-container">
                 <div class="ground-seats">
-                  <div class="seats-row" *ngFor="let item of [].constructor(seatsMapB.Row); index as i">
-                    <div (click)="onSeatClick(seatsMapB.listSeat[j + 2 * i])" [class.seat-reserved]="
-                          seatsMapB.listSeat[j + 2 * i].reserved
+                  <div class="seats-row" *ngFor="let item of [].constructor(clonedMapB.Row); index as i">
+                    <div (click)="onSeatClick(clonedMapB.listSeat[j + 2 * i])" [class.seat-reserved]="
+                    clonedMapB.listSeat[j + 2 * i].reserved
                         " class="seats B" *ngFor="
-                          let item of [].constructor(seatsMapB.Column);
+                          let item of [].constructor(clonedMapB.Column);
                           index as j
                         ">
-                      <span id="seats" class="seat">{{ seatsMapB.listSeat[0].digit }}{{ j + 2 * i }}</span>
+                      <span id="seats" class="seat">{{ clonedMapB.listSeat[0].digit }}{{ j + 2 * i }}</span>
                     </div>
                   </div>
                 </div>

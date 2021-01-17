@@ -34,6 +34,8 @@ export class TicketsComponent implements OnInit {
   diem_tra = null; // điểm trả đã chọn
 
   // Chọn ghế
+  clonedSeatsMapA: SeatModel[] = [];
+  clonedSeatsMapB: SeatModel[] = [];
   listSeatsA: SeatModel[] = [
     {
       digit: "A",
@@ -178,10 +180,12 @@ export class TicketsComponent implements OnInit {
       price: 20.0,
     },
   ];
-
+  a: SeatModel[] = [];
+  b: SeatModel[] = [];
   seatsMapA: SeatMap = new SeatMap(this.listSeatsA);
   seatsMapB: SeatMap = new SeatMap(this.listSeatsB);
-
+  clonedMapA: SeatMap = new SeatMap(this.a);
+  clonedMapB: SeatMap = new SeatMap(this.b);
   listSeats: SeatModel[];
   clickedSeats: SeatModel[] = [];
 
@@ -318,11 +322,14 @@ export class TicketsComponent implements OnInit {
     ];
     // this.toDiemDonTra();
     this.toChonViTri();
+
   }
   toChonViTri() {
     this.indexVal = 1;
     this.index.next(1);
     this.prepareSeatsMap();
+    this.clickedSeats = [];
+    this.ghe_da_chon = [];
   }
 
   toDiemDonTra() {
@@ -347,7 +354,7 @@ export class TicketsComponent implements OnInit {
     this.timXeForm.controls.diem_den.setValue(current_diem_di);
   }
 
-  onDateChange(result: Date[]): void {}
+  onDateChange(result: Date[]): void { }
 
   nextStep() {
     this.indexVal++;
@@ -355,6 +362,9 @@ export class TicketsComponent implements OnInit {
   }
   previousStep() {
     if (this.indexVal > 0) {
+      if (this.indexVal == 1) {
+        this.clearSeatStatus(this.clickedSeats);
+      }
       this.indexVal--;
       this.index.next(this.indexVal);
     } else {
@@ -402,33 +412,60 @@ export class TicketsComponent implements OnInit {
     });
   }
 
+  private clearSeatStatus(clickedSeats: any) {
+    this.clickedSeats.forEach(element => {
+      if (element.digit === "A") {
+        var selectedSeat = <HTMLElement>(
+          document.getElementsByClassName("A")[element.index]
+        );
+      } else {
+        var selectedSeat = <HTMLElement>(
+          document.getElementsByClassName("B")[element.index]
+        );
+      }
+      element.status = !element.status;
+      selectedSeat.style.backgroundColor = "white";
+      selectedSeat.style.color = "black";
+    });
+    this.listSeatsA.forEach(element => {
+      if (element.reserved == false) {
+        element.reserved = true;
+      }
+    });
+    this.listSeatsB.forEach(element => {
+      if (element.reserved == false) {
+        element.reserved = true;
+      }
+    })
+  }
+
   private prepareSeatsMap() {
+    this.clonedMapA.listSeat = [...this.listSeatsA];
+    this.clonedMapB.listSeat = [...this.listSeatsB];
     this.listSeats = [];
-    this.listSeats = this.listSeats.concat(this.listSeatsA);
-    this.listSeats = this.listSeats.concat(this.listSeatsB);
-    for (var i = 0; i < this.listSeatsA.length; i++) {
+
+    this.listSeats = this.listSeats.concat(this.clonedMapA.listSeat);
+    this.listSeats = this.listSeats.concat(this.clonedMapB.listSeat);
+    console.log("cc");
+    for (var i = 0; i < this.clonedMapA.listSeat.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
-        // console.log(this.listSeatsA[i].digit);
-        // console.log(this.xe_da_chon.vi_tri_trong[j].digit);
-        // console.log(this.listSeatsA[i].index);
-        // console.log(this.xe_da_chon.vi_tri_trong[j].index);
         if (
-          this.listSeatsA[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
-          this.listSeatsA[i].index ===
-            Number(this.xe_da_chon.vi_tri_trong[j].index)
+          this.clonedMapA.listSeat[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.clonedMapA.listSeat[i].index ===
+          Number(this.xe_da_chon.vi_tri_trong[j].index)
         ) {
-          this.listSeatsA[i].reserved = false;
+          this.clonedMapA.listSeat[i].reserved = false;
         }
       }
     }
-    for (var i = 0; i < this.listSeatsB.length; i++) {
+    for (var i = 0; i < this.clonedMapB.listSeat.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
         if (
-          this.listSeatsB[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
-          this.listSeatsB[i].index ===
-            Number(this.xe_da_chon.vi_tri_trong[j].index)
+          this.clonedMapB.listSeat[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.clonedMapB.listSeat[i].index ===
+          Number(this.xe_da_chon.vi_tri_trong[j].index)
         ) {
-          this.listSeatsB[i].reserved = false;
+          this.clonedMapB.listSeat[i].reserved = false;
         }
       }
     }
