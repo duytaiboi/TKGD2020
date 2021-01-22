@@ -94,23 +94,23 @@
         <div class="step-1" *ngIf="indexVal == 0">
           <div class="">
             <div class="row pageContent py-1">
-              <div class="col-md-10 d-flex align-items-center">
+              <div class="col-12 d-flex align-items-center">
                 <h5 class="totalBus">Hiện có {{ xe.length }} xe</h5>
               </div>
-              <div
+              <!-- <div
                 class="col-md-2 d-flex justify-content-between align-items-center"
               >
                 <h5>Bộ lọc</h5>
                 <button class="btn btn-outline-warning">Xóa lọc</button>
-              </div>
+              </div> -->
             </div>
             <div class="row pageContent pb-2">
-              <div class="col-md-12 pick-bus-section">
+              <div class="col-12">
                 <div class="row px-6">
                   <!-- view block 2 -->
                   <!-- <div class="viewColumn"> -->
                   <!-- bus 1 -->
-                  <div class="bus col-md-6" *ngFor="let item of xe">
+                  <div class="bus col-sm-6" *ngFor="let item of xe">
                     <!-- content of bus -->
                     <div class="busContent box1 p-3 mype-4">
                       <!-- row 1 of bus -->
@@ -119,11 +119,26 @@
                           <p class="busName">{{ item.ten }}</p>
                         </div>
                         <div class="text-right col-md-4">
-                          <p *ngIf="item.ten=='Phương Trang'" class="busRating">
-                            <span *ngFor="let item of [].constructor(starPT); index as j"><i class="fa fa-star" aria-hidden="true"></i></span>
+                          <p
+                            *ngIf="item.ten == 'Phương Trang'"
+                            class="busRating"
+                          >
+                            <span
+                              *ngFor="
+                                let item of [].constructor(starPT);
+                                index as j
+                              "
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
                           </p>
-                          <p *ngIf="item.ten=='Thạnh Bưởi'" class="busRating">
-                            <span *ngFor="let item of [].constructor(starTB); index as j"><i class="fa fa-star" aria-hidden="true"></i></span>
+                          <p *ngIf="item.ten == 'Thạnh Bưởi'" class="busRating">
+                            <span
+                              *ngFor="
+                                let item of [].constructor(starTB);
+                                index as j
+                              "
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
                           </p>
                         </div>
                       </div>
@@ -192,31 +207,27 @@
                   <!-- view block 2 -->
                 </div>
               </div>
-              <div class="filter-section col-md-2">
+              <!-- <div class="filter-section col-md-2">
                 <div class="filter">
                   <form>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label" for="nhaxe">Nhà xe</label>
                       <select class="form-select" id="nhaxe">
                         <option selected>Phương Trang</option>
                       </select>
                     </div>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label" for="diemdi">Điểm đi</label>
                       <select class="form-select" id="diemdi">
                         <option selected>Sài Gòn</option>
                       </select>
                     </div>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label" for="diemden">Điểm đến</label>
                       <select class="form-select" id="diemden">
                         <option selected>Hà Tiên</option>
                       </select>
                     </div>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label" for="sapxepgiave"
                         >Sắp xếp giá vé</label
@@ -225,7 +236,6 @@
                         <option selected>Thấp đến cao</option>
                       </select>
                     </div>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label" for="sapxepdanhgia"
                         >Sắp xếp đánh giá</label
@@ -234,7 +244,6 @@
                         <option selected>4 sao</option>
                       </select>
                     </div>
-                    <!-- control -->
                     <div class="my-form-control">
                       <label class="form-label">Thời gian khởi hành</label>
                       <div class="d-flex justify-content-center">
@@ -277,7 +286,7 @@
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -368,26 +377,37 @@
               <div style="height: 60%">
                 <h6 id="">Danh sách ghế</h6>
                 <!-- <span id="e49_195">Danh sách ghế</span> -->
-                <div class="my-card" style="height: 70%;">
-                  <div *ngIf="clickedSeats" class="">
+                <div
+                  class="my-card"
+                  style="
+                    scroll-behavior: smooth;
+                    overflow-y: auto;
+                    height: 70%;
+                  "
+                >
+                  <div
+                    *ngIf="clickedSeats"
+                    class="row col-12"
+                    style="height: 100%"
+                  >
                     <div
-                      class="clicked-seats"
+                      class="col-4"
                       *ngFor="let item of clickedSeats; index as i"
                     >
-                      <span id="seats" class="seat"
-                        >{{ item.digit }}{{ item.index }}</span
-                      >
+                      <div class="clicked-seats">
+                        <span id="seats" class="seat"
+                          >{{ item.digit }}{{ item.index }}</span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div style="height: 40%;">
-                  <h6 id="">Tổng tiền</h6>
+              <div style="height: 40%">
+                <h6 id="">Tổng tiền</h6>
                 <div class="my-card p-2" style="height: 80%">
-                  <h6 id=""
-                    >{{ totalPrice }} VNĐ</h6
-                  >
-              </div>
+                  <h6 id="">{{ totalPrice }} VNĐ</h6>
+                </div>
               </div>
             </div>
           </div>

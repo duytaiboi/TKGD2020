@@ -31,7 +31,47 @@
       "vi_tri_trong": [
         {
           "digit": "A",
+          "index": "2"
+        },
+        {
+          "digit": "A",
+          "index": "4"
+        },
+        {
+          "digit": "A",
+          "index": "5"
+        },
+        {
+          "digit": "A",
+          "index": "6"
+        },
+        {
+          "digit": "A",
+          "index": "7"
+        },
+        {
+          "digit": "A",
+          "index": "8"
+        },
+        {
+          "digit": "A",
+          "index": "9"
+        },
+        {
+          "digit": "B",
           "index": "1"
+        },
+        {
+          "digit": "B",
+          "index": "2"
+        },
+        {
+          "digit": "B",
+          "index": "3"
+        },
+        {
+          "digit": "B",
+          "index": "4"
         },
         {
           "digit": "B",
@@ -39,7 +79,15 @@
         },
         {
           "digit": "B",
-          "index": "2"
+          "index": "6"
+        },
+        {
+          "digit": "B",
+          "index": "7"
+        },
+        {
+          "digit": "B",
+          "index": "8"
         },
         {
           "digit": "B",
@@ -639,7 +687,8 @@
       "ngay_di": "12/30/2020",
       "pt_thanh_toan": "Thẻ ATM",
       "tong_tien": 60,
-      "id": 16
+      "id": 16,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8jk66t",
@@ -665,7 +714,8 @@
       "ngay_di": "12/30/2020",
       "pt_thanh_toan": "Tiền mặt",
       "tong_tien": 400000,
-      "id": 17
+      "id": 17,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8jtrm9",
@@ -691,7 +741,8 @@
       "ngay_di": "12/30/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
-      "id": 18
+      "id": 18,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8jwdpn",
@@ -717,7 +768,8 @@
         "B6",
         "B7"
       ],
-      "id": 19
+      "id": 19,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8lmv99",
@@ -743,7 +795,8 @@
         "B7",
         "B6"
       ],
-      "id": 20
+      "id": 20,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8n3d2i",
@@ -768,7 +821,8 @@
       "vi_tri": [
         "B6"
       ],
-      "id": 21
+      "id": 21,
+      "danh_gia": 5
     },
     {
       "ma_ve": "kk8n3o75",
@@ -793,7 +847,85 @@
       "vi_tri": [
         "A3"
       ],
-      "id": 22
+      "id": 22,
+      "danh_gia": 5
+    },
+    {
+      "ma_ve": "kk8nsw29",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 150000,
+      "vi_tri": [
+        "B5"
+      ],
+      "id": 23
+    },
+    {
+      "ma_ve": "kk8ntcdf",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "B9",
+        "B2"
+      ],
+      "id": 24
+    },
+    {
+      "ma_ve": "kk8oj1k7",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:30",
+        "dia_diem": "Khu vực Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "A1",
+        "A3"
+      ],
+      "id": 25
     }
   ],
   "users": [

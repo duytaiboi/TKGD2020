@@ -24,7 +24,9 @@ export class VeDaDatComponent implements OnInit {
     this.user = this.userSV.getUserStorage();
     if (this.user) {
       this.veSV.ds_ve(this.user.email).subscribe((res) => {
-        this.ves = res;
+        this.ves = res.sort((a, b) => {
+          return b.id - a.id;
+        });
       });
     }
   }
