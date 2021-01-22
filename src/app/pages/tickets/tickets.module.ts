@@ -9,6 +9,7 @@ import { NgZorroAntdModule } from "ng-zorro-antd";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
+import { TimVeComponent } from './tim-ve/tim-ve.component';
 @NgModule({
   imports: [
     TicketsRoutingModule,
@@ -21,6 +22,7 @@ import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
   declarations: [
     TicketsComponent,
     VeDaDatComponent,
+    TimVeComponent,
   ],
   // exports: [
   //   TicketsComponent,

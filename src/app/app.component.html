@@ -23,6 +23,11 @@
           ><span class="btn-title">Trợ giúp</span>
         </button>
 
+        <button nz-button class="btn-header" routerLink="tickets/tim-ve">
+          <i nz-icon nzType="search" class="custom-icon" nzTheme="outline"></i
+          ><span class="btn-title">Tìm vé</span>
+        </button>
+
         <button
           nz-button
           nz-dropdown
@@ -45,7 +50,7 @@
         <nz-dropdown-menu #loggedInDdl="nzDropdownMenu">
           <ul nz-menu *ngIf="user">
             <li nz-menu-item>
-              <a routerLink="/tickets/ve-da-dat">Kiểm tra vé của tôi</a>
+              <a routerLink="/tickets/ve-da-dat">Danh sách vé</a>
             </li>
             <li nz-menu-item>
               <a (click)="logout()">Đăng xuất</a>

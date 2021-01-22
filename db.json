@@ -3,6 +3,7 @@
     {
       "id": 1,
       "ten": "Phương Trang",
+      "sdt": "0933615558",
       "gia_ve": 150000,
       "ngay_di": "12/30/2020",
       "diem_di": "Đà Nẵng",
@@ -49,6 +50,7 @@
     {
       "id": 2,
       "ten": "Thạnh Bưởi",
+      "sdt": "0933615558",
       "gia_ve": 200000,
       "ngay_di": "12/30/2020",
       "diem_di": "Đà Nẵng",
@@ -91,6 +93,7 @@
     {
       "id": 3,
       "ten": "Thạnh Bưởi",
+      "sdt": "0933615558",
       "gia_ve": 250000,
       "ngay_di": "12/30/2020",
       "diem_di": "Sài Gòn",
@@ -133,6 +136,7 @@
     {
       "id": 4,
       "ten": "Thạnh Bưởi",
+      "sdt": "0933615558",
       "gia_ve": 160000,
       "ngay_di": "12/30/2020",
       "diem_di": "Sài Gòn",
@@ -179,6 +183,7 @@
     {
       "id": 5,
       "ten": "Phương Trang",
+      "sdt": "0933615558",
       "gia_ve": 200000,
       "ngay_di": "12/30/2020",
       "diem_di": "Sài Gòn",
@@ -221,6 +226,7 @@
     {
       "id": 6,
       "ten": "Phương Trang",
+      "sdt": "0933615558",
       "gia_ve": 200000,
       "ngay_di": "12/30/2020",
       "diem_di": "Sài Gòn",
@@ -271,8 +277,9 @@
     {
       "id": 7,
       "ten": "Thạnh Bưởi",
+      "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Đà Nẵng",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -577,6 +584,32 @@
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
       "id": 11
+    },
+    {
+      "ma_ve": "kk8aam8u",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 60,
+      "id": 15
     }
   ],
   "users": [
