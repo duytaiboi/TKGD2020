@@ -8,6 +8,8 @@ import { VeService } from "src/app/services/ve.service";
 import { XeService } from "src/app/services/xe.service";
 import { SeatMap } from "src/core/model/seat-map.model";
 import { SeatModel } from "src/core/model/seat.model";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { RatingModalComponent } from "src/app/modals/rating-modal/rating-modal.component";
 
 @Component({
   selector: "app-tickets",
@@ -192,6 +194,7 @@ export class TicketsComponent implements OnInit {
   totalPrice: number = 0;
   pt_thanh_toans = ["Thẻ Visa", "Thẻ ATM", "Momo", "Tiền mặt"];
   constructor(
+    private modalService: NgbModal,
     private fb: FormBuilder,
     private xeSV: XeService,
     private message: NzMessageService,
@@ -203,6 +206,7 @@ export class TicketsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mockModal();
     this.timXeForm = this.fb.group({
       ngay_di: [new Date(2020, 11, 30), Validators.required],
       diem_den: ["Hà Nội", Validators.required],
@@ -404,6 +408,12 @@ export class TicketsComponent implements OnInit {
     var seatModel = new SeatModel();
     seatModel.digit = selectedSeat.innerHTML;
     this.calculatePrice();
+  }
+
+  private mockModal(){
+    const informModalRef = this.modalService.open(RatingModalComponent);
+    informModalRef.componentInstance.title = "Phương Trang";
+    informModalRef.componentInstance.message = "Hãy đánh giá trải nghiệm của bạn nào...";
   }
 
   private calculatePrice() {

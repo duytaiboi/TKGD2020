@@ -20,6 +20,7 @@ import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { AlertModule } from "ngx-alerts";
 import { NgZorroAntdModule, NZ_I18N, en_US } from "ng-zorro-antd";
 import { NzFormModule } from "ng-zorro-antd/form";
+import { RatingModalComponent } from "./modals/rating-modal/rating-modal.component";
 export const environment = {
   production: false,
   appName: "nmcnpm",
@@ -33,6 +34,7 @@ export const environment = {
     NgZorroAntdModule,
     ServiceModule,
     CommonModule,
+    ModalsModule,
     BrowserAnimationsModule,
     FormsModule,
     NzFormModule,

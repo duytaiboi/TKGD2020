@@ -577,6 +577,30 @@
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
       "id": 11
+    },
+    {
+      "ma_ve": "kk5iww98",
+      "ten_kh": "dsad",
+      "sdt_kh": "0919255266",
+      "email_kh": "tasssd",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 60,
+      "id": 12
     }
   ],
   "users": [

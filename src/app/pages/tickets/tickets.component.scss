@@ -336,8 +336,29 @@ custom-back-col {
   padding: 0.75rem;
 }
 
+.filter-section {
+  flex: 0 0 20% !important ;
+  max-width: 20% !important;
+}
+
+.pick-bus-section {
+  flex: 0 0 80% !important;
+  max-width: 80% !important;
+}
+
 .my-form-control {
   padding: 0.25rem 0;
+}
+
+.me-2 {
+  .hour {
+    margin-right: 15%;
+  }
+  width: 50%;
+}
+
+.form-select {
+  margin-left: 5% !important;
 }
 
 .my-form-control select {
@@ -2537,7 +2558,7 @@ custom-back-col {
 }
 #e49_175 {
   opacity: 1;
- width: 85%;
+  width: 85%;
   height: 150px;
   left: 896px;
   top: 439px;
