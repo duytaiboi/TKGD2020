@@ -32,53 +32,107 @@
     <div *ngIf="ve != null" class="col-sm-6">
       <div class="content-title">Thông tin vé</div>
       <div class="border shadow rounded" style="background-color: #ffffff">
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Mã vé:</p>
-          <p>{{ ve.ma_ve }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Mã vé:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.ma_ve }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Tên khách hàng:</p>
-          <p>{{ ve.ten_kh }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Tên khách hàng:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.ten_kh }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Số điện thoại khách hàng:</p>
-          <p>{{ ve.sdt_kh }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">
+              Số điện thoại khách hàng:
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.sdt_kh }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Tên xe:</p>
-          <p>{{ ve.ten_xe }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Tên xe:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.ten_xe }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Số điện thoại nhà xe:</p>
-          <p>{{ ve.sdt_xe }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">
+              Số điện thoại nhà xe:
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.sdt_xe }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Điểm đi:</p>
-          <p>{{ ve.diem_di }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Điểm đi:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.diem_di }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Điểm đến:</p>
-          <p>{{ ve.diem_den }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Điểm đến:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.diem_den }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Điểm đón:</p>
-          <p>{{ ve.diem_don.gio }} | {{ ve.diem_don.dia_diem }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Điểm đón:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.diem_don.gio }} | {{ ve.diem_don.dia_diem }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Điểm trả:</p>
-          <p>{{ ve.diem_tra.gio }} | {{ ve.diem_tra.dia_diem }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Điểm trả:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.diem_tra.gio }} | {{ ve.diem_tra.dia_diem }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Vị trí:</p>
-          <p>{{ ve.vi_tri }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">Vị trí:</p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.vi_tri }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <p style="font-weight: bold">Phương thức thanh toán:</p>
-          <p>{{ ve.pt_thanh_toan }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bold">
+              Phương thức thanh toán:
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>{{ ve.pt_thanh_toan }}</p>
+          </div>
         </div>
-        <div class="row" style="display: flex; justify-content: center">
-          <h5 style="font-weight: bolder">Tổng tiền:</h5>
-          <h5 style="color: red">{{ ve.tong_tien }} đ</h5>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-right" style="font-weight: bolder">Tổng tiền:</p>
+          </div>
+          <div class="col-sm-6">
+            <h5 style="color: red">{{ ve.tong_tien }} đ</h5>
+          </div>
         </div>
       </div>
     </div>
