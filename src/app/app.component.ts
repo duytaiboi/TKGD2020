@@ -17,9 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.userService.isLoggedIn().subscribe((res) => {
-      console.log(res);
       this.user = this.userService.getUserStorage();
-      console.log(this.user);
     });
   }
 

@@ -234,7 +234,6 @@ export class TicketsComponent implements OnInit {
       }
     });
     this.index.subscribe((res) => {
-      console.log(res);
       if (res === 3) {
         this.getUserInfos();
       }
@@ -360,6 +359,10 @@ export class TicketsComponent implements OnInit {
   onDateChange(result: Date[]): void {}
 
   nextStep() {
+    if (this.indexVal == 1 && !this.clickedSeats.length) {
+      this.message.warning("Vui lòng chọn vị trí");
+      return;
+    }
     this.indexVal++;
     this.index.next(this.indexVal);
   }
@@ -417,7 +420,6 @@ export class TicketsComponent implements OnInit {
   }
 
   private calculatePrice() {
-    console.log(this.clickedSeats);
     this.totalPrice = this.clickedSeats.length * this.xe_da_chon.gia_ve;
   }
 
@@ -455,7 +457,6 @@ export class TicketsComponent implements OnInit {
 
     this.listSeats = this.listSeats.concat(this.clonedMapA.listSeat);
     this.listSeats = this.listSeats.concat(this.clonedMapB.listSeat);
-    console.log("cc");
     for (var i = 0; i < this.clonedMapA.listSeat.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
         if (

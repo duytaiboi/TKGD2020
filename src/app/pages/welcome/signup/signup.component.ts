@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit {
   }
 
   signupWithForm() {
-    console.log(this.form);
 
     for (const i in this.form.controls) {
       this.form.controls[i].markAsDirty();

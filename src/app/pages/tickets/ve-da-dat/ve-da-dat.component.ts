@@ -22,10 +22,8 @@ export class VeDaDatComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.userSV.getUserStorage();
-    console.log(this.user);
     if (this.user) {
       this.veSV.ds_ve(this.user.email).subscribe((res) => {
-        console.log(res);
         this.ves = res;
       });
     }

@@ -14,7 +14,6 @@ export class UserService extends ApiService {
 
   setUserStorage(infos: any) {
     localStorage.setItem("user", JSON.stringify(infos));
-    console.log(infos);
     this.logger.next(true);
   }
 
