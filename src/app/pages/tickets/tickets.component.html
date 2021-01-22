@@ -84,7 +84,7 @@
             </div>
             <div class="row pageContent pb-2">
               <div class="col-md-10 pick-bus-section d-flex">
-                <div class="row px-6">
+                <div class="row px-6 tickets-section">
                   <!-- view block 2 -->
                   <!-- <div class="viewColumn"> -->
                   <!-- bus 1 -->
@@ -97,12 +97,11 @@
                           <p class="busName">{{ item.ten }}</p>
                         </div>
                         <div class="text-right col-md-4">
-                          <p class="busRating">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                          <p *ngIf="item.ten=='Phương Trang'" class="busRating">
+                            <span *ngFor="let item of [].constructor(starPT); index as j"><i class="fa fa-star" aria-hidden="true"></i></span>
+                          </p>
+                          <p *ngIf="item.ten=='Thạnh Bưởi'" class="busRating">
+                            <span *ngFor="let item of [].constructor(starTB); index as j"><i class="fa fa-star" aria-hidden="true"></i></span>
                           </p>
                         </div>
                       </div>
@@ -303,8 +302,9 @@
               </div>
               <span id="e49_196">Tổng tiền</span>
               <div id="e49_175">
-                <div id="e49_176"></div>
-                <span *ngIf="totalPrice" id="e49_177">{{ totalPrice * 1000 }} VNĐ</span>
+                <div id="e49_176">
+                  <span *ngIf="totalPrice" id="e49_177">{{ totalPrice * 1000 }} VNĐ</span>
+                </div>
               </div>
             </div>
           </div>

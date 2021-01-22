@@ -26,4 +26,8 @@ export class VeService extends ApiService {
   ds_ve(email_kh: string) {
     return this.httpGet(this.url_ve_da_dat + `?email_kh=${email_kh}`);
   }
+
+  danh_gia_ve(body: any, id: number) {
+    return this.httpPut(this.url_ve_da_dat + `/${id}`, body);
+  }
 }

@@ -10,6 +10,7 @@ export class RatingModalComponent implements OnInit {
   @Input() title: string = '';
   @Input() message: string = '';
   @Output() buttonSubmitClickEvent = new EventEmitter();
+  ratingStar: number = 0;
   constructor(private activeModal: NgbActiveModal) { }
 
   ngOnInit() {
@@ -17,10 +18,16 @@ export class RatingModalComponent implements OnInit {
 
 
   buttonSubmitClick() {
-    this.buttonSubmitClickEvent.emit();
+    this.buttonSubmitClickEvent.emit(this.ratingStar);
   }
 
   close() {
     this.activeModal.close();
+  }
+
+  rateTicket(star) {
+    this.ratingStar = star;
+    console.log(star);
+
   }
 }
