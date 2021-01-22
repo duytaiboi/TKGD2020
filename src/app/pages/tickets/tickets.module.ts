@@ -9,6 +9,7 @@ import { NgZorroAntdModule } from "ng-zorro-antd";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { VeDaDatComponent } from "./ve-da-dat/ve-da-dat.component";
+import { TimVeComponent } from './tim-ve/tim-ve.component';
 import { RatingModalComponent } from "src/app/modals/rating-modal/rating-modal.component";
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { RatingModalComponent } from "src/app/modals/rating-modal/rating-modal.c
     RatingModalComponent,
     TicketsComponent,
     VeDaDatComponent,
+    TimVeComponent,
   ],
   providers:[
     NgbActiveModal,

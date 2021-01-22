@@ -276,8 +276,8 @@ export class TicketsComponent implements OnInit {
       ten_kh: customerInfo.ten_kh,
       sdt_kh: customerInfo.sdt_kh,
       email_kh: customerInfo.email_kh,
-      ten_xe: this.xe_da_chon.ten_xe,
-      sdt_xe: this.xe_da_chon.sdt_xe,
+      ten_xe: this.xe_da_chon.ten,
+      sdt_xe: this.xe_da_chon.sdt,
       diem_di: this.xe_da_chon.diem_di,
       diem_den: this.xe_da_chon.diem_den,
       diem_don: this.diem_don,
@@ -287,6 +287,7 @@ export class TicketsComponent implements OnInit {
       pt_thanh_toan: customerInfo.pt_thanh_toan,
       tong_tien: this.totalPrice,
     };
+    console.log(model)
     this.veSV.dat_ve(model).subscribe((res) => {
       if (res && res.id) {
         this.message.success("Đặt vé thành công");
