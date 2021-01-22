@@ -279,7 +279,7 @@
       "ten": "Thạnh Bưởi",
       "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "30/12/2020",
+      "ngay_di": "12/30/2020",
       "diem_di": "Đà Nẵng",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -632,10 +632,88 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "30/12/2020",
+      "ngay_di": "12/30/2020",
       "pt_thanh_toan": "Thẻ ATM",
       "tong_tien": 60,
       "id": 16
+    },
+    {
+      "ma_ve": "kk8jk66t",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "15:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "22:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Tiền mặt",
+      "tong_tien": 400000,
+      "id": 17
+    },
+    {
+      "ma_ve": "kk8jtrm9",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "15:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "22:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 200000,
+      "id": 18
+    },
+    {
+      "ma_ve": "kk8jwdpn",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "15:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "22:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "ngay_di": "12/30/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 400000,
+      "vi_tri": [
+        "B6",
+        "B7"
+      ],
+      "id": 19
     }
   ],
   "users": [

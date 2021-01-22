@@ -206,7 +206,6 @@ export class TicketsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mockModal();
     this.timXeForm = this.fb.group({
       ngay_di: [new Date(2020, 11, 30), Validators.required],
       diem_den: ["Hà Nội", Validators.required],
@@ -270,7 +269,8 @@ export class TicketsComponent implements OnInit {
     }
     //this.get();
     const customerInfo = this.customerInfoForm.value;
-
+    // vị trí
+    const vi_tri = this.clickedSeats.map((e) => e.digit + e.index);
     const model = {
       ma_ve: Date.now().toString(36),
       ten_kh: customerInfo.ten_kh,
@@ -282,12 +282,11 @@ export class TicketsComponent implements OnInit {
       diem_den: this.xe_da_chon.diem_den,
       diem_don: this.diem_don,
       diem_tra: this.diem_tra,
-      vi_tri: ["A01", "B02"],
       ngay_di: this.xe_da_chon.ngay_di,
       pt_thanh_toan: customerInfo.pt_thanh_toan,
       tong_tien: this.totalPrice,
+      vi_tri: vi_tri,
     };
-    console.log(model)
     this.veSV.dat_ve(model).subscribe((res) => {
       if (res && res.id) {
         this.message.success("Đặt vé thành công");
@@ -327,7 +326,6 @@ export class TicketsComponent implements OnInit {
     ];
     // this.toDiemDonTra();
     this.toChonViTri();
-
   }
   toChonViTri() {
     this.indexVal = 1;
@@ -359,7 +357,7 @@ export class TicketsComponent implements OnInit {
     this.timXeForm.controls.diem_den.setValue(current_diem_di);
   }
 
-  onDateChange(result: Date[]): void { }
+  onDateChange(result: Date[]): void {}
 
   nextStep() {
     this.indexVal++;
@@ -411,20 +409,20 @@ export class TicketsComponent implements OnInit {
     this.calculatePrice();
   }
 
-  private mockModal(){
+  private mockModal() {
     const informModalRef = this.modalService.open(RatingModalComponent);
     informModalRef.componentInstance.title = "Phương Trang";
-    informModalRef.componentInstance.message = "Hãy đánh giá trải nghiệm của bạn nào...";
+    informModalRef.componentInstance.message =
+      "Hãy đánh giá trải nghiệm của bạn nào...";
   }
 
   private calculatePrice() {
-    this.clickedSeats.forEach((seat) => {
-      this.totalPrice = this.totalPrice + seat.price;
-    });
+    console.log(this.clickedSeats);
+    this.totalPrice = this.clickedSeats.length * this.xe_da_chon.gia_ve;
   }
 
   private clearSeatStatus(clickedSeats: any) {
-    this.clickedSeats.forEach(element => {
+    this.clickedSeats.forEach((element) => {
       if (element.digit === "A") {
         var selectedSeat = <HTMLElement>(
           document.getElementsByClassName("A")[element.index]
@@ -438,16 +436,16 @@ export class TicketsComponent implements OnInit {
       selectedSeat.style.backgroundColor = "white";
       selectedSeat.style.color = "black";
     });
-    this.listSeatsA.forEach(element => {
+    this.listSeatsA.forEach((element) => {
       if (element.reserved == false) {
         element.reserved = true;
       }
     });
-    this.listSeatsB.forEach(element => {
+    this.listSeatsB.forEach((element) => {
       if (element.reserved == false) {
         element.reserved = true;
       }
-    })
+    });
   }
 
   private prepareSeatsMap() {
@@ -461,9 +459,10 @@ export class TicketsComponent implements OnInit {
     for (var i = 0; i < this.clonedMapA.listSeat.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
         if (
-          this.clonedMapA.listSeat[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.clonedMapA.listSeat[i].digit ===
+            this.xe_da_chon.vi_tri_trong[j].digit &&
           this.clonedMapA.listSeat[i].index ===
-          Number(this.xe_da_chon.vi_tri_trong[j].index)
+            Number(this.xe_da_chon.vi_tri_trong[j].index)
         ) {
           this.clonedMapA.listSeat[i].reserved = false;
         }
@@ -472,9 +471,10 @@ export class TicketsComponent implements OnInit {
     for (var i = 0; i < this.clonedMapB.listSeat.length; i++) {
       for (var j = 0; j < this.xe_da_chon.vi_tri_trong.length; j++) {
         if (
-          this.clonedMapB.listSeat[i].digit === this.xe_da_chon.vi_tri_trong[j].digit &&
+          this.clonedMapB.listSeat[i].digit ===
+            this.xe_da_chon.vi_tri_trong[j].digit &&
           this.clonedMapB.listSeat[i].index ===
-          Number(this.xe_da_chon.vi_tri_trong[j].index)
+            Number(this.xe_da_chon.vi_tri_trong[j].index)
         ) {
           this.clonedMapB.listSeat[i].reserved = false;
         }

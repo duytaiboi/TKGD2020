@@ -1,6 +1,6 @@
 <div *ngIf="listSeats" id="e49_3">
     <div id="seat-container">
-        <div class="ground-seats">
+        <div class="my-card">
             <div class="seats-row" *ngFor="let item of [].constructor(seatsMapA.Row) ; index as i">
                 <div (click)="onSeatClick(seatsMapA.listSeat[j+2*i])" class="seats A"
                     [class.seat-reserved]="seatsMapA.listSeat[j+2*i].reserved"
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div id="seat-container-ground">
-        <div class="ground-seats">
+        <div class="my-card">
             <div class="seats-row" *ngFor="let item of [].constructor(seatsMapB.Row) ; index as i">
                 <div (click)="onSeatClick(seatsMapB.listSeat[j+2*i])" class="seats B"
                     *ngFor="let item of [].constructor(seatsMapB.Column); index as j">

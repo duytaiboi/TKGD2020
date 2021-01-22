@@ -5,9 +5,14 @@
     <form nz-form [formGroup]="timXeForm" (ngSubmit)="timXe()">
       <nz-form-item nzJustify="center">
         <div nz-col [nzSpan]="3" nzOffset="4">
-          <nz-form-label [nzSpan]="24"><span class="form-title">Ngày đi</span></nz-form-label>
+          <nz-form-label [nzSpan]="24"
+            ><span class="form-title">Ngày đi</span></nz-form-label
+          >
           <nz-form-control [nzSpan]="22">
-            <nz-date-picker formControlName="ngay_di" nzFormat="dd/MM/yyyy"></nz-date-picker>
+            <nz-date-picker
+              formControlName="ngay_di"
+              nzFormat="dd/MM/yyyy"
+            ></nz-date-picker>
           </nz-form-control>
         </div>
         <div nz-col [nzSpan]="3">
@@ -25,7 +30,13 @@
           </div>
         </div>
         <div nz-col [nzSpan]="2">
-          <i nz-icon nzType="swap" class="icon-transfer" nzTheme="outline" (click)="transfer()"></i>
+          <i
+            nz-icon
+            nzType="swap"
+            class="icon-transfer"
+            nzTheme="outline"
+            (click)="transfer()"
+          ></i>
         </div>
         <div nz-col [nzSpan]="3">
           <div>
@@ -43,8 +54,8 @@
         </div>
         <div nz-col [nzSpan]="3">
           <button nz-button class="btn-search">
-            <i nz-icon nzType="search" class="search-icon" nzTheme="outline"></i><span class="btn-search-title">Tìm
-              vé</span>
+            <i nz-icon nzType="search" class="search-icon" nzTheme="outline"></i
+            ><span class="btn-search-title">Tìm vé</span>
           </button>
         </div>
       </nz-form-item>
@@ -52,7 +63,10 @@
   </div>
 </div>
 
-<div [hidden]="!screen_chon_xe" style="background-color: #ffffff; padding: 20px; min-height: 100vh">
+<div
+  [hidden]="!screen_chon_xe"
+  style="background-color: #ffffff; padding: 20px; min-height: 100vh"
+>
   <div>
     <!-- Step bar -->
     <div class="steps">
@@ -65,8 +79,14 @@
     </div>
     <div class="row">
       <div class="col-1 custom-back-col">
-        <button class="btn button-back" style="height: 75vh" (click)="previousStep()">
-          <span><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></span>
+        <button
+          class="btn button-back"
+          style="height: 75vh"
+          (click)="previousStep()"
+        >
+          <span
+            ><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i
+          ></span>
         </button>
       </div>
       <div class="col-10">
@@ -77,18 +97,20 @@
               <div class="col-md-10 d-flex align-items-center">
                 <h5 class="totalBus">Hiện có {{ xe.length }} xe</h5>
               </div>
-              <div class="col-md-2 d-flex justify-content-between align-items-center">
+              <div
+                class="col-md-2 d-flex justify-content-between align-items-center"
+              >
                 <h5>Bộ lọc</h5>
                 <button class="btn btn-outline-warning">Xóa lọc</button>
               </div>
             </div>
             <div class="row pageContent pb-2">
-              <div class="col-md-10 pick-bus-section d-flex">
+              <div class="col-md-12 pick-bus-section">
                 <div class="row px-6">
                   <!-- view block 2 -->
                   <!-- <div class="viewColumn"> -->
                   <!-- bus 1 -->
-                  <div class="bus col-md-4" *ngFor="let item of xe">
+                  <div class="bus col-md-6" *ngFor="let item of xe">
                     <!-- content of bus -->
                     <div class="busContent box1 p-3 mype-4">
                       <!-- row 1 of bus -->
@@ -98,11 +120,21 @@
                         </div>
                         <div class="text-right col-md-4">
                           <p class="busRating">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star" aria-hidden="true"></i
+                            ></span>
+                            <span
+                              ><i class="fa fa-star-o" aria-hidden="true"></i
+                            ></span>
                           </p>
                         </div>
                       </div>
@@ -110,22 +142,40 @@
                       <div class="">
                         <div>
                           <p class="m-0">
-                            <span class="location-icon"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></span>
-                            <span>{{ item.diem_don[0].gio }} |
-                              {{ item.diem_don[0].dia_diem }}</span>
+                            <span class="location-icon"
+                              ><i
+                                class="fa fa-map-marker fa-2x"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                            <span
+                              >{{ item.diem_don[0].gio }} |
+                              {{ item.diem_don[0].dia_diem }}</span
+                            >
                           </p>
                           <p class="m-0">
-                            <span class="location-icon myps-1"><i class="fa fa-long-arrow-down"
-                                aria-hidden="true"></i></span>
+                            <span class="location-icon myps-1"
+                              ><i
+                                class="fa fa-long-arrow-down"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
                             <span></span>
                           </p>
                           <p>
-                            <span class="location-icon"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></span>
-                            <span>{{ item.diem_tra[item.diem_tra.length - 1].gio }}
+                            <span class="location-icon"
+                              ><i
+                                class="fa fa-map-marker fa-2x"
+                                aria-hidden="true"
+                              ></i
+                            ></span>
+                            <span
+                              >{{ item.diem_tra[item.diem_tra.length - 1].gio }}
                               |
                               {{
-                              item.diem_tra[item.diem_tra.length - 1].dia_diem
-                              }}</span>
+                                item.diem_tra[item.diem_tra.length - 1].dia_diem
+                              }}</span
+                            >
                           </p>
                         </div>
                       </div>
@@ -138,7 +188,12 @@
                       </div>
                       <!-- button of bus -->
                       <button class="btn busButton" (click)="chonXe(item)">
-                        <span><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></span>
+                        <span
+                          ><i
+                            class="fa fa-arrow-circle-right fa-2x"
+                            aria-hidden="true"
+                          ></i
+                        ></span>
                       </button>
                     </div>
                     <!-- /busContent -->
@@ -174,14 +229,18 @@
                     </div>
                     <!-- control -->
                     <div class="my-form-control">
-                      <label class="form-label" for="sapxepgiave">Sắp xếp giá vé</label>
+                      <label class="form-label" for="sapxepgiave"
+                        >Sắp xếp giá vé</label
+                      >
                       <select class="form-select" id="sapxepgiave">
                         <option selected>Thấp đến cao</option>
                       </select>
                     </div>
                     <!-- control -->
                     <div class="my-form-control">
-                      <label class="form-label" for="sapxepdanhgia">Sắp xếp đánh giá</label>
+                      <label class="form-label" for="sapxepdanhgia"
+                        >Sắp xếp đánh giá</label
+                      >
                       <select class="form-select" id="sapxepdanhgia">
                         <option selected>4 sao</option>
                       </select>
@@ -232,22 +291,20 @@
               </div>
             </div>
           </div>
-
         </div>
         <!-- End Chọn xe -->
+
         <!-- Chọn ghế -->
         <div class="step-2" *ngIf="indexVal == 1">
           <div class="seats-component-container">
             <div class="notations">
-              <span id="e49_197">{{xe_da_chon.ten}}
-                </span>
+              <h3>{{ xe_da_chon.ten }}</h3>
               <span id="e49_185">Trạng thái:</span>
               <span id="e49_186">Còn trống</span>
               <div id="e49_189">
                 <div id="e49_190"></div>
               </div>
-              <span id="e49_187">Đã
-                đặt</span>
+              <span id="e49_187">Đã đặt</span>
               <div id="e49_191">
                 <div id="e49_192"></div>
               </div>
@@ -257,59 +314,97 @@
               </div>
             </div>
           </div>
-          <div *ngIf="listSeats" id="e49_3">
-            <div class="seats-container">
-              <span id="e49_182">Tầng trên</span>
+          <div class="row" *ngIf="listSeats" id="e49_3">
+            <div class="col-sm-4">
+              <h6 id="">Tầng trên</h6>
               <div id="seat-container">
-                <div class="ground-seats">
-                  <div class="seats-row" *ngFor="let item of [].constructor(clonedMapA.Row); index as i">
-                    <div (click)="onSeatClick(clonedMapA.listSeat[j + 2 * i])" class="seats A" [class.seat-reserved]="
-                    clonedMapA.listSeat[j + 2 * i].reserved
-                        " *ngFor="
-                          let item of [].constructor(clonedMapA.Column);
-                          index as j
-                        ">
-                      <span id="seats" class="seat">{{ clonedMapA.listSeat[0].digit }}{{ j + 2 * i }}</span>
+                <div class="my-card">
+                  <div
+                    class="seats-row"
+                    *ngFor="
+                      let item of [].constructor(clonedMapA.Row);
+                      index as i
+                    "
+                  >
+                    <div
+                      (click)="onSeatClick(clonedMapA.listSeat[j + 2 * i])"
+                      class="seats A"
+                      [class.seat-reserved]="
+                        clonedMapA.listSeat[j + 2 * i].reserved
+                      "
+                      *ngFor="
+                        let item of [].constructor(clonedMapA.Column);
+                        index as j
+                      "
+                    >
+                      <span id="seats" class="seat"
+                        >{{ clonedMapA.listSeat[0].digit }}{{ j + 2 * i }}</span
+                      >
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="seats-container">
-              <span id="e49_183">Tầng dưới</span>
+            <div class="col-sm-4">
+              <h6 id="">Tầng dưới</h6>
               <div id="seat-container">
-                <div class="ground-seats">
-                  <div class="seats-row" *ngFor="let item of [].constructor(clonedMapB.Row); index as i">
-                    <div (click)="onSeatClick(clonedMapB.listSeat[j + 2 * i])" [class.seat-reserved]="
-                    clonedMapB.listSeat[j + 2 * i].reserved
-                        " class="seats B" *ngFor="
-                          let item of [].constructor(clonedMapB.Column);
-                          index as j
-                        ">
-                      <span id="seats" class="seat">{{ clonedMapB.listSeat[0].digit }}{{ j + 2 * i }}</span>
+                <div class="my-card">
+                  <div
+                    class="seats-row"
+                    *ngFor="
+                      let item of [].constructor(clonedMapB.Row);
+                      index as i
+                    "
+                  >
+                    <div
+                      (click)="onSeatClick(clonedMapB.listSeat[j + 2 * i])"
+                      [class.seat-reserved]="
+                        clonedMapB.listSeat[j + 2 * i].reserved
+                      "
+                      class="seats B"
+                      *ngFor="
+                        let item of [].constructor(clonedMapB.Column);
+                        index as j
+                      "
+                    >
+                      <span id="seats" class="seat"
+                        >{{ clonedMapB.listSeat[0].digit }}{{ j + 2 * i }}</span
+                      >
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="right-seats-section">
-              <span id="e49_195">Danh sách ghế</span>
-              <div id="selected-seats-container">
-                <div *ngIf="clickedSeats" class="clicked-seats-section">
-                  <div class="clicked-seats" *ngFor="let item of clickedSeats; index as i">
-                    <span id="seats" class="seat">{{ item.digit }}{{ item.index }}</span>
+            <div class="col-sm-4">
+              <div style="height: 60%">
+                <h6 id="">Danh sách ghế</h6>
+                <!-- <span id="e49_195">Danh sách ghế</span> -->
+                <div class="my-card" style="height: 70%;">
+                  <div *ngIf="clickedSeats" class="">
+                    <div
+                      class="clicked-seats"
+                      *ngFor="let item of clickedSeats; index as i"
+                    >
+                      <span id="seats" class="seat"
+                        >{{ item.digit }}{{ item.index }}</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
-              <span id="e49_196">Tổng tiền</span>
-              <div id="e49_175">
-                <div id="e49_176"></div>
-                <span *ngIf="totalPrice" id="e49_177">{{ totalPrice * 1000 }} VNĐ</span>
+              <div style="height: 40%;">
+                  <h6 id="">Tổng tiền</h6>
+                <div class="my-card p-2" style="height: 80%">
+                  <h6 id=""
+                    >{{ totalPrice }} VNĐ</h6
+                  >
+              </div>
               </div>
             </div>
           </div>
         </div>
         <!-- End chọn ghế -->
+
         <!-- Chọn điểm đón/trả -->
         <div class="step-3" *ngIf="indexVal == 2">
           <div *ngIf="xe_da_chon">
@@ -320,7 +415,11 @@
                   <h5>Điểm đón</h5>
                   <div>
                     <nz-radio-group [(ngModel)]="diem_don">
-                      <label *ngFor="let item of xe_da_chon.diem_don; index as i" nz-radio [nzValue]="item">
+                      <label
+                        *ngFor="let item of xe_da_chon.diem_don; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
                         {{ item.gio }} | {{ item.dia_diem }}
                       </label>
                     </nz-radio-group>
@@ -332,7 +431,11 @@
                   <h5>Điểm trả</h5>
                   <div>
                     <nz-radio-group [(ngModel)]="diem_tra">
-                      <label *ngFor="let item of xe_da_chon.diem_tra; index as i" nz-radio [nzValue]="item">
+                      <label
+                        *ngFor="let item of xe_da_chon.diem_tra; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
                         {{ item.gio }} | {{ item.dia_diem }}
                       </label>
                     </nz-radio-group>
@@ -419,8 +522,11 @@
                   <div class="ticket-infos__label">Vị trí ghế</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <span *ngFor="let seat of ghe_da_chon"
-                    class="ticket-infos__content">{{seat.digit}}{{seat.index}}</span>
+                  <span
+                    *ngFor="let seat of ghe_da_chon"
+                    class="ticket-infos__content"
+                    >{{ seat.digit }}{{ seat.index }}</span
+                  >
                 </div>
               </div>
 
@@ -429,7 +535,7 @@
                   <div class="ticket-infos__label">Tổng tiền</div>
                 </div>
                 <div nz-col nzSpan="18">
-                  <div class="ticket-infos__content">{{totalPrice}}</div>
+                  <div class="ticket-infos__content">{{ totalPrice }}</div>
                 </div>
               </div>
             </div>
@@ -438,35 +544,81 @@
             <form nz-form [formGroup]="customerInfoForm" (ngSubmit)="datVe()">
               <span class="ticket-infos">
                 <div class="ticket-infos__title">Thông tin hành khách</div>
-                <div class="ticket-infos__wrapper2" style="margin-bottom: 10px !important;">
+                <div
+                  class="ticket-infos__wrapper2"
+                  style="margin-bottom: 10px !important"
+                >
                   <nz-form-item style="margin-bottom: 10px">
-                    <label for="ten_kh" class="col-12" style="margin: 0 !important">Tên hành khách</label>
-                    <nz-form-control class="col-12" nzErrorTip="Vui lòng không để trống trường này!">
-                      <input id="ten_kh" type="text" nz-input formControlName="ten_kh" />
+                    <label
+                      for="ten_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Tên hành khách</label
+                    >
+                    <nz-form-control
+                      class="col-12"
+                      nzErrorTip="Vui lòng không để trống trường này!"
+                    >
+                      <input
+                        id="ten_kh"
+                        type="text"
+                        nz-input
+                        formControlName="ten_kh"
+                      />
                     </nz-form-control>
                   </nz-form-item>
 
                   <nz-form-item style="margin-bottom: 10px">
-                    <label for="sdt_kh" class="col-12" style="margin: 0 !important">Số điện thoại</label>
-                    <nz-form-control class="col-12" nzErrorTip="Vui lòng không để trống trường này!">
-                      <input id="sdt_kh" type="text" nz-input formControlName="sdt_kh" />
+                    <label
+                      for="sdt_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Số điện thoại</label
+                    >
+                    <nz-form-control
+                      class="col-12"
+                      nzErrorTip="Vui lòng không để trống trường này!"
+                    >
+                      <input
+                        id="sdt_kh"
+                        type="text"
+                        nz-input
+                        formControlName="sdt_kh"
+                      />
                     </nz-form-control>
                   </nz-form-item>
 
                   <nz-form-item style="margin-bottom: 10px">
-                    <label for="email_kh" class="col-12" style="margin: 0 !important">Email</label>
+                    <label
+                      for="email_kh"
+                      class="col-12"
+                      style="margin: 0 !important"
+                      >Email</label
+                    >
                     <nz-form-control class="col-12">
-                      <input id="email_kh" type="text" nz-input formControlName="email_kh" />
+                      <input
+                        id="email_kh"
+                        type="text"
+                        nz-input
+                        formControlName="email_kh"
+                      />
                     </nz-form-control>
                   </nz-form-item>
                 </div>
               </span>
               <span class="ticket-infos">
                 <div class="ticket-infos__title">Phương thức thanh toán</div>
-                <div class="ticket-infos__wrapper2" style="margin-bottom: 10px !important;">
+                <div
+                  class="ticket-infos__wrapper2"
+                  style="margin-bottom: 10px !important"
+                >
                   <div class="col-12">
                     <nz-radio-group formControlName="pt_thanh_toan">
-                      <label *ngFor="let item of pt_thanh_toans; index as i" nz-radio [nzValue]="item">
+                      <label
+                        *ngFor="let item of pt_thanh_toans; index as i"
+                        nz-radio
+                        [nzValue]="item"
+                      >
                         {{ item }}
                       </label>
                     </nz-radio-group>
@@ -475,7 +627,13 @@
               </span>
               <nz-form-item>
                 <nz-form-control class="col-12">
-                  <button nz-button nzType="primary" style="width: 100%; border-radius: 50vw;">Thanh toán</button>
+                  <button
+                    nz-button
+                    nzType="primary"
+                    style="width: 100%; border-radius: 50vw"
+                  >
+                    Thanh toán
+                  </button>
                 </nz-form-control>
               </nz-form-item>
             </form>
@@ -484,9 +642,15 @@
         <!-- End Thanh toán -->
       </div>
       <div class="col-1">
-        <button *ngIf="indexVal != 0 && indexVal != 3" class="btn button-back float-right" style="height: 75vh"
-          (click)="nextStep()">
-          <span><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></span>
+        <button
+          *ngIf="indexVal != 0 && indexVal != 3"
+          class="btn button-back float-right"
+          style="height: 75vh"
+          (click)="nextStep()"
+        >
+          <span
+            ><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i
+          ></span>
         </button>
       </div>
     </div>
