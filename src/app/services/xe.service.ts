@@ -22,8 +22,8 @@ export class XeService extends ApiService {
     );
   }
 
-  get(id: string) {
-    return this.get(this.url + `/${id}`);
+  getXe(id: string) {
+    return this.httpGet(this.url + `/${id}`);
   }
 
   add(body: any) {
@@ -31,6 +31,6 @@ export class XeService extends ApiService {
   }
 
   edit(e: any) {
-    return this.httpPut(this.url, e);
+    return this.httpPut(this.url + `/${e.id}`, e);
   }
 }

@@ -290,6 +290,7 @@ export class TicketsComponent implements OnInit {
       if (res && res.id) {
         this.message.success("Đặt vé thành công");
         this.router.navigate(["tickets/ve-da-dat"]);
+        this.capNhatViTriTrong();
       } else {
         this.message.error("Đặt vé thất bại");
       }
@@ -315,7 +316,25 @@ export class TicketsComponent implements OnInit {
       }
     });
   }
-
+  capNhatViTriTrong() {
+    this.xeSV.getXe(this.xe_da_chon.id).subscribe((res) => {
+      console.log(res);
+      if (res) {
+        let xe_da_chon = res;
+        let vi_tri_trong = xe_da_chon.vi_tri_trong.filter((e) => {
+          return (
+            this.clickedSeats.find(
+              (x) => x.digit == e.digit && x.index == e.index
+            ) == null
+          );
+        });
+        xe_da_chon.vi_tri_trong = vi_tri_trong;
+        this.xeSV.edit(xe_da_chon).subscribe((res) => {
+          console.log(res);
+        });
+      }
+    });
+  }
   // chọn xe
   chonXe(item) {
     this.xe_da_chon = item;
