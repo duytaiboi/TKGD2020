@@ -15,6 +15,7 @@
           <th>Điểm đón</th>
           <th>Điểm trả</th>
           <th>Vị trí</th>
+          <th>Đánh giá</th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,7 @@
           <td>{{ item.diem_don.gio }}-{{ item.diem_don.dia_diem }}</td>
           <td>{{ item.diem_tra.gio }}-{{ item.diem_tra.dia_diem }}</td>
           <td>{{ item.vi_tri }}</td>
+          <td>{{item.danh_gia}} <span>&#9733;</span></td>
         </tr>
         <tr *ngIf="ves.length == 0">
           <td colspan="10">Danh sách trống</td>

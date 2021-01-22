@@ -30,7 +30,11 @@
       </form>
     </div>
     <div *ngIf="ve != null" class="col-sm-6">
-      <div class="content-title">Thông tin vé</div>
+      <div class="title-container">
+        <div class="content-title">Thông tin vé</div>
+        <button (click)="onRatingClick()" class="rate-button">Đánh giá</button>
+      </div>
+      
       <div class="border shadow rounded" style="background-color: #ffffff">
         <div class="row">
           <div class="col-sm-6">

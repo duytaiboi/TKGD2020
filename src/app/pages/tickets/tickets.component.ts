@@ -10,6 +10,7 @@ import { SeatMap } from "src/core/model/seat-map.model";
 import { SeatModel } from "src/core/model/seat.model";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { RatingModalComponent } from "src/app/modals/rating-modal/rating-modal.component";
+import { SharedService } from "src/app/services/shared-service";
 
 @Component({
   selector: "app-tickets",
@@ -190,11 +191,13 @@ export class TicketsComponent implements OnInit {
   clonedMapB: SeatMap = new SeatMap(this.b);
   listSeats: SeatModel[];
   clickedSeats: SeatModel[] = [];
+  starPT: number = 4;
+  starTB: number = 4;
 
   totalPrice: number = 0;
   pt_thanh_toans = ["Thẻ Visa", "Thẻ ATM", "Momo", "Tiền mặt"];
   constructor(
-    private modalService: NgbModal,
+    private sharedService: SharedService,
     private fb: FormBuilder,
     private xeSV: XeService,
     private message: NzMessageService,
@@ -206,6 +209,7 @@ export class TicketsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getStars();
     this.timXeForm = this.fb.group({
       ngay_di: [new Date(2020, 11, 30), Validators.required],
       diem_den: ["Hà Nội", Validators.required],
@@ -431,13 +435,6 @@ export class TicketsComponent implements OnInit {
     this.calculatePrice();
   }
 
-  private mockModal() {
-    const informModalRef = this.modalService.open(RatingModalComponent);
-    informModalRef.componentInstance.title = "Phương Trang";
-    informModalRef.componentInstance.message =
-      "Hãy đánh giá trải nghiệm của bạn nào...";
-  }
-
   private calculatePrice() {
     this.totalPrice = this.clickedSeats.length * this.xe_da_chon.gia_ve;
   }
@@ -467,6 +464,13 @@ export class TicketsComponent implements OnInit {
         element.reserved = true;
       }
     });
+  }
+
+  private getStars() {
+    this.sharedService.updateFlag.subscribe(result => {
+      this.starPT = this.sharedService.getStarPT();
+      this.starTB = this.sharedService.getStarTB();
+    })
   }
 
   private prepareSeatsMap() {
