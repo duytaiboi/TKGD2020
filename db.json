@@ -620,7 +620,8 @@
       "ngay_di": "12/30/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 60,
-      "id": 15
+      "id": 15,
+      "danh_gia": 4
     },
     {
       "ma_ve": "kk8arc7r",
@@ -646,7 +647,8 @@
       "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ ATM",
       "tong_tien": 60,
-      "id": 16
+      "id": 16,
+      "danh_gia": 4
     }
   ],
   "users": [
