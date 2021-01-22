@@ -610,6 +610,32 @@
       "pt_thanh_toan": "Momo",
       "tong_tien": 60,
       "id": 15
+    },
+    {
+      "ma_ve": "kk8arc7r",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "vi_tri": [
+        "A01",
+        "B02"
+      ],
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ ATM",
+      "tong_tien": 60,
+      "id": 16
     }
   ],
   "users": [
