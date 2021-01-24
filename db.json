@@ -5,7 +5,7 @@
       "ten": "Phương Trang",
       "sdt": "0933615558",
       "gia_ve": 150000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Đà Nẵng",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -31,18 +31,6 @@
       "vi_tri_trong": [
         {
           "digit": "A",
-          "index": "2"
-        },
-        {
-          "digit": "A",
-          "index": "4"
-        },
-        {
-          "digit": "A",
-          "index": "5"
-        },
-        {
-          "digit": "A",
           "index": "6"
         },
         {
@@ -54,44 +42,8 @@
           "index": "8"
         },
         {
-          "digit": "A",
-          "index": "9"
-        },
-        {
-          "digit": "B",
-          "index": "1"
-        },
-        {
-          "digit": "B",
-          "index": "2"
-        },
-        {
-          "digit": "B",
-          "index": "3"
-        },
-        {
-          "digit": "B",
-          "index": "4"
-        },
-        {
-          "digit": "B",
-          "index": "5"
-        },
-        {
-          "digit": "B",
-          "index": "6"
-        },
-        {
-          "digit": "B",
-          "index": "7"
-        },
-        {
           "digit": "B",
           "index": "8"
-        },
-        {
-          "digit": "B",
-          "index": "9"
         }
       ]
     },
@@ -100,7 +52,7 @@
       "ten": "Thạnh Bưởi",
       "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Đà Nẵng",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -135,7 +87,7 @@
       "ten": "Thạnh Bưởi",
       "sdt": "0933615558",
       "gia_ve": 250000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Sài Gòn",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -178,7 +130,7 @@
       "ten": "Thạnh Bưởi",
       "sdt": "0933615558",
       "gia_ve": 160000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Sài Gòn",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -225,7 +177,7 @@
       "ten": "Phương Trang",
       "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Sài Gòn",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -268,7 +220,7 @@
       "ten": "Phương Trang",
       "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Sài Gòn",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -319,7 +271,7 @@
       "ten": "Thạnh Bưởi",
       "sdt": "0933615558",
       "gia_ve": 200000,
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "diem_di": "Đà Nẵng",
       "diem_den": "Hà Nội",
       "diem_don": [
@@ -342,14 +294,216 @@
           "dia_diem": "Nội thành Hà Nội"
         }
       ],
+      "vi_tri_trong": []
+    },
+    {
+      "id": 8,
+      "ten": "Xe Nhà",
+      "sdt": "0933615558",
+      "gia_ve": 200000,
+      "ngay_di": "31/12/2020",
+      "diem_di": "Nha Trang",
+      "diem_den": "Sài Gòn",
+      "diem_don": [
+        {
+          "gio": "23:00",
+          "dia_diem": "Big C - Vĩnh Điềm Trung"
+        }
+      ],
+      "diem_tra": [
+        {
+          "gio": "7:00",
+          "dia_diem": "Công viên 23/9"
+        }
+      ],
       "vi_tri_trong": [
         {
           "digit": "B",
           "index": "5"
         },
         {
+          "digit": "B",
+          "index": "3"
+        },
+        {
+          "digit": "B",
+          "index": "6"
+        },
+        {
+          "digit": "A",
+          "index": "3"
+        },
+        {
+          "digit": "A",
+          "index": "4"
+        },
+        {
+          "digit": "A",
+          "index": "5"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "ten": "Xe Nhà",
+      "sdt": "0933615558",
+      "gia_ve": 200000,
+      "ngay_di": "31/12/2020",
+      "diem_di": "Sài Gòn",
+      "diem_den": "Nha Trang",
+      "diem_don": [
+        {
+          "gio": "21:30",
+          "dia_diem": "Công viên 23/9"
+        }
+      ],
+      "diem_tra": [
+        {
+          "gio": "5:30",
+          "dia_diem": "Big C - Vĩnh Điềm Trung"
+        }
+      ],
+      "vi_tri_trong": [
+        {
+          "digit": "B",
+          "index": "2"
+        },
+        {
+          "digit": "B",
+          "index": "1"
+        },
+        {
+          "digit": "A",
+          "index": "7"
+        },
+        {
+          "digit": "A",
+          "index": "9"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "ten": "Xe Nhà",
+      "sdt": "0933615558",
+      "gia_ve": 200000,
+      "ngay_di": "31/12/2020",
+      "diem_di": "Sài Gòn",
+      "diem_den": "Nha Trang",
+      "diem_don": [
+        {
+          "gio": "22:30",
+          "dia_diem": "Công viên 23/9"
+        }
+      ],
+      "diem_tra": [
+        {
+          "gio": "6:30",
+          "dia_diem": "Big C - Vĩnh Điềm Trung"
+        }
+      ],
+      "vi_tri_trong": [
+        {
+          "digit": "B",
+          "index": "2"
+        },
+        {
+          "digit": "B",
+          "index": "3"
+        },
+        {
+          "digit": "A",
+          "index": "7"
+        },
+        {
+          "digit": "A",
+          "index": "8"
+        },
+        {
+          "digit": "A",
+          "index": "9"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "ten": "Xe Nhà V.I.P",
+      "sdt": "0933615558",
+      "gia_ve": 400000,
+      "ngay_di": "31/12/2020",
+      "diem_di": "Sài Gòn",
+      "diem_den": "Nha Trang",
+      "diem_don": [
+        {
+          "gio": "22:00",
+          "dia_diem": "Công viên 23/9"
+        }
+      ],
+      "diem_tra": [
+        {
+          "gio": "6:00",
+          "dia_diem": "Big C - Vĩnh Điềm Trung"
+        }
+      ],
+      "vi_tri_trong": [
+        {
+          "digit": "B",
+          "index": "2"
+        },
+        {
+          "digit": "A",
+          "index": "9"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "ten": "Xe Nhà V.I.P",
+      "sdt": "0933615558",
+      "gia_ve": 400000,
+      "ngay_di": "31/12/2020",
+      "diem_di": "Sài Gòn",
+      "diem_den": "Nha Trang",
+      "diem_don": [
+        {
+          "gio": "22:50",
+          "dia_diem": "Công viên 23/9"
+        }
+      ],
+      "diem_tra": [
+        {
+          "gio": "6:50",
+          "dia_diem": "Big C - Vĩnh Điềm Trung"
+        }
+      ],
+      "vi_tri_trong": [
+        {
+          "digit": "B",
+          "index": "1"
+        },
+        {
+          "digit": "A",
+          "index": "7"
+        },
+        {
+          "digit": "A",
+          "index": "8"
+        },
+        {
+          "digit": "A",
+          "index": "9"
+        },
+        {
+          "digit": "A",
+          "index": "3"
+        },
+        {
           "digit": "A",
           "index": "2"
+        },
+        {
+          "digit": "A",
+          "index": "1"
         }
       ]
     }
@@ -377,7 +531,7 @@
         "A02",
         "B01"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Tiền mặt",
       "tong_tien": 150000,
       "danh_gia": 4
@@ -401,7 +555,7 @@
         "A1",
         "B2"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 2,
@@ -426,7 +580,7 @@
         "A1",
         "B2"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 3,
@@ -451,7 +605,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 4,
@@ -476,7 +630,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 5,
@@ -501,7 +655,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 6,
@@ -526,7 +680,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 7,
@@ -551,7 +705,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ ATM",
       "tong_tien": 0,
       "id": 8,
@@ -576,7 +730,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 0,
       "id": 9,
@@ -603,7 +757,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 0,
       "id": 10,
@@ -630,7 +784,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
       "id": 11,
@@ -657,7 +811,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 60,
       "id": 15,
@@ -684,7 +838,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ ATM",
       "tong_tien": 60,
       "id": 16,
@@ -711,7 +865,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Tiền mặt",
       "tong_tien": 400000,
       "id": 17,
@@ -738,7 +892,7 @@
         "A01",
         "B02"
       ],
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
       "id": 18,
@@ -761,7 +915,7 @@
         "gio": "22:00",
         "dia_diem": "Văn phòng Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 400000,
       "vi_tri": [
@@ -788,7 +942,7 @@
         "gio": "22:30",
         "dia_diem": "Nội thành Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 400000,
       "vi_tri": [
@@ -815,7 +969,7 @@
         "gio": "22:30",
         "dia_diem": "Nội thành Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Tiền mặt",
       "tong_tien": 200000,
       "vi_tri": [
@@ -841,7 +995,7 @@
         "gio": "22:30",
         "dia_diem": "Nội thành Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 200000,
       "vi_tri": [
@@ -867,7 +1021,7 @@
         "gio": "06:30",
         "dia_diem": "Nội thành Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 150000,
       "vi_tri": [
@@ -892,7 +1046,7 @@
         "gio": "06:00",
         "dia_diem": "Văn phòng Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Thẻ Visa",
       "tong_tien": 300000,
       "vi_tri": [
@@ -918,7 +1072,7 @@
         "gio": "06:00",
         "dia_diem": "Văn phòng Hà Nội"
       },
-      "ngay_di": "12/30/2020",
+      "ngay_di": "30/12/2020",
       "pt_thanh_toan": "Momo",
       "tong_tien": 300000,
       "vi_tri": [
@@ -926,6 +1080,291 @@
         "A3"
       ],
       "id": 25
+    },
+    {
+      "ma_ve": "kk91muqr",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "B1",
+        "B3"
+      ],
+      "id": 26
+    },
+    {
+      "ma_ve": "kk91p05x",
+      "ten_kh": "Tan",
+      "sdt_kh": "09213321",
+      "email_kh": "jcaow@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 200000,
+      "vi_tri": [
+        "B5"
+      ],
+      "id": 27
+    },
+    {
+      "ma_ve": "kk91pjr0",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Thạnh Bưởi",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "16:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "23:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 200000,
+      "vi_tri": [
+        "A2"
+      ],
+      "id": 28,
+      "danh_gia": 2.5
+    },
+    {
+      "ma_ve": "kk91tara",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "B7",
+        "B9"
+      ],
+      "id": 29
+    },
+    {
+      "ma_ve": "kk922r87",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 150000,
+      "vi_tri": [
+        "B5"
+      ],
+      "id": 30
+    },
+    {
+      "ma_ve": "kk928uwk",
+      "ten_kh": "zxcv",
+      "sdt_kh": "01924128",
+      "email_kh": "akwofa@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 150000,
+      "vi_tri": [
+        "B4"
+      ],
+      "id": 31
+    },
+    {
+      "ma_ve": "kk929lda",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 150000,
+      "vi_tri": [
+        "B2"
+      ],
+      "id": 32
+    },
+    {
+      "ma_ve": "kk92bc7l",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:00",
+        "dia_diem": "Văn phòng Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 150000,
+      "vi_tri": [
+        "B6"
+      ],
+      "id": 33,
+      "danh_gia": 4
+    },
+    {
+      "ma_ve": "kk92y79z",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Xe Nhà V.I.P",
+      "sdt_xe": "0933615558",
+      "diem_di": "Sài Gòn",
+      "diem_den": "Nha Trang",
+      "diem_don": {
+        "gio": "22:50",
+        "dia_diem": "Công viên 23/9"
+      },
+      "diem_tra": {
+        "gio": "6:50",
+        "dia_diem": "Big C - Vĩnh Điềm Trung"
+      },
+      "ngay_di": "31/12/2020",
+      "pt_thanh_toan": "Momo",
+      "tong_tien": 800000,
+      "vi_tri": [
+        "B2",
+        "B3"
+      ],
+      "id": 34,
+      "danh_gia": 3
+    },
+    {
+      "ma_ve": "kk932o0d",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:30",
+        "dia_diem": "Khu vực Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ ATM",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "A2",
+        "A4"
+      ],
+      "id": 35,
+      "danh_gia": 4
+    },
+    {
+      "ma_ve": "kk93sge2",
+      "ten_kh": "Cao Minh Tân",
+      "sdt_kh": "0933615558",
+      "email_kh": "heocaominhtan@gmail.com",
+      "ten_xe": "Phương Trang",
+      "sdt_xe": "0933615558",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Hà Nội",
+      "diem_don": {
+        "gio": "01:00",
+        "dia_diem": "Bến xe Đà Nẵng"
+      },
+      "diem_tra": {
+        "gio": "06:30",
+        "dia_diem": "Nội thành Hà Nội"
+      },
+      "ngay_di": "30/12/2020",
+      "pt_thanh_toan": "Thẻ Visa",
+      "tong_tien": 300000,
+      "vi_tri": [
+        "A5",
+        "A9"
+      ],
+      "id": 36,
+      "danh_gia": 4
     }
   ],
   "users": [

@@ -6,7 +6,6 @@ import { RatingModalComponent } from "src/app/modals/rating-modal/rating-modal.c
 import { SharedService } from "src/app/services/shared-service";
 import { VeService } from "src/app/services/ve.service";
 
-
 @Component({
   selector: "app-tim-ve",
   templateUrl: "./tim-ve.component.html",
@@ -17,7 +16,7 @@ export class TimVeComponent implements OnInit {
   validateForm!: FormGroup;
 
   constructor(
-    private sharedService:SharedService,
+    private sharedService: SharedService,
     private modalService: NgbModal,
     private veSV: VeService,
     private fb: FormBuilder,
@@ -42,21 +41,18 @@ export class TimVeComponent implements OnInit {
     this.tim_ve();
   }
 
-  submitTicketRating():void{
-    this.veSV.danh_gia_ve(this.ve,this.ve.id).subscribe(result=>{
-      if(result)
-      {
-        console.log("ok");
-        if(this.ve.ten==="Thạnh Bưởi")
-        {
-          this.sharedService.setStarTB=this.ve.danh_gia;
+  submitTicketRating(): void {
+    this.veSV.danh_gia_ve(this.ve, this.ve.id).subscribe((result) => {
+      if (result) {
+        this.message.success("Đánh giá thành công");
+        if (this.ve.ten === "Thạnh Bưởi") {
+          this.sharedService.setStarTB = this.ve.danh_gia;
         }
-        if(this.ve.ten==="Phương Trang")
-        {
-          this.sharedService.setStartPT=this.ve.danh_gia;
-        }     
+        if (this.ve.ten === "Phương Trang") {
+          this.sharedService.setStartPT = this.ve.danh_gia;
+        }
       }
-    })
+    });
   }
 
   tim_ve() {
@@ -70,14 +66,18 @@ export class TimVeComponent implements OnInit {
     });
   }
 
-  onRatingClick(){
-      const informModalRef = this.modalService.open(RatingModalComponent);
-      informModalRef.componentInstance.title = "Phương Trang";
-      informModalRef.componentInstance.message = "Hãy đánh giá trải nghiệm của bạn nào...";
-      informModalRef.componentInstance.buttonSubmitClickEvent.subscribe(star=>{
-        this.ve.danh_gia=star;
+  onRatingClick() {
+    const informModalRef = this.modalService.open(RatingModalComponent);
+    informModalRef.componentInstance.title = "Phương Trang";
+    informModalRef.componentInstance.message =
+      "Hãy đánh giá trải nghiệm của bạn nào...";
+    informModalRef.componentInstance.buttonSubmitClickEvent.subscribe(
+      (star) => {
+        this.ve.danh_gia = star;
         this.submitTicketRating();
         this.sharedService.updateFlag.emit(2);
-      })
+        informModalRef.close();
+      }
+    );
   }
 }
